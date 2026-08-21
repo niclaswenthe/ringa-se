@@ -52,22 +52,32 @@
   source: "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W"
   verified: "2026-08"
 
+- claim: "iPhone 17e har eSIM (i Sverige med både eSIM och fysiskt SIM; eSIM-only gäller enbart vissa marknader)"
+  file: src/data/esim-devices.json
+  source: "https://en.wikipedia.org/wiki/IPhone_17e"
+  verified: "2026-08"
+
 - claim: "eSIM-stödet för Samsungs modeller stämmer, inklusive att S20 FE och S21 FE saknar eSIM och att A55/A54/A35 har eSIM i europeiska varianter"
   file: src/data/esim-devices.json
   source: "https://www.samsung.com/uk/support/mobile-devices/galaxy-esim-and-supported-network-carriers/"
   verified: "2026-08"
 
-- claim: "eSIM-stödet för Googles Pixel-modeller stämmer (Pixel 3 och senare har eSIM)"
+- claim: "Galaxy S26-serien har eSIM i europeiska varianter"
   file: src/data/esim-devices.json
-  source: "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W"
+  source: "https://en.wikipedia.org/wiki/Samsung_Galaxy_S26"
   verified: "2026-08"
 
-- claim: "eSIM-stödet för Sonys Xperia-modeller stämmer (1/5/10-serierna generation IV och senare har eSIM i Europa)"
+- claim: "eSIM-stödet för Googles Pixel-modeller stämmer (Pixel 3 och senare har eSIM, inklusive Pixel 10a)"
   file: src/data/esim-devices.json
-  source: "https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/activating-an-esim-on-sony-xperia-1-iv-and-xperia-10-iv/"
+  source: "https://en.wikipedia.org/wiki/Pixel_10a"
   verified: "2026-08"
 
-- claim: "eSIM-stödet för Xiaomi/Redmi-modeller stämmer (13T-serien och senare flaggskepp har eSIM i globala varianter; Redmi Note Pro-varianter variantberoende)"
+- claim: "eSIM-stödet för Sonys Xperia-modeller stämmer (1/5/10-serierna generation IV och senare har eSIM i Europa, inklusive Xperia 1 VII och 10 VII)"
+  file: src/data/esim-devices.json
+  source: "https://www.sony.co.uk/electronics/support/articles/00300757"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Xiaomi/Redmi-modeller stämmer (13T-serien och senare flaggskepp inklusive Xiaomi 17-serien har eSIM i globala varianter; kinesiska varianter saknar det; Redmi Note Pro-varianter variantberoende)"
   file: src/data/esim-devices.json
   source: "https://cellulardata.ubigi.com/help-center/faq/esim-data-plan/xiaomi-devices-equipped-with-esim/"
   verified: "2026-08"
