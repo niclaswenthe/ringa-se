@@ -1,0 +1,155 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+
+const factChecked = "2026-08";
+
+const faq = [
+  {
+    q: "Räcker det att stänga av dataroaming för att vara säker?",
+    a: "Det stoppar all surf via mobilnätet utomlands, vilket tar bort den största kostnadsrisken. Men samtal och SMS kan fortfarande kosta – att ringa eller svara utanför EU debiteras enligt din operatörs utlandsprislista även med dataroaming avslagen.",
+  },
+  {
+    q: "Skyddar EU:s kostnadsspärr mig mot alla chockfakturor?",
+    a: "Nej. Spärren på cirka 50 euro gäller bara dataanvändning, inte samtal och SMS. Ringer du hem långa samtal från ett land utanför EU kan fakturan växa förbi spärrgränsen utan att något stoppar den.",
+  },
+  {
+    q: "Kostar det något att ta emot SMS utomlands?",
+    a: "Nej, att ta emot SMS är gratis hos svenska operatörer var du än är. Det är därför ett bra upplägg att ha svenska SIM:et aktivt för bank-koder medan ett eSIM sköter surfen.",
+  },
+  {
+    q: "Vad gör jag om jag redan fått en hög roamingräkning?",
+    a: "Kontakta din operatör och be om en specifikation. Kontrollera att spärrgränsen fungerat för datadelen. Betala inte mer än du måste innan du fått svar – och inför nästa resa: stäng av dataroaming och använd eSIM i stället.",
+  },
+];
+---
+
+<GuideLayout
+  title="Roaming utanför EU – så undviker du fällorna"
+  description="Utanför EU gäller inga pristak för roaming. Här är fällorna som ger chockfakturor – fartygsnät, autouppkoppling, spärrgränsens luckor – och hur du undviker dem."
+  h1="Roaming utanför EU – så undviker du fällorna"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <h2>Vad gäller inom EU?</h2>
+  <p>
+    Inom EU och EES ringer, sms:ar och surfar du till samma pris som hemma i
+    Sverige – principen kallas{" "}
+    <a href="/ordlista/#roam-like-at-home">roam like at home</a> och är lag i
+    hela unionen enligt{" "}
+    <a href="https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm">
+      EU:s roamingregler</a>. Det enda du behöver känna till är{" "}
+    <a href="/ordlista/#fair-use">fair use-reglerna</a>, som kan begränsa
+    surfmängden för de billigaste abonnemangen.
+  </p>
+  <p>
+    Hur EU-reglerna fungerar i detalj – och vad som gäller i gränsfall som
+    Schweiz och Storbritannien – går vi igenom i{" "}
+    <a href="/guider/ringa-utomlands/">stora guiden om att ringa och surfa
+    utomlands</a>. Den här sidan handlar om resten av världen, där inga
+    pristak skyddar dig.
+  </p>
+
+  <h2>Vad händer med priset utanför EU?</h2>
+  <p>
+    Utanför EU sätter din operatör priset fritt, och skillnaderna är stora:
+    surf kan kosta allt från några tior per dag med ett dagspaket till
+    hundratals kronor per gigabyte utan. Samma resa kan alltså bli tio gånger
+    dyrare beroende på operatör och land.
+  </p>
+  <p>
+    De flesta svenska operatörer säljer numera dagspaket eller resepaket för
+    populära resmål – ofta cirka 40–100 kr per dag för en begränsad mängd
+    surf. Utan paket gäller stycketaxa per megabyte, och det är där de riktiga
+    chockfakturorna föds. Exakt vad din operatör tar betalt i ett visst land
+    hittar du i operatörens prislista – och en uppskattning för din resa får
+    du i <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a>.
+  </p>
+  <p>
+    Hur dyrt det blir varierar också per land: se landsguiderna för{" "}
+    <a href="/lander/thailand/">Thailand</a>,{" "}
+    <a href="/lander/usa/">USA</a>, <a href="/lander/turkiet/">Turkiet</a>{" "}
+    och <a href="/lander/storbritannien/">Storbritannien</a>.
+  </p>
+
+  <h2>Vilka är de klassiska roamingfällorna?</h2>
+  <p>
+    De dyraste misstagen utomlands är nästan alltid samma fem: fartygs- och
+    satellitnät, automatisk uppkoppling vid landning, appar som jobbar i
+    bakgrunden, fel nät nära landgränser och en övertro på spärrgränsen.
+  </p>
+  <ul>
+    <li>
+      <strong>Fartygs- och satellitnät.</strong> Ombord på kryssningsfartyg,
+      färjor och flygplan kopplar telefonen gärna upp sig mot ett satellitnät.
+      Sådana nät omfattas{" "}
+      <a href="https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/faq/index_sv.htm">
+        inte av EU:s roamingregler</a> ens mitt i Medelhavet, och priserna är
+      bland de högsta som finns. Sätt telefonen i flygplansläge till havs.
+    </li>
+    <li>
+      <strong>Automatisk uppkoppling vid landning.</strong> I samma sekund som
+      planet landar kopplar telefonen upp sig och hämtar mejl, bilder och
+      uppdateringar – innan du hunnit tänka. Stäng av{" "}
+      <a href="/ordlista/#dataroaming">dataroaming</a> innan avresa om du inte
+      tänker använda den.
+    </li>
+    <li>
+      <strong>Appar som uppdaterar i bakgrunden.</strong> Molnbackup av
+      semesterbilder, poddhämtningar och appuppdateringar kan äta gigabyte
+      utan att du använder telefonen aktivt. Slå av bakgrundsuppdatering och
+      automatisk backup via mobildata före resan.
+    </li>
+    <li>
+      <strong>Gränszoner.</strong> Nära en landgräns kan telefonen välja ett
+      nät i grannlandet – till exempel ett icke-EU-nät när du semestrar i en
+      EU-gränsstad. Välj nät manuellt (<a href="/ordlista/#natval">nätval</a>)
+      om du rör dig nära en gräns där prisreglerna skiljer sig.
+    </li>
+    <li>
+      <strong>Övertro på spärrgränsen.</strong> Operatörer måste erbjuda en
+      automatisk kostnadsspärr för dataroaming på cirka 50 euro (ofta runt
+      600 kr i svenska abonnemang) – men{" "}
+      <a href="https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/">
+        spärren gäller bara surf, inte samtal och SMS</a>. Långa samtal hem
+      från ett land utanför EU stoppas inte av någon spärr.
+    </li>
+  </ul>
+
+  <h2>Hur skyddar jag mig mot chockfakturan?</h2>
+  <p>
+    Grundskyddet är enkelt: stäng av dataroaming för ditt svenska SIM innan
+    avresa, och sköt surfen via ett{" "}
+    <a href="/ordlista/#esim">eSIM</a> med fast pris i stället. Då vet du på
+    kronan vad resans surf kostar – och ditt svenska SIM ligger kvar och tar
+    emot SMS gratis.
+  </p>
+  <ul>
+    <li>Stäng av dataroaming för svenska SIM:et redan på flygplatsen hemma.</li>
+    <li>
+      Ladda ner offline-kartor och eventuella språkpaket innan du åker.
+    </li>
+    <li>
+      Aktivera din operatörs <a href="/ordlista/#utlandssparr">utlandsspärr</a>{" "}
+      eller kostnadsspärr om du vill ha hängslen och livrem.
+    </li>
+    <li>
+      Använd <a href="/ordlista/#dual-sim">dual-SIM</a>: eSIM för surfen,
+      svenska SIM:et för SMS och nödsamtal. Hur du kommer igång står i{" "}
+      <a href="/guider/esim-for-nyborjare/">eSIM-guiden för nybörjare</a>.
+    </li>
+    <li>
+      Ring hem via <a href="/ordlista/#wifi-samtal">wifi-samtal</a> eller
+      meddelandeappar i stället för vanliga röstsamtal.
+    </li>
+  </ul>
+  <AffiliateButton
+    partner="airalo"
+    text="Se Airalos eSIM-priser för ditt resmål"
+  />
+  <p>
+    Kontrollera aktuella priser hos leverantören och i din operatörs
+    utlandsprislista – priserna ändras löpande.
+  </p>
+</GuideLayout>

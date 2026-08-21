@@ -1,0 +1,371 @@
+# Register över Ringa.se:s granskningsbara faktapåståenden.
+# Läses av faktagranskningsagenten (se agents/fact-check-prompt.md).
+# Varje faktapåstående i guiderna ska ha en post här.
+
+# --- basta-abonnemang-resa ---
+# Claims för /guider/basta-abonnemang-resa/ – ett påstående per rad,
+# verifieras månatligen av agentpipelinen mot käll-URL:erna.
+- claim: "Hallon tillämpar samma villkor i Storbritannien som inom EU/EES – samtal, SMS och surf dras ur den vanliga potten upp till EU-gränsen"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.hallon.se/eu"
+  verified: "2026-08"
+- claim: "Hallon erbjuder eSIM utan extra kostnad, beställs via Mina sidor"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.hallon.se/esim"
+  verified: "2026-08"
+- claim: "Vimla ingår fri roaming i EU/EES och Storbritannien, med ett månadstak för utlandssurf (fair use)"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://vimla.se/roaming/"
+  verified: "2026-08"
+- claim: "Vimla erbjuder eSIM utan extra kostnad"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://vimla.se/esim/"
+  verified: "2026-08"
+- claim: "Vimla-kunder köper surfpaket för användning utanför EU/Storbritannien i stället för löpande pris"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://vimla.se/utlandspriser/"
+  verified: "2026-08"
+- claim: "Comviq ingår fri EU/EES-roaming i de flesta abonnemang"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.comviq.se/hjalp/utland/anvanda-mobilen-till-och-fran-utlandet"
+  verified: "2026-08"
+- claim: "Comviq räknar Storbritannien till övriga världen; surf där sker via Resesurf-dagpaket (från cirka 80 kr per dag) eller surfpaket"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.comviq.se/utland/storbritannien"
+  verified: "2026-08"
+- claim: "Comviq erbjuder eSIM som beställs och aktiveras i appen eller på Mitt konto"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.comviq.se/hjalp/mobiltelefoni/kom-igang-med-esim"
+  verified: "2026-08"
+- claim: "Telia och Telenor tar särskild betalt för roaming i Storbritannien (dagavgift)"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://feber.se/mobil/telia-och-telenor-infor-roamingavgifter-i-storbritannien/429384/"
+  verified: "2026-08"
+
+# --- esim-devices ---
+# Claims-fragment: eSIM-stödet i src/data/esim-devices.json.
+# En samlingspost per märke. Verifieras månatligen av fact-check-pipelinen
+# mot tillverkarnas officiella specifikationer (europeiska varianter).
+
+- claim: "eSIM-stödet för Apples modeller i esim-devices.json stämmer med Apples officiella specifikationer (XS/XR och senare har eSIM; iPhone Air är eSIM-only)"
+  file: src/data/esim-devices.json
+  source: "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Samsungs modeller stämmer, inklusive att S20 FE och S21 FE saknar eSIM och att A55/A54/A35 har eSIM i europeiska varianter"
+  file: src/data/esim-devices.json
+  source: "https://www.samsung.com/uk/support/mobile-devices/galaxy-esim-and-supported-network-carriers/"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Googles Pixel-modeller stämmer (Pixel 3 och senare har eSIM)"
+  file: src/data/esim-devices.json
+  source: "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Sonys Xperia-modeller stämmer (1/5/10-serierna generation IV och senare har eSIM i Europa)"
+  file: src/data/esim-devices.json
+  source: "https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/activating-an-esim-on-sony-xperia-1-iv-and-xperia-10-iv/"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Xiaomi/Redmi-modeller stämmer (13T-serien och senare flaggskepp har eSIM i globala varianter; Redmi Note Pro-varianter variantberoende)"
+  file: src/data/esim-devices.json
+  source: "https://cellulardata.ubigi.com/help-center/faq/esim-data-plan/xiaomi-devices-equipped-with-esim/"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för OnePlus-modeller stämmer (13 har eSIM i EU; 11/12 variantberoende; Nord-serien utelämnad pga. motstridiga uppgifter)"
+  file: src/data/esim-devices.json
+  source: "https://www.airalo.com/blog/oneplus"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Motorola-modeller stämmer (Razr 40/50/60 och Edge 40/50/60 har eSIM; Moto G-serien i regel inte)"
+  file: src/data/esim-devices.json
+  source: "https://www.airalo.com/blog/are-motorola-phones-esim-compatible"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Nothing-modeller stämmer (Phone (3) har eSIM; Phone (1)/(2)/(2a) saknar det)"
+  file: src/data/esim-devices.json
+  source: "https://support.nothing.tech/hc/en-us/articles/36457710266001-Does-the-Phone-3-support-eSIM"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Honor-modeller stämmer (Magic6 Pro och Magic7 Pro har eSIM)"
+  file: src/data/esim-devices.json
+  source: "https://www.honor.com/global/tech/honor-esim/"
+  verified: "2026-08"
+
+- claim: "eSIM-stödet för Fairphone-modeller stämmer (Fairphone 4 och 5 har eSIM)"
+  file: src/data/esim-devices.json
+  source: "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W"
+  verified: "2026-08"
+
+- claim: "Doros telefoner saknar alltjämt eSIM-stöd"
+  file: src/data/esim-devices.json
+  source: "https://www.doro.com/sv-se/"
+  verified: "2026-08"
+
+# --- esim-for-nyborjare ---
+# Granskningsbara påståenden i eSIM-guiden för nybörjare.
+- claim: "Alla iPhone från XS/XR och senare stöder eSIM"
+  file: src/pages/guider/esim-for-nyborjare.astro
+  source: "https://www.telness.se/faq/teknisk-support/enheter-med-stoed-foer-esim"
+  verified: "2026-08"
+- claim: "De flesta Samsung Galaxy-toppmodeller från S20 och framåt samt Google Pixel från Pixel 3 stöder eSIM"
+  file: src/pages/guider/esim-for-nyborjare.astro
+  source: "https://www.telness.se/faq/teknisk-support/enheter-med-stoed-foer-esim"
+  verified: "2026-08"
+- claim: "Rese-eSIM med mindre datapaket kostar från cirka 50–100 kr; veckopaket ofta 100–300 kr"
+  file: src/pages/guider/esim-for-nyborjare.astro
+  source: "https://www.airalo.com/sv"
+  verified: "2026-08"
+- claim: "Att ta emot SMS utomlands är gratis hos svenska operatörer"
+  file: src/pages/guider/esim-for-nyborjare.astro
+  source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
+  verified: "2026-08"
+- claim: "Många rese-eSIM kan bara installeras en gång på en enhet och kan inte flyttas fritt"
+  file: src/pages/guider/esim-for-nyborjare.astro
+  source: "https://www.airalo.com/sv"
+  verified: "2026-08"
+
+# --- ordlista ---
+# Claims för /ordlista/ – de flesta definitioner är tidlösa och behöver
+# ingen löpande verifiering. Nedan endast påståenden med förändringsbara fakta.
+- claim: "EU:s standardskydd stoppar dataroaming vid ungefär motsvarande 50 euro om kunden inte aktivt valt annat (term: Utlandsspärr/beloppsspärr)"
+  file: src/pages/ordlista/index.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+- claim: "Roam Like at Home innebär att samtal, SMS och surf inom EU/EES dras ur den vanliga potten utan extra kostnad, med fair use-begränsningar (termer: Roam Like at Home, Fair use, Roaming)"
+  file: src/pages/ordlista/index.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+
+# --- ringa-utomlands ---
+# Granskningsbara faktapåståenden i pelarguiden.
+# Verifieras månatligen av fact-check-pipelinen. Format: se agents/claims.yml.
+
+- claim: "EU:s roamingregler (roam like at home) är garanterade till och med 30 juni 2032 genom förordning (EU) 2022/612"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://eur-lex.europa.eu/legal-content/SV/TXT/?uri=CELEX%3A32022R0612"
+  verified: "2026-08"
+
+- claim: "Inom EU/EES ingår samtal, sms och surf till samma pris som hemma, utan föranmälan"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+
+- claim: "Operatörer får tillämpa ett fair use-tak för surf i EU, beräknat enligt EU-formel, med begränsad tilläggsavgift över taket"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+
+- claim: "Utanför EU/EES finns ingen prisreglering av roaming – operatörerna sätter priserna själva"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://pts.se/internet-och-telefoni/roaming/"
+  verified: "2026-08"
+
+- claim: "En spärrgräns på motsvarande cirka 50 euro (600–700 kr) för datatrafik utomlands är standard på svenska abonnemang, med sms-varning och stopp"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://pts.se/internet-och-telefoni/roaming/"
+  verified: "2026-08"
+
+- claim: "Svenska operatörers dagspaket utanför EU kostar från cirka 50–100 kr per dag i populära resländer"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://www.telia.se/roaming/utanfor-eu"
+  verified: "2026-08"
+
+- claim: "Satellitnät på fartyg och flygplan omfattas inte av EU:s roamingregler och prissätts fritt"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+
+- claim: "Ett rese-eSIM för en normal semestervecka utanför EU kostar ofta från cirka 50–150 kr"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://www.airalo.com/sv"
+  verified: "2026-08"
+
+# --- roaming-utanfor-eu ---
+# Granskningsbara påståenden i guiden Roaming utanför EU.
+- claim: "Inom EU/EES gäller roam like at home – samma pris som hemma för samtal, SMS och surf"
+  file: src/pages/guider/roaming-utanfor-eu.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+- claim: "Fartygs- och satellitnät omfattas inte av EU:s roamingregler"
+  file: src/pages/guider/roaming-utanfor-eu.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/faq/index_sv.htm"
+  verified: "2026-08"
+- claim: "Operatörer måste erbjuda automatisk kostnadsspärr för dataroaming på cirka 50 euro (ofta cirka 600 kr)"
+  file: src/pages/guider/roaming-utanfor-eu.astro
+  source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
+  verified: "2026-08"
+- claim: "Kostnadsspärren gäller endast dataanvändning, inte samtal och SMS"
+  file: src/pages/guider/roaming-utanfor-eu.astro
+  source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
+  verified: "2026-08"
+- claim: "Svenska operatörers dagspaket utanför EU kostar ofta cirka 40–100 kr per dag"
+  file: src/pages/guider/roaming-utanfor-eu.astro
+  source: "https://www.telia.se/privat/support/utomlands"
+  verified: "2026-08"
+- claim: "Att ta emot SMS utomlands är gratis hos svenska operatörer"
+  file: src/pages/guider/roaming-utanfor-eu.astro
+  source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
+  verified: "2026-08"
+
+# --- storbritannien ---
+# Granskningsbara påståenden: src/pages/lander/storbritannien.astro
+# OBS: Operatörernas UK-villkor är sajtens mest föränderliga fakta – granska
+# varje månad mot operatörernas egna sidor nedan.
+- claim: "Storbritannien står sedan Brexit utanför EU:s roamingregler; svenska operatörer väljer själva sina UK-villkor"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+- claim: "Hallon räknar Storbritannien som EU/EES – ring, sms:a och surfa som hemma"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.hallon.se/support/utomlands/eu-roaming"
+  verified: "2026-08"
+- claim: "Vimla har fri roaming i EU/EES och Storbritannien med en månadsgräns för surf (f.n. 33 GB/mån)"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://vimla.se/roaming/"
+  verified: "2026-08"
+- claim: "Storbritannien ingår i Tres 3Världen – surf som hemma med abonnemang som har tjänsten"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.tre.se/handla/tjanster/3varlden"
+  verified: "2026-08"
+- claim: "Telenor låter de flesta abonnemang surfa på ordinarie surfpott i Storbritannien, men samtal och SMS kostar extra"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.telenor.se/roaming/storbritannien/"
+  verified: "2026-08"
+- claim: "Telia behandlar Storbritannien som land utanför EU-villkoren – dagspris från cirka 130 kr för 0,5 GB eller surfpaket"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.telia.se/roaming/storbritannien"
+  verified: "2026-08"
+- claim: "Tele2 räknar Storbritannien som land utanför EU/EES sedan 2022 – utlandspriser eller paket gäller"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.tele2.se/tips/vad-kostar-egentligen-samtal-och-surf-i-olika-lander"
+  verified: "2026-08"
+- claim: "Storbritanniens landsnummer är +44"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://en.wikipedia.org/wiki/Telephone_numbers_in_the_United_Kingdom"
+  verified: "2026-08"
+- claim: "Nödnumret i Storbritannien är 999 och EU-numret 112 fungerar parallellt mot samma larmcentral"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.gov.uk/contact-999-textphone"
+  verified: "2026-08"
+- claim: "Airalo säljer eSIM för Storbritannien med datapaket från helgpaket till månadspaket"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.airalo.com/united-kingdom-esim"
+  verified: "2026-08"
+
+# --- thailand ---
+# Granskningsbara påståenden – /lander/thailand/
+- claim: "Thailand ligger utanför EU/EES och omfattas inte av EU:s roamingregler (roam like at home)"
+  file: src/pages/lander/thailand.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+- claim: "Telia tar betalt per MB i Thailand upp till ett dagstak på drygt 100 kr för 0,5 GB"
+  file: src/pages/lander/thailand.astro
+  source: "https://www.telia.se/roaming/thailand"
+  verified: "2026-08"
+- claim: "Tele2 säljer datapaket för utvalda resmål utanför EU"
+  file: src/pages/lander/thailand.astro
+  source: "https://www.tele2.se/tips/vad-kostar-egentligen-samtal-och-surf-i-olika-lander"
+  verified: "2026-08"
+- claim: "Telenor har tidvis inkluderat Thailand i vissa abonnemangsformer"
+  file: src/pages/lander/thailand.astro
+  source: "https://www.telenor.se/roaming/"
+  verified: "2026-08"
+- claim: "eSIM med thailändsk data kostar från cirka 50 kr/vecka, cirka 100 kr för 10 GB (Airalo från ca 4 USD, 10 GB ca 10–11 USD)"
+  file: src/pages/lander/thailand.astro
+  source: "https://www.airalo.com/thailand-esim"
+  verified: "2026-08"
+- claim: "Thailands landsnummer är +66"
+  file: src/pages/lander/thailand.astro
+  source: "https://www.itu.int/oth/T02020000CD/en"
+  verified: "2026-08"
+- claim: "Thailands nödnummer: 191 polis, 1669 ambulans, 1155 turistpolis (engelsktalande); gratis från alla telefoner; 112 fungerar inte"
+  file: src/pages/lander/thailand.astro
+  source: "https://www.expatica.com/th/health/healthcare/thailand-emergency-number-2172893/"
+  verified: "2026-08"
+- claim: "AIS och True är stora mobiloperatörer i Thailand med 4G/5G-täckning i städer och turistområden, säljer turist-SIM/eSIM"
+  file: src/pages/lander/thailand.astro
+  source: "https://www.ais.th/en/consumers/roaming/travellers-to-thailand"
+  verified: "2026-08"
+
+# --- turkiet ---
+# Granskningsbara påståenden: src/pages/lander/turkiet.astro
+- claim: "Turkiet ligger utanför EU/EES och omfattas inte av EU:s roamingregler (roam like at home)"
+  file: src/pages/lander/turkiet.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+- claim: "Hos Telia kostar surf i Turkiet från cirka 130 kr per dag för 0,5 GB, med större surfpaket som alternativ"
+  file: src/pages/lander/turkiet.astro
+  source: "https://www.telia.se/roaming/turkiet"
+  verified: "2026-08"
+- claim: "Turkiet ingår i Tres tjänst 3Världen – kunder med abonnemang som har tjänsten surfar som hemma utan extra kostnad"
+  file: src/pages/lander/turkiet.astro
+  source: "https://www.tre.se/handla/tjanster/3varlden"
+  verified: "2026-08"
+- claim: "Turkiets landsnummer är +90"
+  file: src/pages/lander/turkiet.astro
+  source: "https://en.wikipedia.org/wiki/Telephone_numbers_in_Turkey"
+  verified: "2026-08"
+- claim: "Nödnumret i Turkiet är 112 (samlat nödnummer för alla larmtjänster)"
+  file: src/pages/lander/turkiet.astro
+  source: "https://en.wikipedia.org/wiki/112_(emergency_telephone_number)"
+  verified: "2026-08"
+- claim: "Turkiet kräver IMEI-registrering (med hög avgift) först när en turkisk SIM/eSIM använts i en utländsk telefon i mer än 120 dagar; turister och svensk roaming berörs inte"
+  file: src/pages/lander/turkiet.astro
+  source: "https://simology.io/blog/turkey-imei-registration-tourists-deadlines-fees-workarounds-2026"
+  verified: "2026-08"
+- claim: "Airalo säljer eSIM för Turkiet med datapaket i flera storlekar, små veckopaket kostar under hundralappen"
+  file: src/pages/lander/turkiet.astro
+  source: "https://www.airalo.com/turkey-esim"
+  verified: "2026-08"
+
+# --- usa ---
+# Granskningsbara påståenden – /lander/usa/
+- claim: "USA ligger utanför EU:s roamingregler; svenska operatörer tar dagspris från cirka 150 kr eller säljer datapaket"
+  file: src/pages/lander/usa.astro
+  source: "https://www.telia.se/roaming/utanfor-eu"
+  verified: "2026-08"
+- claim: "Telia tar betalt per MB i USA upp till ett dagstak på uppemot 200 kr för cirka 1 GB (169 kr/1024 MB vid granskning)"
+  file: src/pages/lander/usa.astro
+  source: "https://www.telia.se/roaming/utanfor-eu"
+  verified: "2026-08"
+- claim: "Tele2:s datapaket för USA, ca 10 GB, kostar cirka 500 kr"
+  file: src/pages/lander/usa.astro
+  source: "https://www.tele2.se/tips/vad-kostar-egentligen-samtal-och-surf-i-olika-lander"
+  verified: "2026-08"
+- claim: "USA:s stora operatörer (AT&T, T-Mobile, Verizon) har stängt sina 2G- och 3G-nät; samtal kräver VoLTE"
+  file: src/pages/lander/usa.astro
+  source: "https://www.fcc.gov/consumers/guides/plan-ahead-phase-out-3g-cellular-networks-and-service"
+  verified: "2026-08"
+- claim: "Airalo har amerikanska eSIM från cirka 4 USD (ca 50 kr)"
+  file: src/pages/lander/usa.astro
+  source: "https://www.airalo.com/united-states-esim"
+  verified: "2026-08"
+- claim: "USA:s landsnummer är +1"
+  file: src/pages/lander/usa.astro
+  source: "https://www.itu.int/oth/T02020000DE/en"
+  verified: "2026-08"
+- claim: "911 är nödnummer för polis, ambulans och brandkår i hela USA; 112 fungerar inte"
+  file: src/pages/lander/usa.astro
+  source: "https://www.fcc.gov/911-wireless-services"
+  verified: "2026-08"
+
+# --- verktyg ---
+# Granskningsbara påståenden i verktygssidorna.
+- claim: "Svenska operatörers dygnspaket utanför EU kostar oftast cirka 40–130 kr per dygn"
+  file: src/pages/verktyg/roamingkalkylator.astro
+  source: "https://www.telia.se/privat/support/utomlands"
+  verified: "2026-08"
+- claim: "Kalkylatorns spann för operatörsroaming (100–1200 kr/vecka beroende på surfbehov) täcker de stora svenska operatörernas dygnspaketpriser"
+  file: src/pages/verktyg/roamingkalkylator.astro
+  source: "https://www.tele2.se/utomlands"
+  verified: "2026-08"
+- claim: "Kalkylatorns spann för turist-eSIM (40–500 kr/vecka beroende på surfbehov) täcker typiska priser hos stora eSIM-leverantörer"
+  file: src/pages/verktyg/roamingkalkylator.astro
+  source: "https://www.airalo.com/sv"
+  verified: "2026-08"
+- claim: "En beloppsspärr på cirka 600–700 kr för dataroaming är standard hos svenska operatörer (motsvarar 50 € enligt EU-regler)"
+  file: src/pages/verktyg/roamingkalkylator.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-08"
+

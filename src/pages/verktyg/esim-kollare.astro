@@ -1,0 +1,176 @@
+---
+// Interaktivt verktyg: Funkar eSIM i min telefon?
+// All data bäddas in vid build (define:vars) – inga API-anrop i drift,
+// inga cookies, ingen localStorage. [KRAV]
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+import deviceData from "../../data/esim-devices.json";
+
+const factChecked = "2026-08";
+
+const faq = [
+  {
+    q: "Vad betyder det att en telefon stöder eSIM?",
+    a: "Att telefonen har ett inbyggt, digitalt SIM som kan laddas med ett abonnemang eller resepaket utan fysiskt kort. Du kan då köpa ett eSIM för resan och installera det med en QR-kod eller app – oftast med ditt vanliga svenska SIM kvar i telefonen.",
+  },
+  {
+    q: "Min telefon finns inte i listan – hur kollar jag själv?",
+    a: "På iPhone: Inställningar → Allmänt → Om – finns raden EID stöder telefonen eSIM. På Android: Inställningar → Nätverk (eller Anslutningar) → SIM-hanterare – finns valet 'Lägg till eSIM' stöder den det. Du kan också söka på modellnamnet plus 'eSIM' på tillverkarens webbplats.",
+  },
+  {
+    q: "Kan stödet skilja sig mellan olika varianter av samma modell?",
+    a: "Ja. Vissa modeller säljs i olika varianter på olika marknader, där bara vissa har eSIM. Listan här utgår från de varianter som säljs i Sverige och EU – har du köpt telefonen utanför Europa kan svaret skilja sig.",
+  },
+];
+---
+
+<GuideLayout
+  title="Funkar eSIM i min telefon?"
+  description="Välj telefonmärke och modell och få svar direkt: stöder din telefon eSIM? Täcker de vanligaste modellerna i Sverige."
+  h1="Funkar eSIM i min telefon?"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <p>
+    Välj märke och modell så får du svar direkt på om telefonen stöder
+    <a href="/ordlista/#esim">eSIM</a>. Kollaren körs helt i din webbläsare och
+    sparar ingenting – och täcker de vanligaste modellerna i Sverige.
+  </p>
+
+  <div class="tool-form">
+    <label for="brand-select">Telefonmärke</label>
+    <select id="brand-select">
+      <option value="">Välj märke …</option>
+    </select>
+
+    <label for="model-select">Modell</label>
+    <select id="model-select" disabled>
+      <option value="">Välj märke först …</option>
+    </select>
+  </div>
+
+  <div id="kollare-result" class="tool-result" role="status" hidden>
+    <p class="verdict" id="kollare-verdict"></p>
+    <p id="kollare-note"></p>
+  </div>
+  {/* CTA:n ligger utanför live-regionen så att skärmläsare inte läser upp
+      annonslänken vid varje resultatuppdatering. */}
+  <div id="kollare-cta" hidden>
+    <AffiliateButton partner="airalo" text="Se eSIM för din resa hos Airalo" />
+  </div>
+
+  <noscript>
+    <p class="notis">
+      Kollaren kräver att JavaScript är påslaget. Utan JavaScript: se vanliga
+      frågor nedan för hur du kollar eSIM-stödet direkt i telefonens
+      inställningar.
+    </p>
+  </noscript>
+
+  <h2>Vilka telefoner stöder eSIM?</h2>
+  <p>
+    De flesta telefoner som sålts i Sverige de senaste åren stöder eSIM: alla
+    iPhone från XS/XR och senare, Samsungs Galaxy S-serie från S20, Googles
+    Pixel från Pixel 3 och många fler. Bland enklare Android-modeller är stödet
+    mer blandat – där är det värt att kolla innan du köper ett rese-eSIM.
+  </p>
+  <p>
+    Nyfiken på hur det fungerar? Läs
+    <a href="/guider/esim-for-nyborjare/">eSIM för nybörjare</a> – och räkna på
+    vad resan kostar med
+    <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a>.
+  </p>
+
+  <script is:inline define:vars={{ deviceData }}>
+    const brands = deviceData.brands;
+    const brandSelect = document.getElementById("brand-select");
+    const modelSelect = document.getElementById("model-select");
+    const resultBox = document.getElementById("kollare-result");
+    const verdictEl = document.getElementById("kollare-verdict");
+    const noteEl = document.getElementById("kollare-note");
+    const ctaEl = document.getElementById("kollare-cta");
+
+    const UNKNOWN = "__unknown__";
+    const FALLBACK =
+      "Vi har inte den modellen i listan än. Så kollar du själv: på iPhone, öppna Inställningar → Allmänt → Om – finns raden EID stöder telefonen eSIM. På Android, öppna Inställningar → Nätverk/Anslutningar → SIM – finns valet ”Lägg till eSIM” stöder den det.";
+
+    brands.forEach((brand, i) => {
+      const opt = document.createElement("option");
+      opt.value = String(i);
+      opt.textContent = brand.name;
+      brandSelect.appendChild(opt);
+    });
+
+    brandSelect.addEventListener("change", () => {
+      modelSelect.innerHTML = "";
+      resultBox.hidden = true;
+      ctaEl.hidden = true;
+      if (brandSelect.value === "") {
+        modelSelect.disabled = true;
+        modelSelect.appendChild(new Option("Välj märke först …", ""));
+        return;
+      }
+      modelSelect.disabled = false;
+      modelSelect.appendChild(new Option("Välj modell …", ""));
+      brands[Number(brandSelect.value)].models.forEach((m, i) => {
+        modelSelect.appendChild(new Option(m.model, String(i)));
+      });
+      modelSelect.appendChild(
+        new Option("Min modell finns inte i listan", UNKNOWN)
+      );
+    });
+
+    // Visa live-regionen först och fyll den strax därefter – innehåll som
+    // sätts medan regionen är display:none annonseras inte av alla
+    // skärmläsare (WCAG 4.1.3).
+    function showResult(verdictText, verdictClass, noteText, showCta) {
+      resultBox.hidden = false;
+      ctaEl.hidden = !showCta;
+      setTimeout(() => {
+        verdictEl.textContent = verdictText;
+        verdictEl.className = "verdict " + verdictClass;
+        noteEl.textContent = noteText;
+      }, 60);
+    }
+
+    modelSelect.addEventListener("change", () => {
+      if (modelSelect.value === "") {
+        resultBox.hidden = true;
+        ctaEl.hidden = true;
+        return;
+      }
+
+      if (modelSelect.value === UNKNOWN) {
+        showResult(
+          "Osäkert – kolla i telefonen",
+          "verdict-okand",
+          FALLBACK,
+          false
+        );
+        return;
+      }
+
+      const model =
+        brands[Number(brandSelect.value)].models[Number(modelSelect.value)];
+      const texts = {
+        ja: "Ja – den här modellen stöder eSIM.",
+        nej: "Nej – den här modellen stöder inte eSIM.",
+        delvis: "Delvis – stödet beror på variant.",
+      };
+      const note =
+        model.note ||
+        (model.esim === "ja"
+          ? "Du kan köpa ett rese-eSIM och installera det med QR-kod eller app."
+          : model.esim === "nej"
+            ? "För den här telefonen är alternativen ett lokalt fysiskt SIM-kort på resmålet, eller din operatörs vanliga roaming."
+            : "");
+      showResult(
+        texts[model.esim],
+        "verdict-" + model.esim,
+        note,
+        model.esim !== "nej"
+      );
+    });
+  </script>
+</GuideLayout>

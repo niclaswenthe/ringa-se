@@ -1,0 +1,57 @@
+# Månatlig faktagranskning med människa-i-loopen. [KRAV]
+# Agenten öppnar pull requests – den publicerar aldrig direkt till main.
+#
+# Förutsättningar:
+# - Repo secret ANTHROPIC_API_KEY måste finnas.
+# - Branch protection på main + CODEOWNERS skyddar komponenter och juridik.
+#
+# TODO EFTER LANSERING: aktivera cron-schemat genom att avkommentera
+# schedule-blocket nedan. Fram till dess körs jobbet manuellt via
+# workflow_dispatch (fliken Actions → Fact check → Run workflow).
+
+name: Fact check
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   # Körs 06:00 UTC dag 1–7 varje månad; guard-steget nedan släpper bara
+  #   # igenom måndagar → "första måndagen i månaden" (GitHub-cron saknar
+  #   # direkt stöd för det).
+  #   - cron: "0 6 1-7 * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: fact-check
+  cancel-in-progress: false
+
+jobs:
+  fact-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bara första måndagen (vid cron-körning)
+        if: github.event_name == 'schedule'
+        run: |
+          if [ "$(date +%u)" != "1" ]; then
+            echo "Inte måndag – hoppar över."
+            exit 78
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Kör faktagranskningsagenten
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Läs filen agents/fact-check-prompt.md i detta repo och utför
+            uppdraget exakt enligt den. Dagens datum: använd `date`.
+            Skapa branches och pull requests med `gh` (GITHUB_TOKEN är satt).
+            Öppna aldrig en PR som ändrar filer utanför skyddsräckena i
+            prompten.
+          claude_args: "--allowedTools 'Bash,Read,Edit,Write,Glob,Grep,WebSearch,WebFetch'"

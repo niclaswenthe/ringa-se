@@ -1,0 +1,156 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+
+const factChecked = "2026-08";
+
+const faq = [
+  {
+    q: "Kostar det något att ta emot samtal utomlands?",
+    a: "Inom EU/EES ingår mottagna samtal utan extra kostnad, precis som hemma. Utanför EU tar de flesta svenska operatörer betalt även när du svarar på ett samtal – kolla din operatörs prislista för landet innan du svarar.",
+  },
+  {
+    q: "Fungerar sms utomlands?",
+    a: "Ja, sms fungerar i princip överallt där din telefon har täckning. Inom EU ingår sms i ditt abonnemang, och utanför EU kostar det ofta några kronor per skickat sms medan mottagna sms är gratis hos de flesta operatörer.",
+  },
+  {
+    q: "Behåller jag mitt svenska nummer om jag använder eSIM på resan?",
+    a: "Ja. Ett rese-eSIM läggs till som ett extra abonnemang i telefonen medan ditt svenska nummer är kvar. Du surfar via eSIM:et och kan samtidigt ta emot samtal och sms till ditt vanliga nummer.",
+  },
+  {
+    q: "Vad gör jag om fakturan ändå blev hög?",
+    a: "Kontakta din operatör först och be om en specifikation. Spärrgränsen på cirka 50 euro ska normalt ha varnat och stoppat datatrafiken; om det inte skett kan du ha rätt att bestrida delar av kostnaden. Konsumenternas tele- och internetbyrå ger gratis vägledning.",
+  },
+];
+---
+
+<GuideLayout
+  title="Ringa & surfa utomlands 2026 – stora guiden"
+  description="Vad kostar mobilen utomlands? EU-reglerna, fällorna utanför EU och när eSIM är bättre – hela guiden på begriplig svenska."
+  h1="Ringa & surfa utomlands – stora guiden 2026"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <p>
+    Det här är hubben för allt Ringa.se skriver om mobilen på resan. Här får du
+    helhetsbilden – vad som ingår i EU, vad som kan bli dyrt utanför EU och när
+    ett <a href="/ordlista/#esim">eSIM</a> är det smartare valet. Vill du gå
+    direkt på djupet finns egna guider om
+    <a href="/guider/esim-for-nyborjare/">eSIM för nybörjare</a>,
+    <a href="/guider/roaming-utanfor-eu/">roaming utanför EU</a> och
+    <a href="/guider/basta-abonnemang-resa/">bästa svenska abonnemanget för resenärer</a>.
+  </p>
+
+  <h2>Vad kostar det att använda mobilen utomlands?</h2>
+  <p>
+    Inom EU och EES kostar mobilen som hemma – samtal, sms och surf ingår i ditt
+    vanliga abonnemang. Utanför EU sätter operatörerna sina egna priser, och
+    där kan surf via <a href="/ordlista/#roaming">roaming</a> kosta från cirka
+    50 kr per dag med dagspaket upp till flera hundra kronor per gigabyte utan
+    paket.
+  </p>
+  <p>
+    Skillnaden mellan "inom EU" och "utanför EU" är alltså hela poängen med den
+    här sajten. En vecka på Mallorca kräver ingen planering alls, medan samma
+    vecka i <a href="/lander/thailand/">Thailand</a>,
+    <a href="/lander/usa/">USA</a> eller <a href="/lander/turkiet/">Turkiet</a>
+    kan ge en rejäl faktura om du låter telefonen sköta sig själv. Vill du
+    räkna på just din resa: prova
+    <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a>.
+  </p>
+
+  <h2>Vad ingår i mitt svenska abonnemang inom EU?</h2>
+  <p>
+    EU:s regler om <a href="/ordlista/#roam-like-at-home">roam like at home</a>
+    innebär att du ringer, sms:ar och surfar i andra EU/EES-länder till samma
+    pris som i Sverige, utan att göra något i förväg. Reglerna är garanterade
+    till och med den 30 juni 2032 genom
+    <a href="https://eur-lex.europa.eu/legal-content/SV/TXT/?uri=CELEX%3A32022R0612">EU-förordningen om roaming</a>.
+  </p>
+  <p>
+    Ett undantag är värt att känna till:
+    <a href="/ordlista/#fair-use">fair use-regeln</a>. Har du en stor surfpott
+    hemma kan operatören sätta ett tak för hur mycket av den du får använda i
+    andra EU-länder. Taket räknas fram enligt en EU-formel, operatören måste
+    berätta var din gräns går, och passerar du den blir det en begränsad
+    tilläggsavgift enligt
+    <a href="https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm">EU:s regler</a>
+    – ingen chockfaktura, men bra att veta om du jobbar på distans en längre
+    period.
+  </p>
+
+  <h2>Vad gäller utanför EU?</h2>
+  <p>
+    Utanför EU och EES finns ingen prisreglering – varje operatör bestämmer
+    själv vad samtal, sms och surf ska kosta, enligt
+    <a href="https://pts.se/internet-och-telefoni/roaming/">Post- och telestyrelsen</a>.
+    De flesta svenska operatörer säljer dagspaket från cirka 50–100 kr per dag
+    i populära resländer, men utan paket kan priset per megabyte bli mycket
+    högt.
+  </p>
+  <p>
+    Ett skyddsnät finns: en spärrgräns på motsvarande cirka 50 euro
+    (600–700 kr) för datatrafik utomlands är standard på svenska abonnemang.
+    Du varnas via sms och trafiken stoppas när gränsen nås, om du inte aktivt
+    höjer den. Gränsen skyddar mot de värsta fakturorna – men 600 kr för några
+    dagars strösurf är fortfarande dyrt jämfört med alternativen. Hela
+    resonemanget, inklusive riskländerna, finns i guiden
+    <a href="/guider/roaming-utanfor-eu/">Roaming utanför EU – så undviker du fällorna</a>.
+  </p>
+
+  <h2>När är eSIM bättre än vanlig roaming?</h2>
+  <p>
+    Utanför EU är ett rese-eSIM nästan alltid det billigaste sättet att surfa:
+    du köper en datapott för landet i förväg, ofta från cirka 50–150 kr för en
+    normal semestervecka, i stället för dagspriser som snabbt summerar till
+    flera hundra kronor. Inom EU behövs det däremot sällan – där ingår ju
+    surfen redan.
+  </p>
+  <p>
+    Det fina med eSIM är att du inte byter bort något. Telefonen har kvar ditt
+    svenska nummer via <a href="/ordlista/#dual-sim">dual-SIM</a>, så sms och
+    samtal når dig som vanligt, medan surfen går via det billigare eSIM:et.
+    Installationen tar några minuter och kräver ingen teknisk vana – se
+    <a href="/guider/esim-for-nyborjare/">nybörjarguiden</a>. Osäker på om din
+    telefon stöder eSIM? Testa
+    <a href="/verktyg/esim-kollare/">eSIM-kollaren</a>.
+  </p>
+  <AffiliateButton partner="airalo" text="Jämför eSIM för ditt resmål hos Airalo" />
+
+  <h2>Hur undviker jag de dyraste fällorna?</h2>
+  <p>
+    De flesta chockfakturor beror inte på att någon ringt för mycket, utan på
+    att telefonen surfat i bakgrunden på fel nät. Tre vanor räcker långt:
+  </p>
+  <ul>
+    <li>
+      <strong>Stäng av <a href="/ordlista/#dataroaming">dataroaming</a></strong>
+      innan du landar i ett land utanför EU, och slå bara på den medvetet.
+      Stäng även av automatiska uppdateringar av appar och molnbackup på
+      mobildata.
+    </li>
+    <li>
+      <strong>Se upp med fartygs- och flygplansnät.</strong> Satellitnät på
+      kryssningsfartyg, färjor och flygplan omfattas aldrig av EU:s
+      roamingregler – de prissätts fritt och hör till det dyraste som finns,
+      även mitt i Europa, enligt
+      <a href="https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm">EU:s konsumentupplysning</a>.
+      Kolla att telefonen inte valt ett nät med namn i stil med "Maritime"
+      eller "OnAir" – läs mer om <a href="/ordlista/#natval">manuellt nätval</a>.
+    </li>
+    <li>
+      <strong>Använd <a href="/ordlista/#wifi-samtal">WiFi-samtal</a></strong>
+      när du har wifi: hos flera operatörer räknas samtal hem till Sverige då
+      som vanliga samtal, och du slipper roamingavgiften helt. Exakta villkor
+      skiljer sig – kolla din operatör.
+    </li>
+  </ul>
+  <p>
+    Landsguiderna går igenom det här per resmål:
+    <a href="/lander/thailand/">Thailand</a>, <a href="/lander/usa/">USA</a>,
+    <a href="/lander/turkiet/">Turkiet</a> och
+    <a href="/lander/storbritannien/">Storbritannien</a> – det sista landet är
+    ett specialfall där svenska operatörer gör helt olika efter Brexit.
+  </p>
+</GuideLayout>

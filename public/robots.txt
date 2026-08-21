@@ -1,0 +1,36 @@
+# Ringa.se – robots.txt
+#
+# AVSIKTLIGT: Alla stora AI-crawlers och sökbotar tillåts uttryckligen.
+# Ringa.se vill bli citerad av AI-assistenter (ChatGPT, Claude, Gemini,
+# Perplexity) – det är en medveten synlighetsstrategi, inte ett förbiseende.
+# Lägg ALDRIG till en wildcard-regel som blockerar dessa user-agents.
+# Se även /llms.txt för en maskinläsbar översikt av sajten.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ringa.se/sitemap-index.xml

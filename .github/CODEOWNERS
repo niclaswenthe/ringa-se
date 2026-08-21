@@ -1,0 +1,11 @@
+# Skyddar filer som faktagranskningsagenten aldrig får ändra utan
+# uttrycklig manuell granskning. Kombineras med branch protection på main
+# (kräv CODEOWNERS-granskning för dessa sökvägar).
+
+/src/components/        @niclaswenthe
+/src/layouts/           @niclaswenthe
+/src/config/            @niclaswenthe
+/src/pages/om/          @niclaswenthe
+/public/robots.txt      @niclaswenthe
+/.github/               @niclaswenthe
+/agents/fact-check-prompt.md @niclaswenthe

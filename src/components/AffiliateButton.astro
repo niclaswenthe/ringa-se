@@ -1,0 +1,24 @@
+---
+// [KRAV] Knappkomponent för affiliatelänkar. Renderar alltid ordet
+// "Annonslänk" i direkt anslutning till knappen (MFL 9 §, IAB Sveriges
+// rekommendation) och rel="sponsored noopener" (Googles krav för betalda
+// länkar). Får inte ändras av agentpipelinen.
+import { partners, type PartnerKey } from "../config/partners";
+
+interface Props {
+  /** Nyckel i partners.ts – enda tillåtna sättet att peka ut målet. */
+  partner: PartnerKey;
+  /** Knapptext, t.ex. "Se Airalos eSIM för Thailand". */
+  text: string;
+}
+
+const { partner, text } = Astro.props;
+const target = partners[partner];
+---
+
+<p class="affiliate-button-wrap">
+  <a class="affiliate-button" href={target.url} rel="sponsored noopener">
+    {text}
+  </a>
+  <span class="affiliate-label">Annonslänk till {target.label}</span>
+</p>

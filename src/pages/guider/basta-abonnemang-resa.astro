@@ -1,0 +1,160 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+
+const factChecked = "2026-08";
+
+const faq = [
+  {
+    q: "Måste jag byta abonnemang för att kunna resa?",
+    a: "Nej. Alla svenska abonnemang fungerar inom EU/EES till samma pris som hemma tack vare EU:s roamingregler. Det är först utanför EU – och i viss mån i Storbritannien – som valet av operatör börjar spela roll för plånboken.",
+  },
+  {
+    q: "Vilken operatör är billigast i Storbritannien?",
+    a: "Det beror på abonnemang, men mönstret är tydligt: vissa operatörer, däribland Hallon och Vimla, behandlar Storbritannien som EU och tar inget extra, medan andra tar en dagavgift eller löpande pris. Kontrollera din operatörs egen utlandssida för Storbritannien innan du reser.",
+  },
+  {
+    q: "Kan jag ha kvar mitt svenska nummer och ändå använda rese-eSIM?",
+    a: "Ja, om din telefon har dual-SIM, vilket nästan alla telefoner med eSIM-stöd har. Ditt svenska abonnemang ligger kvar för samtal och SMS medan surfen går via rese-eSIM:et. Stäng av dataroaming på det svenska abonnemanget så undviker du oavsiktliga kostnader.",
+  },
+  {
+    q: "Har alla svenska operatörer eSIM?",
+    a: "De flesta större operatörer och många budgetmärken erbjuder i dag eSIM utan extra kostnad, ofta via appen eller inloggat läge. Kontrollera dels att din operatör erbjuder eSIM, dels att din telefon stöder det – det senare kollar du enkelt i vår eSIM-kollare.",
+  },
+];
+---
+
+<GuideLayout
+  title="Bästa svenska abonnemanget för dig som reser"
+  description="Vilket svenskt mobilabonnemang passar resenärer? Vi jämför EU-villkor, Storbritannien-priser och eSIM-stöd – utan superlativ, med källor."
+  h1="Bästa svenska abonnemanget för dig som reser"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <p>
+    ”Bästa” beror på hur du reser. Här går vi igenom vad som faktiskt skiljer
+    svenska abonnemang åt ur ett reseperspektiv – och det är färre saker än
+    reklamen antyder, men de kan betyda hundralappar per resa.
+  </p>
+
+  <h2>Vad ska en resenär titta på i ett abonnemang?</h2>
+  <p>
+    Fyra saker avgör hur bra ett svenskt abonnemang är på resa: hur mycket surf
+    du får använda inom EU (<a href="/ordlista/#fair-use">fair use-taket</a>),
+    vad som gäller i Storbritannien, om operatören erbjuder
+    <a href="/ordlista/#esim">eSIM</a>, och priserna utanför EU. Månadspriset
+    hemma i Sverige säger nästan ingenting om vad resan kommer att kosta.
+  </p>
+  <ul>
+    <li>
+      <strong>EU-surfmängd:</strong> inom EU/EES gäller
+      <a href="/ordlista/#roam-like-at-home">Roam Like at Home</a> – du
+      använder din vanliga pott. Men operatören får sätta ett skäligt
+      månadstak för utlandssurfen, och taken skiljer sig åt mellan
+      abonnemang.
+    </li>
+    <li>
+      <strong>Storbritannien:</strong> sedan Brexit omfattas landet inte av
+      EU-reglerna, och här går operatörerna åt olika håll – mer om det nedan.
+    </li>
+    <li>
+      <strong>eSIM-stöd:</strong> gör det enkelt att kombinera ditt svenska
+      abonnemang med ett rese-eSIM i samma telefon
+      (<a href="/ordlista/#dual-sim">dual-SIM</a>).
+    </li>
+    <li>
+      <strong>Priser utanför EU:</strong> här är operatörsroaming nästan
+      alltid dyrt oavsett operatör – då är
+      <a href="/guider/roaming-utanfor-eu/">strategin viktigare än
+      operatörsvalet</a>.
+    </li>
+  </ul>
+
+  <h2>Vilka operatörer har bra villkor för resenärer?</h2>
+  <p>
+    Den största praktiska skillnaden mellan svenska operatörer gäller
+    Storbritannien: några behandlar landet som EU utan extra kostnad, medan
+    andra tar betalt per dag eller per megabyte. Inom EU/EES är villkoren
+    däremot likartade eftersom EU-reglerna styr.
+  </p>
+
+  <h3>Hallon – EU-villkor även i Storbritannien</h3>
+  <p>
+    Hallon låter dig
+    <a href="https://www.hallon.se/eu">ringa, sms:a och surfa i EU/EES och
+    Storbritannien</a> på samma villkor som hemma – surfen dras ur din
+    vanliga pott upp till abonnemangets EU-gräns. För dig som ofta åker till
+    London är det ett av de enklaste sätten att slippa både dagavgifter och
+    rese-eSIM. Hallon erbjuder också
+    <a href="https://www.hallon.se/esim">eSIM utan extra kostnad</a>, beställt
+    via Mina sidor.
+  </p>
+  <AffiliateButton partner="hallon" text="Se Hallons abonnemang" />
+
+  <h3>Vimla – EU och Storbritannien med månadstak</h3>
+  <p>
+    Vimla ingår fri roaming i
+    <a href="https://vimla.se/roaming/">EU/EES och Storbritannien</a>, med ett
+    månadstak för hur mycket surf du kan använda utomlands
+    (<a href="/ordlista/#fair-use">fair use</a>) – kontrollera aktuell gräns på
+    Vimlas roamingsida. Vimla har även
+    <a href="https://vimla.se/esim/">eSIM utan extra kostnad</a>. Utanför
+    EU/Storbritannien köper du surfpaket i appen i stället för att betala
+    löpande pris.
+  </p>
+  <AffiliateButton partner="vimla" text="Se Vimlas abonnemang" />
+
+  <h3>Comviq – EU ingår, men Storbritannien kostar extra</h3>
+  <p>
+    Hos Comviq ingår
+    <a href="https://www.comviq.se/hjalp/utland/anvanda-mobilen-till-och-fran-utlandet">
+    fri roaming inom EU/EES i de flesta abonnemang</a>, men Storbritannien
+    räknas till övriga världen: där betalar du via
+    <a href="https://www.comviq.se/utland/storbritannien">dagpaket (Resesurf)
+    eller surfpaket</a> – räkna med från cirka 80 kr per dag för surf.
+    Comviq har <a
+      href="https://www.comviq.se/hjalp/mobiltelefoni/kom-igang-med-esim"
+    >eSIM som beställs och aktiveras i appen</a>. För dig som mest reser inom
+    EU fungerar Comviq utmärkt; för täta UK-resor finns billigare upplägg.
+  </p>
+  <AffiliateButton partner="comviq" text="Se Comviqs abonnemang" />
+
+  <h3>Och de stora operatörerna?</h3>
+  <p>
+    Flera av de större operatörerna, bland andra Telia och Telenor, tar
+    <a href="https://feber.se/mobil/telia-och-telenor-infor-roamingavgifter-i-storbritannien/429384/">
+    särskild betalt för roaming i Storbritannien</a>, ofta som en dagavgift,
+    medan andra räknar in landet i sina EU-villkor. Villkoren ändras dessutom
+    över tid. Kolla alltid din operatörs egen utlandssida för Storbritannien
+    före resan – och jämför med vad
+    <a href="/lander/storbritannien/">vår Storbritannien-guide</a> visar att
+    ett rese-eSIM kostar.
+  </p>
+
+  <h2>Vad gäller för eSIM hos svenska operatörer?</h2>
+  <p>
+    De flesta svenska operatörer erbjuder i dag eSIM utan extra kostnad, och
+    beställningen görs vanligen i operatörens app eller på Mina sidor med
+    BankID. Det intressanta för resenärer är kombinationen: med ditt svenska
+    abonnemang som eSIM eller fysiskt kort plus ett rese-eSIM för surfen har
+    du både ditt vanliga nummer och billig data i samma telefon. Börja med att
+    kolla att din telefon stöder eSIM i
+    <a href="/verktyg/esim-kollare/">eSIM-kollaren</a>, och läs
+    <a href="/guider/esim-for-nyborjare/">nybörjarguiden</a> om tekniken är ny
+    för dig.
+  </p>
+
+  <h2>Behöver jag byta abonnemang före en resa utanför EU?</h2>
+  <p>
+    Oftast inte. Utanför EU är operatörsroaming dyr hos i stort sett alla
+    svenska operatörer, så skillnaden mellan dem är mindre viktig – det
+    smarta draget är i stället ett
+    <a href="/ordlista/#esim">rese-eSIM</a> för destinationen eller ett
+    surfpaket från din befintliga operatör. Byt abonnemang om du ofta åker
+    till Storbritannien och din operatör tar dagavgift där, eller om ditt
+    EU-surftak är för snålt för dina resvanor. I övrigt: behåll det du har och
+    <a href="/guider/roaming-utanfor-eu/">planera surfen inför resan</a> i
+    stället.
+  </p>
+</GuideLayout>

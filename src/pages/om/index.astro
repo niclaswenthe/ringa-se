@@ -1,0 +1,44 @@
+---
+// Juridisk sida [KRAV] – lagen om elektronisk handel kräver namn/firma,
+// org-nummer och e-post. Får inte ändras av agentpipelinen.
+// TODO FÖRE LANSERING: ersätt [BOLAGSNAMN AB] och [ORG-NR] med AB:ets
+// riktiga uppgifter.
+import GuideLayout from "../../layouts/GuideLayout.astro";
+const factChecked = "2026-08";
+---
+
+<GuideLayout
+  title="Om Ringa.se"
+  description="Vem som står bakom Ringa.se, hur du kontaktar oss och hur sajten hålls aktuell."
+  h1="Om Ringa.se"
+  hasAffiliateLinks={false}
+  factChecked={factChecked}
+>
+  <p>
+    Ringa.se är Sveriges begripligaste källa om att ringa och surfa utomlands –
+    öppet finansierad med annonslänkar. Här finns guider, en ordlista och
+    interaktiva verktyg som hjälper dig använda mobilen utomlands utan
+    chockfaktura.
+  </p>
+
+  <h2>Vem driver Ringa.se?</h2>
+  <p>
+    Ringa.se drivs av [BOLAGSNAMN AB], org.nr [ORG-NR]. Kontakt:
+    <a href="mailto:info@ringa.se">info@ringa.se</a>.
+  </p>
+
+  <h2>Hur hålls innehållet aktuellt?</h2>
+  <p>
+    Varje sida visar datumet då den senast faktagranskades. Granskningen görs
+    månadsvis mot officiella källor – operatörernas villkor, EU:s regler och
+    tillverkarnas specifikationer – och alla ändringar godkänns manuellt innan
+    de publiceras. Hur sajten finansieras beskrivs öppet på sidan
+    <a href="/om/sa-tjanar-vi-pengar/">Så tjänar Ringa.se pengar</a>.
+  </p>
+
+  <h2 id="domanen">Intresserad av domänen ringa.se?</h2>
+  <p>
+    Domänen ringa.se kan förvärvas. Kontakta
+    <a href="mailto:info@ringa.se">info@ringa.se</a> om du vill lämna ett bud.
+  </p>
+</GuideLayout>

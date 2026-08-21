@@ -1,0 +1,20 @@
+---
+// [KRAV] Sidfot på alla sidor: juridiska länkar + domän-till-salu-raden.
+// Årtalet genereras vid build. Får inte ändras av agentpipelinen.
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <ul>
+      <li><a href="/om/">Om Ringa.se</a></li>
+      <li><a href="/om/sa-tjanar-vi-pengar/">Så tjänar vi pengar</a></li>
+      <li><a href="/om/integritet-cookies/">Integritet &amp; cookies</a></li>
+    </ul>
+    <p>
+      Intresserad av domänen ringa.se?
+      <a href="/om/#domanen">Kontakta oss.</a>
+    </p>
+    <p>© {year} Ringa.se. Innehållet är originalskrivet och faktagranskas löpande.</p>
+  </div>
+</footer>

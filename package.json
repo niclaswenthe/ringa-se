@@ -1,0 +1,18 @@
+{
+  "name": "ringa-se",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ringa.se – Sveriges begripligaste källa om att ringa och surfa utomlands",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.1.0",
+    "typescript": "^5.7.0"
+  }
+}

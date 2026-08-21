@@ -1,0 +1,44 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { siteName } from "../config/site";
+import "../styles/global.css";
+
+interface Props {
+  /** Unik sidtitel (utan sajtnamn – läggs på automatiskt). */
+  title: string;
+  /** Unik meta description för sidan. */
+  description: string;
+  /** JSON-LD-objekt som ska renderas statiskt i head. */
+  schema?: object[];
+}
+
+const { title, description, schema = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const fullTitle =
+  Astro.url.pathname === "/" ? title : `${title} – ${siteName}`;
+---
+
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {
+      schema.map((obj) => (
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(obj)} />
+      ))
+    }
+  </head>
+  <body>
+    <Header />
+    <main id="huvudinnehall" class="container">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

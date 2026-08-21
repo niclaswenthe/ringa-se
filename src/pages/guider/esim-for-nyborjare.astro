@@ -1,0 +1,162 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+
+const factChecked = "2026-08";
+
+const faq = [
+  {
+    q: "Kan jag behålla mitt svenska nummer när jag använder eSIM?",
+    a: "Ja. Ditt svenska SIM ligger kvar i telefonen och tar emot samtal och SMS som vanligt, medan eSIM:et bara sköter surfen. Du väljer i inställningarna vilket SIM som används till vad.",
+  },
+  {
+    q: "Kan jag flytta ett eSIM mellan telefoner?",
+    a: "Oftast inte fritt. Många rese-eSIM kan bara installeras en gång, på en enhet. Byter du telefon behöver du i regel kontakta leverantören eller köpa ett nytt. Installera därför eSIM:et på den telefon du faktiskt tar med på resan.",
+  },
+  {
+    q: "Funkar eSIM på en operatörslåst telefon?",
+    a: "Nej, i regel inte med andra leverantörers eSIM. Är telefonen låst till en operatör kan den vägra profiler från andra. De flesta svenska telefoner säljs olåsta, men är du osäker: kontrollera med din operatör innan du köper ett rese-eSIM.",
+  },
+  {
+    q: "Vad händer med eSIM:et när resan är slut?",
+    a: "Ingenting du måste åtgärda – datapaketet slutar gälla när dagarna eller gigabyten är slut. Du kan radera profilen i inställningarna när du vill. Ditt svenska abonnemang påverkas inte.",
+  },
+];
+
+const howTo = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Så installerar du ett eSIM inför resan",
+  description:
+    "Installera ett rese-eSIM hemma på wifi, aktivera det på resmålet och behåll ditt svenska SIM för samtal och SMS.",
+  step: [
+    {
+      "@type": "HowToStep",
+      name: "Köp ett eSIM för resmålet",
+      text: "Köp ett eSIM-datapaket för landet du reser till, hos en eSIM-leverantör eller i deras app. Du får en QR-kod eller installerar direkt via appen.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Installera profilen hemma på wifi",
+      text: "Skanna QR-koden i telefonens inställningar (Lägg till eSIM/mobilabonnemang) eller följ appens installationsknapp. Gör det hemma på wifi, inte på flygplatsen.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Aktivera eSIM:et när du landat",
+      text: "På resmålet: välj eSIM-profilen som datalinje och slå på dataroaming för just den profilen. Låt dataroaming vara AV för ditt svenska SIM.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Behåll svenska SIM:et aktivt för SMS",
+      text: "Låt ditt vanliga SIM vara på för samtal och SMS, så att bank-koder och tvåfaktorsinloggningar når dig som vanligt.",
+    },
+  ],
+};
+---
+
+<GuideLayout
+  title="eSIM för nybörjare – så funkar det"
+  description="Vad är ett eSIM, vilka telefoner stöds och hur installerar du det? Begriplig steg-för-steg-guide för dig som ska resa utomlands."
+  h1="eSIM för nybörjare"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+  extraSchema={[howTo]}
+>
+  <h2>Vad är ett eSIM?</h2>
+  <p>
+    Ett <a href="/ordlista/#esim">eSIM</a> är ett SIM-kort som är inbyggt i
+    telefonen och laddas digitalt, i stället för att du petar in ett plastkort.
+    Du köper ett abonnemang eller datapaket, skannar en QR-kod och några
+    minuter senare är telefonen uppkopplad – utan besök i någon butik.
+  </p>
+  <p>
+    För resenärer är det här en liten revolution. Förr köpte du ett lokalt
+    kontantkort i en kiosk på flygplatsen och tappade bort ditt svenska SIM i
+    plånboken. Med eSIM köper du surfen hemifrån i soffan, och ditt svenska
+    SIM sitter kvar i telefonen hela tiden. Telefonen använder båda samtidigt
+    – det kallas <a href="/ordlista/#dual-sim">dual-SIM</a>.
+  </p>
+  <p>
+    Själva tekniken är samma som i ett vanligt SIM-kort: eSIM:et identifierar
+    dig i mobilnätet. Skillnaden är bara leveranssättet. En telefon kan dessutom
+    lagra flera <a href="/ordlista/#esim-profil">eSIM-profiler</a>, så du kan ha
+    ett eSIM för Thailand och ett för USA liggande redo.
+  </p>
+
+  <h2>Vilka telefoner stöder eSIM?</h2>
+  <p>
+    De flesta telefoner sålda i Sverige de senaste åren stöder eSIM: alla
+    iPhone från XS och XR och senare, de flesta Samsung Galaxy-toppmodeller
+    från S20 och framåt samt Google Pixel från Pixel 3 och senare. Osäker på
+    din modell? <a href="/verktyg/esim-kollare/">eSIM-kollaren</a> ger dig
+    svar direkt.
+  </p>
+  <p>
+    Budgetmodeller är undantaget – där dröjde eSIM-stödet längre, och vissa
+    modeller säljs i olika varianter för olika marknader. Tumregeln: en
+    mellanklass- eller toppmodell från de senaste åren klarar det nästan
+    alltid, en enklare modell behöver du kolla upp. Kom också ihåg att en{" "}
+    <a href="/ordlista/#operatorslast">operatörslåst</a> telefon kan vägra
+    andra leverantörers eSIM.
+  </p>
+
+  <h2>Hur installerar jag ett eSIM?</h2>
+  <p>
+    Du köper ett datapaket för resmålet, installerar eSIM-profilen hemma på
+    wifi och aktiverar den först när du landat. Hela processen tar ett par
+    minuter och kräver inga tekniska förkunskaper.
+  </p>
+  <ol>
+    <li>
+      <strong>Köp ett eSIM för resmålet.</strong> Välj land och datapaket hos
+      en eSIM-leverantör, på webben eller i deras app. Du får en QR-kod via
+      mejl eller installerar direkt från appen.
+    </li>
+    <li>
+      <strong>Installera profilen hemma på wifi.</strong> Öppna telefonens
+      inställningar, välj "Lägg till eSIM" (eller motsvarande) och skanna
+      QR-koden. Gör det hemma i lugn och ro – inte på flygplatsens wifi.
+    </li>
+    <li>
+      <strong>Aktivera eSIM:et när du landat.</strong> Välj eSIM-profilen som
+      datalinje och slå på{" "}
+      <a href="/ordlista/#dataroaming">dataroaming</a> för just den profilen.
+      Låt dataroaming vara <em>av</em> för ditt svenska SIM, så kan inget
+      oväntat ticka på det.
+    </li>
+    <li>
+      <strong>Behåll svenska SIM:et aktivt för SMS.</strong> Då når
+      bank-koder och andra verifierings-SMS dig som vanligt. Att ta emot SMS
+      utomlands är gratis hos svenska operatörer.
+    </li>
+  </ol>
+  <p>
+    Krånglar uppkopplingen på plats brukar det bero på att fel linje är vald
+    som datalinje, att dataroaming är avslaget för eSIM-profilen eller i
+    enstaka fall på en{" "}
+    <a href="/ordlista/#apn">APN-inställning</a> som behöver justeras enligt
+    leverantörens instruktion.
+  </p>
+
+  <h2>Vad kostar ett eSIM för resan?</h2>
+  <p>
+    Ett rese-eSIM med ett mindre datapaket kostar från cirka 50–100 kr, och
+    större paket för en eller två veckors semester ligger ofta kring
+    100–300 kr beroende på land och datamängd. Det är i många länder utanför
+    EU en bråkdel av vad operatörsroaming kostar för samma resa.
+  </p>
+  <p>
+    Priset styrs främst av landet och datamängden. Populära resmål som
+    <a href="/lander/thailand/"> Thailand</a> och{" "}
+    <a href="/lander/turkiet/">Turkiet</a> är billiga, medan till exempel{" "}
+    <a href="/lander/usa/">USA</a> ofta ligger något högre. Vill du jämföra
+    med vad din operatörs roaming kostar för samma resa – prova{" "}
+    <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a>.
+  </p>
+  <AffiliateButton partner="airalo" text="Se Airalos eSIM-utbud per land" />
+  <p>
+    Kontrollera alltid aktuellt pris hos leverantören – utbud och paket
+    ändras löpande.
+  </p>
+</GuideLayout>

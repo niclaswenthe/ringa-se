@@ -1,0 +1,141 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+
+const factChecked = "2026-08";
+
+const faq = [
+  {
+    q: "Ingår Storbritannien i EU-roamingen?",
+    a: "Inte automatiskt. Sedan Brexit står Storbritannien utanför EU:s roamingregler, men flera svenska operatörer har frivilligt valt att behålla EU-liknande villkor där. Andra tar betalt per dag – därför måste du kolla just din operatör.",
+  },
+  {
+    q: "Vad kostar det att surfa i London med svensk operatör?",
+    a: "Allt från ingenting extra till över hundra kronor per dag. Hos Hallon, Vimla och Tre ingår surfen med de flesta abonnemang, medan till exempel Telia tar ett dagspris. Kolla din operatörs utlandssida för Storbritannien före avresa.",
+  },
+  {
+    q: "Behöver jag eSIM för en helg i London?",
+    a: "Om din operatör har EU-villkor i Storbritannien: nej. Om den tar dagspris kan ett litet rese-eSIM löna sig redan från andra dagen, eftersom hela helgens surf då kostar ungefär som ett enda dagspass.",
+  },
+  {
+    q: "Vilket nödnummer gäller i Storbritannien?",
+    a: "999 är det klassiska brittiska nödnumret, men EU-numret 112 fungerar precis lika bra och kopplas till samma larmcentral.",
+  },
+];
+---
+
+<GuideLayout
+  title="eSIM & ringa i Storbritannien"
+  description="Efter Brexit gör svenska operatörer olika i Storbritannien – vissa ingår som EU, andra tar dagspris. Kolla vad som gäller för din operatör innan du reser."
+  h1="eSIM & ringa i Storbritannien"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <p>
+    Storbritannien står sedan Brexit utanför EU:s
+    <a href="/ordlista/#roam-like-at-home">roamingregler</a>, och svenska
+    operatörer hanterar det helt olika: hos vissa använder du mobilen som
+    hemma, hos andra kostar surfen över hundra kronor per dag. Det enda
+    hållbara rådet är därför att kolla exakt vad din operatör gör innan
+    avresa – det skiljer hundralappar på en Londonhelg.
+  </p>
+
+  <h2>Fungerar mitt svenska abonnemang i Storbritannien – och vad kostar det?</h2>
+  <p>
+    Ja, alla svenska abonnemang fungerar i Storbritannien – men villkoren
+    spretar mer än för något annat vanligt resmål. Så här ser det ut hos några
+    av de största operatörerna (kontrollera alltid aktuella villkor via
+    länkarna, det här är sajtens mest föränderliga fakta):
+  </p>
+  <div class="table-wrap">
+    <table>
+      <caption>Svenska operatörers villkor i Storbritannien</caption>
+      <thead>
+        <tr>
+          <th scope="col">Operatör</th>
+          <th scope="col">Vad gäller i Storbritannien?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.hallon.se/support/utomlands/eu-roaming">Hallon</a></td>
+          <td>Räknar Storbritannien som EU/EES – ring, sms:a och surfa som hemma.</td>
+        </tr>
+        <tr>
+          <td><a href="https://vimla.se/roaming/">Vimla</a></td>
+          <td>Fri roaming i EU/EES och Storbritannien, upp till en månadsgräns för surf.</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.tre.se/handla/tjanster/3varlden">Tre</a></td>
+          <td>Storbritannien ingår i 3Världen – surfa som hemma med de abonnemang som har tjänsten.</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.telenor.se/roaming/storbritannien/">Telenor</a></td>
+          <td>Surfa på din vanliga surfpott med de flesta abonnemang – men samtal och SMS kostar extra.</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.telia.se/roaming/storbritannien">Telia</a></td>
+          <td>Utanför EU-villkoren – dagspris från cirka 130 kr för en halv gigabyte, eller surfpaket.</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.tele2.se/utland">Tele2</a></td>
+          <td>Räknar Storbritannien som land utanför EU/EES – utlandspriser eller paket gäller.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Funderar du på att byta abonnemang och reser ofta till Storbritannien?
+    Guiden <a href="/guider/basta-abonnemang-resa/">bästa svenska abonnemanget
+    för dig som reser</a> går igenom vilka operatörer som har bäst villkor.
+  </p>
+
+  <h2>Behöver jag eSIM i Storbritannien?</h2>
+  <p>
+    Det beror helt på din operatör. Har du Hallon, Vimla eller ett
+    Tre-abonnemang med 3Världen behöver du inget
+    <a href="/ordlista/#esim">eSIM</a> – ditt abonnemang fungerar redan som
+    hemma. Betalar du däremot dagspris, eller vill du kunna ringa brittiska
+    nummer utan minuttaxa, blir ett rese-eSIM snabbt billigare: några dagars
+    surf kostar då ungefär som ett enda dagspass hos de dyrare operatörerna.
+    Räkna på din egen resa i
+    <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a> och
+    kontrollera telefonens stöd i
+    <a href="/verktyg/esim-kollare/">eSIM-kollaren</a>.
+  </p>
+
+  <h2>Rekommenderad eSIM för Storbritannien</h2>
+  <p>
+    Airalo säljer eSIM för Storbritannien med datapaket från små helgpaket
+    till större månadspaket – kontrollera aktuellt pris hos leverantören.
+    Installationen tar några minuter och beskrivs steg för steg i
+    <a href="/guider/esim-for-nyborjare/">nybörjarguiden</a>.
+  </p>
+  <AffiliateButton partner="airalo" text="Se Airalos eSIM för Storbritannien" />
+
+  <h2>Praktiskt: riktnummer, WiFi-samtal och nödnummer</h2>
+  <p>
+    Storbritanniens landsnummer är +44. Ringer du hem slår du +46 följt av det
+    svenska numret utan första nollan. Nödnumret är
+    <a href="https://www.gov.uk/contact-999-textphone">999</a>, och EU-numret
+    112 fungerar parallellt och kopplas till samma larmcentral.
+  </p>
+  <ul>
+    <li>
+      <a href="/ordlista/#wifi-samtal">WiFi-samtal</a> gör att du ringer och
+      tar emot samtal på ditt svenska nummer till hemtaxa så fort du är på
+      WiFi – särskilt användbart om din operatör tar betalt för samtal i
+      Storbritannien.
+    </li>
+    <li>
+      Med <a href="/ordlista/#dual-sim">dual SIM</a> kan du ha svenska numret
+      aktivt för samtal och SMS samtidigt som all data går via ett brittiskt
+      eSIM.
+    </li>
+    <li>
+      Mer om grunderna i <a href="/guider/ringa-utomlands/">stora guiden om
+      att ringa och surfa utomlands</a>.
+    </li>
+  </ul>
+</GuideLayout>

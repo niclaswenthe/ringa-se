@@ -1,0 +1,44 @@
+---
+// Juridisk sida [KRAV] – integritet och cookies på svenska.
+// Får inte ändras av agentpipelinen.
+import GuideLayout from "../../layouts/GuideLayout.astro";
+const factChecked = "2026-08";
+---
+
+<GuideLayout
+  title="Integritet & cookies"
+  description="Ringa.se sätter inga cookies och samlar inte in personuppgifter. Här står vad som gäller när du besöker sajten."
+  h1="Integritet &amp; cookies"
+  hasAffiliateLinks={false}
+  factChecked={factChecked}
+>
+  <p>
+    Ringa.se sätter inga cookies och samlar inte in personuppgifter. Därför
+    finns här ingen cookiebanner – det finns helt enkelt inget att samtycka
+    till.
+  </p>
+
+  <h2>Vad sparas när jag besöker Ringa.se?</h2>
+  <p>
+    Ingenting. Sajten är helt statisk: den använder inga cookies, ingen
+    localStorage, inga spårningsskript och inga inbäddningar från tredje part.
+    Verktygen på sajten (eSIM-kollaren och roamingkalkylatorn) körs helt i din
+    webbläsare och sparar ingenting på din enhet.
+  </p>
+
+  <h2>Vad händer när jag klickar på en annonslänk?</h2>
+  <p>
+    När du klickar på en annonslänk lämnar du Ringa.se. Den mottagande
+    webbplatsen har egna villkor och kan sätta cookies enligt sin egen
+    cookiepolicy – det sker hos mottagaren, inte på Ringa.se. Annonslänkar är
+    alltid tydligt märkta, se
+    <a href="/om/sa-tjanar-vi-pengar/">Så tjänar Ringa.se pengar</a>.
+  </p>
+
+  <h2>Vem kontaktar jag med frågor?</h2>
+  <p>
+    Mejla <a href="mailto:info@ringa.se">info@ringa.se</a>. Tillsynsmyndighet
+    för cookie-reglerna är Post- och telestyrelsen (PTS) och för
+    personuppgifter Integritetsskyddsmyndigheten (IMY).
+  </p>
+</GuideLayout>

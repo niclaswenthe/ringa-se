@@ -1,0 +1,210 @@
+---
+// Interaktivt verktyg: Vad kostar min resa?
+// All data bäddas in vid build – inga API-anrop, inga cookies, ingen
+// localStorage. Uppskattningar redovisas alltid i spann, aldrig exakta
+// priser. Antaganden redovisas öppet under resultatet. [KRAV]
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+
+const factChecked = "2026-08";
+
+// Kostnadsspann i kr för en veckoresa, per surfbehov.
+// op = operatörsroaming med dygnspaket, esim = turist-eSIM.
+// Hålls uppdaterad av agentpipelinen (se agents/claims/verktyg.yml).
+const calcData = {
+  countries: [
+    { id: "thailand", name: "Thailand", kind: "utanfor" },
+    { id: "usa", name: "USA", kind: "utanfor" },
+    { id: "turkiet", name: "Turkiet", kind: "utanfor" },
+    { id: "storbritannien", name: "Storbritannien", kind: "uk" },
+    { id: "annat", name: "Annat land utanför EU", kind: "utanfor" },
+    { id: "eu", name: "Land inom EU/EES", kind: "eu" },
+  ],
+  usage: [
+    { id: "latt", name: "Lätt (mest WiFi, upp till ca 1 GB)" },
+    { id: "normal", name: "Normal (karta, sociala medier, ca 3–5 GB)" },
+    { id: "mycket", name: "Mycket (video, delning, ca 10 GB eller mer)" },
+  ],
+  op: {
+    latt: [100, 400],
+    normal: [300, 700],
+    mycket: [500, 1200],
+  },
+  esim: {
+    latt: [40, 150],
+    normal: [100, 300],
+    mycket: [200, 500],
+  },
+} as const;
+---
+
+<GuideLayout
+  title="Roamingkalkylatorn – vad kostar min resa?"
+  description="Välj land och surfbehov och få ett uppskattat kostnadsspann för en veckoresa: operatörsroaming jämfört med rese-eSIM."
+  h1="Roamingkalkylatorn: vad kostar mobilen på min resa?"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+>
+  <p>
+    Välj resmål och hur mycket du surfar, så får du ett uppskattat
+    kostnadsspann för en veckoresa – med din svenska operatörs
+    <a href="/ordlista/#roaming">roaming</a> respektive med ett
+    <a href="/ordlista/#esim">rese-eSIM</a>. Kalkylatorn körs helt i din
+    webbläsare och sparar ingenting.
+  </p>
+
+  <div class="tool-form">
+    <label for="country-select">Vart reser du?</label>
+    <select id="country-select">
+      <option value="">Välj resmål …</option>
+    </select>
+
+    <label for="usage-select">Hur mycket surfar du?</label>
+    <select id="usage-select">
+      <option value="">Välj surfbehov …</option>
+    </select>
+  </div>
+
+  <div id="calc-result" class="tool-result" role="status" hidden>
+    <p class="verdict" id="calc-headline"></p>
+    <p id="calc-op"></p>
+    <p id="calc-esim"></p>
+  </div>
+  {/* CTA:n ligger utanför live-regionen så att skärmläsare inte läser upp
+      annonslänken vid varje resultatuppdatering. */}
+  <div id="calc-cta" hidden>
+    <AffiliateButton
+      partner="airalo"
+      text="Jämför eSIM för ditt resmål hos Airalo"
+    />
+  </div>
+
+  <noscript>
+    <p class="notis">
+      Kalkylatorn kräver att JavaScript är påslaget. Tumregeln utan kalkylator:
+      inom EU ingår surfen i ditt abonnemang, utanför EU kostar operatörsroaming
+      oftast flera hundra kronor per vecka medan ett rese-eSIM ofta stannar
+      under 200 kronor.
+    </p>
+  </noscript>
+
+  <h2>Hur räknar kalkylatorn?</h2>
+  <p>
+    Spannen bygger på öppet redovisade antaganden: en resa på ungefär en vecka,
+    svenska operatörers dygnspaket utanför EU (oftast cirka 40–130 kr per dygn
+    du använder data) och typiska priser för turist-eSIM med motsvarande
+    datamängd. Allt är uppskattningar i spann – kontrollera alltid aktuellt
+    pris hos din operatör och hos eSIM-leverantören innan du beställer.
+  </p>
+  <ul>
+    <li>
+      <strong>Inom EU/EES</strong> ingår surfen i ditt svenska abonnemang
+      enligt <a href="/ordlista/#roam-like-at-home">roam like at home</a>, upp
+      till abonnemangets <a href="/ordlista/#fair-use">fair use-gräns</a>.
+    </li>
+    <li>
+      <strong>Storbritannien</strong> är ett specialfall efter Brexit: vissa
+      svenska operatörer behåller EU-liknande villkor, andra tar betalt per
+      dygn – läs mer i
+      <a href="/lander/storbritannien/">guiden om Storbritannien</a>.
+    </li>
+    <li>
+      <strong>Utanför EU</strong> gäller operatörens utlandsprislista, oftast
+      dygnspaket. En <a href="/ordlista/#utlandssparr">beloppsspärr</a> på
+      cirka 600–700 kr skyddar mot skenande surfkostnader – men inte mot
+      samtalskostnader.
+    </li>
+  </ul>
+  <p>
+    Mer om fällorna utanför EU hittar du i
+    <a href="/guider/roaming-utanfor-eu/">Roaming utanför EU – så undviker du
+    fällorna</a>, och landsguiderna för
+    <a href="/lander/thailand/">Thailand</a>, <a href="/lander/usa/">USA</a>,
+    <a href="/lander/turkiet/">Turkiet</a> och
+    <a href="/lander/storbritannien/">Storbritannien</a> går igenom respektive
+    resmål i detalj.
+  </p>
+
+  <script is:inline define:vars={{ calcData }}>
+    const countrySelect = document.getElementById("country-select");
+    const usageSelect = document.getElementById("usage-select");
+    const resultBox = document.getElementById("calc-result");
+    const headlineEl = document.getElementById("calc-headline");
+    const opEl = document.getElementById("calc-op");
+    const esimEl = document.getElementById("calc-esim");
+    const ctaEl = document.getElementById("calc-cta");
+
+    calcData.countries.forEach((c) => {
+      countrySelect.appendChild(new Option(c.name, c.id));
+    });
+    calcData.usage.forEach((u) => {
+      usageSelect.appendChild(new Option(u.name, u.id));
+    });
+
+    function kr(range) {
+      return "cirka " + range[0] + "–" + range[1] + " kr";
+    }
+
+    // Visa live-regionen först och fyll den strax därefter – innehåll som
+    // sätts medan regionen är display:none annonseras inte av alla
+    // skärmläsare (WCAG 4.1.3).
+    function showResult(headline, opText, esimText, showCta) {
+      resultBox.hidden = false;
+      ctaEl.hidden = !showCta;
+      setTimeout(() => {
+        headlineEl.textContent = headline;
+        opEl.textContent = opText;
+        esimEl.textContent = esimText;
+      }, 60);
+    }
+
+    function update() {
+      const countryId = countrySelect.value;
+      const usageId = usageSelect.value;
+      if (!countryId || !usageId) {
+        resultBox.hidden = true;
+        ctaEl.hidden = true;
+        return;
+      }
+      const country = calcData.countries.find((c) => c.id === countryId);
+      const op = calcData.op[usageId];
+      const esim = calcData.esim[usageId];
+      const headline =
+        "Uppskattad kostnad för en veckoresa till " + country.name;
+
+      if (country.kind === "eu") {
+        showResult(
+          headline,
+          "Med din svenska operatör: 0 kr extra – surf och samtal ingår i " +
+            "ditt abonnemang inom EU/EES, upp till abonnemangets fair use-gräns.",
+          "Rese-eSIM: behövs normalt inte inom EU. Undantaget är om du surfar " +
+            "mer än din fair use-gräns – då kan ett eSIM för " +
+            kr(esim) +
+            " vara ett alternativ.",
+          false
+        );
+      } else if (country.kind === "uk") {
+        showResult(
+          headline,
+          "Med din svenska operatör: 0 kr hos operatörer som behåller " +
+            "EU-villkor i Storbritannien – eller " +
+            kr(op) +
+            " hos operatörer som tar betalt per dygn. Kolla vad just din " +
+            "operatör gör före avresan.",
+          "Med rese-eSIM: " + kr(esim) + ".",
+          true
+        );
+      } else {
+        showResult(
+          headline,
+          "Med din svenska operatörs roaming: " + kr(op) + ".",
+          "Med rese-eSIM: " + kr(esim) + ".",
+          true
+        );
+      }
+    }
+
+    countrySelect.addEventListener("change", update);
+    usageSelect.addEventListener("change", update);
+  </script>
+</GuideLayout>

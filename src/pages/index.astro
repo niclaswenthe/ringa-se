@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteName, siteDescription, sitePages } from "../config/site";
+
+const title = "Ringa.se – Ringa & surfa utomlands utan chockfaktura";
+const description =
+  "Sveriges begripligaste källa om att ringa och surfa utomlands. Guider, ordlista och verktyg som visar om eSIM funkar i din telefon och vad resan kostar.";
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: "https://ringa.se/",
+  description: siteDescription,
+  inLanguage: "sv",
+  publisher: {
+    "@type": "Organization",
+    name: siteName,
+    url: "https://ringa.se/",
+    description: siteDescription,
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteName,
+  url: "https://ringa.se/",
+  description: siteDescription,
+};
+
+const verktyg = sitePages.filter((p) => p.section === "verktyg");
+const guider = sitePages.filter((p) => p.section === "guider");
+const lander = sitePages.filter((p) => p.section === "lander");
+const ordlista = sitePages.filter((p) => p.section === "ordlista");
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  schema={[websiteSchema, organizationSchema]}
+>
+  <h1>Ringa &amp; surfa utomlands – utan chockfaktura</h1>
+  <p>
+    Ringa.se förklarar på begriplig svenska vad det kostar att använda mobilen
+    utomlands, när ett <a href="/ordlista/#esim">eSIM</a> är smartare än
+    <a href="/ordlista/#roaming">roaming</a> – och hur du slipper de klassiska
+    fällorna. Sajten finansieras öppet med annonslänkar;
+    <a href="/om/sa-tjanar-vi-pengar/">så här tjänar vi pengar</a>.
+  </p>
+
+  <h2>Testa själv</h2>
+  <ul class="card-grid">
+    {
+      verktyg.map((p) => (
+        <li>
+          <a class="card" href={p.path}>
+            <strong>{p.title}</strong>
+            <p>{p.description}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Guider</h2>
+  <ul class="card-grid">
+    {
+      [...guider, ...ordlista].map((p) => (
+        <li>
+          <a class="card" href={p.path}>
+            <strong>{p.title}</strong>
+            <p>{p.description}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Landsguider</h2>
+  <ul class="card-grid">
+    {
+      lander.map((p) => (
+        <li>
+          <a class="card" href={p.path}>
+            <strong>{p.title}</strong>
+            <p>{p.description}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

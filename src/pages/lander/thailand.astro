@@ -1,0 +1,132 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+
+const factChecked = "2026-08";
+
+const faq = [
+  {
+    q: "Kan jag använda Swish och BankID i Thailand?",
+    a: "Ja. Swish och BankID är knutna till ditt svenska mobilnummer och BankID-appen, inte till vilket nät du surfar via. De fungerar via eSIM, hotell-WiFi eller roaming – så länge telefonen har internetuppkoppling.",
+  },
+  {
+    q: "Behåller jag mitt svenska nummer om jag använder eSIM i Thailand?",
+    a: "Ja. Ditt svenska SIM ligger kvar i telefonen och tar emot samtal och sms som vanligt, medan eSIM:et sköter surfen. Stäng av dataroaming på det svenska SIM-kortet så slipper du oväntade avgifter.",
+  },
+  {
+    q: "Räcker hotellets WiFi, eller behöver jag eSIM?",
+    a: "WiFi räcker för den som mest surfar på hotellet. Ett eSIM behövs när du vill ha uppkoppling på stranden, i taxin och för kartor och översättning på språng – och det kostar från några tior för en veckas surf.",
+  },
+  {
+    q: "Fungerar mitt eSIM direkt när jag landar i Bangkok?",
+    a: "Ja, om du installerar eSIM-profilen hemma före avresan och aktiverar den när du landat. Installationen kräver internetuppkoppling, så gör den på hemma-WiFi i lugn och ro.",
+  },
+];
+---
+
+<GuideLayout
+  title="eSIM & ringa i Thailand"
+  description="Fungerar svenska abonnemang i Thailand och vad kostar roaming? Så surfar du billigare med eSIM – priser i spann, praktiska tips och nödnummer."
+  h1="eSIM och ringa i Thailand – så funkar det"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <p>
+    Thailand ligger utanför EU:s <a href="/ordlista/#roaming">roamingregler</a>,
+    så ditt svenska abonnemang fungerar – men till särskilda utlandspriser som
+    snabbt blir dyra. För de flesta resenärer är ett
+    <a href="/ordlista/#esim">eSIM</a> med thailändsk surf det enklaste och
+    billigaste alternativet. Här går vi igenom båda vägarna.
+  </p>
+
+  <h2>Fungerar mitt svenska abonnemang i Thailand och vad kostar det?</h2>
+  <p>
+    Ja, svenska abonnemang fungerar i Thailand, men eftersom landet ligger
+    utanför EU/EES tillkommer roamingavgifter – hos de stora operatörerna
+    handlar det typiskt om dagspriser från cirka 100 kr och uppåt för en
+    begränsad mängd surf.
+  </p>
+  <p>
+    Telia tar till exempel betalt per megabyte upp till ett dagstak på drygt
+    hundralappen för ett halvt gigabyte
+    (<a href="https://www.telia.se/roaming/thailand" rel="noopener">aktuella priser hos Telia</a>).
+    Tele2 säljer datapaket för utvalda resmål
+    (<a href="https://www.tele2.se/tips/vad-kostar-egentligen-samtal-och-surf-i-olika-lander" rel="noopener">Tele2 om utlandspriser</a>),
+    och Telenor har tidvis inkluderat Thailand i vissa abonnemangsformer –
+    kontrollera vad som gäller för just ditt abonnemang
+    (<a href="https://www.telenor.se/roaming/" rel="noopener">Telenors roamingsidor</a>).
+    Gemensamt för alla: ett par veckors normalsurfande på operatörsroaming
+    kostar lätt över tusenlappen. Räkna på din resa i
+    <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a>.
+  </p>
+  <p>
+    Aktivera gärna <a href="/ordlista/#utlandssparr">kostnadsspärren</a> hos din
+    operatör före avresan, och läs
+    <a href="/guider/roaming-utanfor-eu/">guiden om roaming utanför EU</a> om du
+    vill förstå fällorna i detalj.
+  </p>
+
+  <h2>Därför är eSIM oftast bättre i Thailand</h2>
+  <p>
+    Ett eSIM med thailändsk data kostar från cirka 50 kr för en veckas
+    lättanvändning och runt hundralappen för 10 GB – ungefär vad en enda dags
+    operatörsroaming kan kosta. Skillnaden växer med reslängden: två veckor med
+    eSIM kostar oftast en tiondel av motsvarande roaming.
+  </p>
+  <p>
+    Thailands mobilnät (AIS, True m.fl.) har god 4G/5G-täckning i städer och
+    turistområden, och turist-eSIM ansluter till samma nät som lokala
+    abonnemang. Du behåller samtidigt ditt svenska nummer aktivt för samtal och
+    sms via <a href="/ordlista/#dual-sim">dual SIM</a> – stäng bara av
+    <a href="/ordlista/#dataroaming">dataroaming</a> på det svenska kortet.
+    Osäker på om din telefon stöder eSIM? Kolla i
+    <a href="/verktyg/esim-kollare/">eSIM-kollaren</a>.
+  </p>
+
+  <h2>Vilket eSIM rekommenderar vi för Thailand?</h2>
+  <p>
+    Airalo har thailändska eSIM med data från cirka 40 kr och är en av de mest
+    etablerade eSIM-butikerna, med installation via app eller QR-kod på några
+    minuter. Nybörjare hittar hela installationsflödet i vår
+    <a href="/guider/esim-for-nyborjare/">eSIM-guide för nybörjare</a>.
+  </p>
+  <AffiliateButton partner="airalo" text="Se Airalos eSIM för Thailand" />
+  <p>
+    Jämför gärna själv – priserna varierar med datamängd och giltighetstid, och
+    lokala turist-SIM från AIS eller True på flygplatsen är också ett fullgott
+    alternativ om du hellre köper på plats.
+  </p>
+
+  <h2>Praktiskt: riktnummer, WiFi-samtal och nödnummer i Thailand</h2>
+  <p>
+    Thailands landsnummer är +66. För att ringa ett svenskt nummer från Thailand
+    slår du +46 följt av numret utan den inledande nollan – det gäller oavsett
+    om du använder roaming eller eSIM.
+  </p>
+  <ul>
+    <li>
+      <strong>Ringa hem billigt:</strong> aktivera
+      <a href="/ordlista/#wifi-samtal">WiFi-samtal</a> hos din svenska operatör
+      före avresan. Hos de flesta operatörer taxeras WiFi-samtal som samtal
+      hemma i Sverige – kontrollera villkoren hos just din operatör.
+    </li>
+    <li>
+      <strong>Nödnummer:</strong> 191 (polis), 1669 (ambulans/medicinsk
+      nödsituation) och 1155 (turistpolisen, engelsktalande). Samtalen är gratis
+      från alla telefoner
+      (<a href="https://www.expatica.com/th/health/healthcare/thailand-emergency-number-2172893/" rel="noopener">översikt över Thailands nödnummer</a>).
+      Det svenska 112 fungerar inte i Thailand.
+    </li>
+    <li>
+      <strong>Röstsamtal via eSIM:</strong> de flesta turist-eSIM är enbart
+      data. Samtal ringer du via ditt svenska SIM (dyrt), WiFi-samtal eller
+      appar som FaceTime och WhatsApp över eSIM-datat.
+    </li>
+  </ul>
+  <p>
+    Mer grundläggande råd finns i
+    <a href="/guider/ringa-utomlands/">stora guiden om att ringa och surfa
+    utomlands</a>.
+  </p>
+</GuideLayout>

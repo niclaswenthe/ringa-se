@@ -1,0 +1,119 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+import AffiliateButton from "../../components/AffiliateButton.astro";
+
+const factChecked = "2026-08";
+
+const faq = [
+  {
+    q: "Ingår Turkiet i EU-roamingen?",
+    a: "Nej. Turkiet ligger utanför EU/EES, så EU-regeln om att ringa och surfa som hemma gäller inte. Vad det kostar styrs helt av din operatörs egna utlandspriser.",
+  },
+  {
+    q: "Kan jag använda WhatsApp och FaceTime i Turkiet?",
+    a: "Ja, appsamtal fungerar bra i Turkiet och räknas som vanlig data. Med ett eSIM eller WiFi kostar samtalen därför i praktiken ingenting extra.",
+  },
+  {
+    q: "Måste jag registrera min telefon i Turkiet?",
+    a: "Inte som turist. Först om du använder en turkisk SIM- eller eSIM-profil i samma telefon i mer än 120 dagar kräver Turkiet en IMEI-registrering med hög avgift. Kortare semestrar berörs inte alls.",
+  },
+  {
+    q: "Vilket nödnummer gäller i Turkiet?",
+    a: "112. Turkiet använder samma samlade nödnummer som Sverige och övriga Europa, och operatörerna kan hjälpa dig på engelska.",
+  },
+];
+---
+
+<GuideLayout
+  title="eSIM & ringa i Turkiet"
+  description="Turkiet ligger utanför EU:s roamingregler. Så mycket kostar det att surfa med svensk operatör i Turkiet – och så slipper du chockfakturan med eSIM."
+  h1="eSIM & ringa i Turkiet"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <p>
+    Turkiet ligger utanför EU, så din svenska <a href="/ordlista/#roaming">roaming</a>
+    fungerar men kostar extra – ofta i form av ett dagspris eller surfpaket. För
+    en vanlig semestervecka blir ett rese-eSIM nästan alltid billigare än
+    operatörens dagspriser. Här går vi igenom vad som gäller, med
+    <a href="/verktyg/roamingkalkylator/">kalkylatorn</a> som snabbaste vägen
+    till en prisuppskattning för just din resa.
+  </p>
+
+  <h2>Fungerar min svenska operatör i Turkiet – och vad kostar det?</h2>
+  <p>
+    Ja, svenska abonnemang fungerar i Turkiet, men eftersom landet ligger
+    utanför EU/EES gäller inte
+    <a href="/ordlista/#roam-like-at-home">roam like at home</a> – varje
+    operatör sätter egna priser. Hos till exempel
+    <a href="https://www.telia.se/roaming/turkiet">Telia</a> kostar surf i
+    Turkiet från cirka 130 kr per dag för en halv gigabyte, med större
+    surfpaket som alternativ. Tre-kunder med vissa abonnemang har i stället
+    Turkiet inkluderat via
+    <a href="https://www.tre.se/handla/tjanster/3varlden">3Världen</a> och
+    surfar då som hemma utan extra kostnad.
+  </p>
+  <p>
+    Spannet mellan operatörerna är alltså stort – från noll extra till
+    hundralappar per dag. Kolla alltid din egen operatörs utlandssida för
+    Turkiet innan avresa, och stäng av
+    <a href="/ordlista/#dataroaming">dataroaming</a> tills du vet vad som
+    gäller. Mer om grunderna finns i
+    <a href="/guider/ringa-utomlands/">stora guiden</a> och i guiden om
+    <a href="/guider/roaming-utanfor-eu/">roaming utanför EU</a>.
+  </p>
+
+  <h2>Därför är eSIM oftast bättre i Turkiet</h2>
+  <p>
+    Ett rese-<a href="/ordlista/#esim">eSIM</a> för Turkiet ger dig en fast,
+    känd kostnad i förväg i stället för löpande dagspriser – för en vecka
+    handlar det typiskt om priset för en enda dags operatörsroaming hos de
+    dyrare operatörerna. Du installerar
+    <a href="/ordlista/#esim-profil">eSIM-profilen</a> hemma före resan,
+    behåller ditt svenska nummer aktivt för SMS tack vare
+    <a href="/ordlista/#dual-sim">dual SIM</a>, och surfar på turkiskt nät
+    från landning. Kolla först att din telefon stöder eSIM med
+    <a href="/verktyg/esim-kollare/">eSIM-kollaren</a> – de flesta telefoner
+    från de senaste åren gör det – och läs
+    <a href="/guider/esim-for-nyborjare/">nybörjarguiden</a> om tekniken är ny
+    för dig.
+  </p>
+
+  <h2>Rekommenderad eSIM för Turkiet</h2>
+  <p>
+    Airalo säljer eSIM för Turkiet med datapaket i flera storlekar – från små
+    veckopaket för under hundralappen till större paket för längre vistelser.
+    Kontrollera aktuellt pris hos leverantören; betalningen sker i förväg så
+    det finns ingen risk för efterdebitering.
+  </p>
+  <AffiliateButton partner="airalo" text="Se Airalos eSIM för Turkiet" />
+
+  <h2>Praktiskt: riktnummer, WiFi-samtal och nödnummer</h2>
+  <p>
+    Turkiets landsnummer är +90. Ringer du hem till Sverige slår du +46 följt
+    av numret utan första nollan. Nödnumret i Turkiet är
+    <a href="https://en.wikipedia.org/wiki/112_(emergency_telephone_number)">112</a>
+    – samma samlade nummer som i Sverige – och det fungerar oavsett vilket SIM
+    du har i telefonen.
+  </p>
+  <ul>
+    <li>
+      <a href="/ordlista/#wifi-samtal">WiFi-samtal</a> via hotellets nät låter
+      dig ringa och ta emot samtal på ditt svenska nummer till hemtaxa – bra
+      komplement när du surfar på eSIM.
+    </li>
+    <li>
+      En kuriositet för långresenärer: använder du en turkisk SIM/eSIM-profil i
+      samma telefon i mer än 120 dagar kräver Turkiet en
+      <a href="https://simology.io/blog/turkey-imei-registration-tourists-deadlines-fees-workarounds-2026">IMEI-registrering</a>
+      med rejäl avgift. Vanliga semestrar och svensk roaming berörs inte.
+    </li>
+    <li>
+      Undvik att svara på okända inkommande samtal när du roamar utanför EU –
+      även mottagna samtal kan kosta. Överväg en
+      <a href="/ordlista/#utlandssparr">utlandsspärr</a> för samtal om du bara
+      tänker surfa.
+    </li>
+  </ul>
+</GuideLayout>

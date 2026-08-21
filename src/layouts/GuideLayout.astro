@@ -1,0 +1,107 @@
+---
+// Sidmall för alla innehållssidor. [KRAV]
+// - hasAffiliateLinks är obligatorisk och saknar defaultvärde: en sida kan
+//   inte råka utelämna annonsmärkningen. true → AdDisclosure renderas överst.
+// - factChecked ("YYYY-MM") renderas som "Senast faktagranskad" under H1 och
+//   blir dateModified i Article-schemat (aktualitetssignal för AI/SEO).
+// - faq renderar en FAQ-sektion + statiskt FAQPage-schema (JSON-LD).
+import BaseLayout from "./BaseLayout.astro";
+import AdDisclosure from "../components/AdDisclosure.astro";
+import { siteName, siteDescription } from "../config/site";
+
+export interface FaqItem {
+  q: string;
+  /** Ren text – används både i sektionen och i FAQPage-schemat. */
+  a: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  /** Sidans H1 (en per sida). */
+  h1: string;
+  /** Obligatorisk, inget defaultvärde. */
+  hasAffiliateLinks: boolean;
+  /** Senast faktagranskad, format "YYYY-MM". */
+  factChecked: string;
+  faq?: FaqItem[];
+  /** Extra JSON-LD-objekt utöver Article/FAQPage (t.ex. HowTo). */
+  extraSchema?: object[];
+}
+
+const { title, description, h1, hasAffiliateLinks, factChecked, faq, extraSchema = [] } =
+  Astro.props;
+
+if (typeof hasAffiliateLinks !== "boolean") {
+  throw new Error(
+    `GuideLayout: sidan ${Astro.url.pathname} saknar obligatorisk prop hasAffiliateLinks`
+  );
+}
+if (!/^\d{4}-\d{2}$/.test(factChecked)) {
+  throw new Error(
+    `GuideLayout: sidan ${Astro.url.pathname} har ogiltigt factChecked-datum: "${factChecked}" (format: YYYY-MM)`
+  );
+}
+
+const MONTHS = [
+  "januari", "februari", "mars", "april", "maj", "juni",
+  "juli", "augusti", "september", "oktober", "november", "december",
+];
+const [fcYear, fcMonth] = factChecked.split("-").map(Number);
+const factCheckedText = `${MONTHS[fcMonth - 1]} ${fcYear}`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: h1,
+  description,
+  inLanguage: "sv",
+  dateModified: `${factChecked}-01`,
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+  publisher: {
+    "@type": "Organization",
+    name: siteName,
+    description: siteDescription,
+    url: Astro.site?.href,
+  },
+};
+
+const faqSchema =
+  faq && faq.length > 0
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        },
+      ]
+    : [];
+
+const schema = [articleSchema, ...faqSchema, ...extraSchema];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  {hasAffiliateLinks && <AdDisclosure />}
+  <article>
+    <h1>{h1}</h1>
+    <p class="fact-checked">Senast faktagranskad: {factCheckedText}</p>
+    <slot />
+    {
+      faq && faq.length > 0 && (
+        <section class="faq" aria-labelledby="faq-rubrik">
+          <h2 id="faq-rubrik">Vanliga frågor</h2>
+          {faq.map((item) => (
+            <>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </>
+          ))}
+        </section>
+      )
+    }
+  </article>
+</BaseLayout>

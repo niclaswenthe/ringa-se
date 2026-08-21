@@ -1,0 +1,158 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+
+const factChecked = "2026-08";
+
+// Sorterad alfabetiskt. Definitionerna är skrivna för att hålla över tid:
+// inga priser, inga årtal, inga operatörsspecifika villkor.
+const terms = [
+  {
+    id: "5g",
+    term: "5G",
+    def: "Femte generationens mobilnät, efterföljaren till 4G. För dig som resenär betyder 5G främst snabbare surf där nätet finns utbyggt, men täckning och hastighet varierar mycket mellan länder och operatörer. Din telefon växlar automatiskt ner till 4G eller 3G där 5G saknas.",
+  },
+  {
+    id: "apn",
+    term: "APN (Access Point Name)",
+    def: "Inställningen som talar om för telefonen vilken ”dörr” den ska använda för att nå internet via mobilnätet. Med svenska abonnemang ställs APN nästan alltid in automatiskt, men vissa eSIM-tjänster kräver att du lägger in APN manuellt enligt leverantörens instruktion. Fel APN är den vanligaste orsaken till att surfen inte fungerar trots full täckning.",
+  },
+  {
+    id: "dataroaming",
+    term: "Dataroaming",
+    def: "Att surfa via ett utländskt mobilnät. Dataroaming är en egen inställning i telefonen som kan slås av och på oberoende av samtal och SMS. Utanför EU är det ofta just dataroaming som orsakar oväntade kostnader, eftersom appar använder data i bakgrunden utan att du märker det.",
+  },
+  {
+    id: "dual-sim",
+    term: "Dual-SIM",
+    def: "En telefon som kan ha två abonnemang aktiva samtidigt, till exempel ditt vanliga svenska SIM och ett rese-eSIM. Du kan då ta emot samtal och SMS på ditt vanliga nummer medan all surf går via resekortet. De flesta moderna telefoner med eSIM-stöd är dual-SIM.",
+  },
+  {
+    id: "esim",
+    term: "eSIM",
+    def: "Ett inbyggt, digitalt SIM-kort som redan sitter i telefonen och laddas med ett abonnemang på elektronisk väg, ofta genom att skanna en QR-kod. Ett eSIM gör samma jobb som ett fysiskt SIM-kort men kan köpas, levereras och aktiveras på några minuter utan att något skickas med post. Det gör eSIM särskilt praktiskt för resor.",
+  },
+  {
+    id: "esim-profil",
+    term: "eSIM-profil",
+    def: "Själva abonnemangsinformationen som laddas ner till telefonens inbyggda eSIM-chip. En telefon kan lagra flera eSIM-profiler samtidigt, till exempel en för varje land du besöker ofta, men bara ett begränsat antal kan vara aktiva åt gången. En raderad profil kan oftast inte återanvändas – då behövs en ny från leverantören.",
+  },
+  {
+    id: "fair-use",
+    term: "Fair use (skälig användning)",
+    def: "Regler som begränsar hur mycket av ditt abonnemang du får använda i utlandet, även där roaming annars ingår. Vanligast är ett tak för hur många gigabyte du kan surfa per månad utomlands, eller en gräns för hur länge du kan använda abonnemanget utanför hemlandet i sträck. Villkoren står i operatörens avtal och skiljer sig mellan abonnemang.",
+  },
+  {
+    id: "fysiskt-sim",
+    term: "Fysiskt SIM-kort",
+    def: "Det klassiska plastkortet som sätts i telefonens SIM-fack. Fungerar likadant som ett eSIM men måste levereras fysiskt och flyttas för hand mellan telefoner. På resa är nackdelen att du ofta måste plocka ut ditt svenska kort för att sätta i ett lokalt – med ett eSIM kan båda vara kvar samtidigt.",
+  },
+  {
+    id: "hotspot",
+    term: "Hotspot (internetdelning)",
+    def: "Funktion som låter telefonen dela sin mobildata via WiFi till andra enheter, till exempel en surfplatta eller resesällskapets telefoner. Praktiskt på resa när bara en person köpt ett eSIM eller surfpaket. Vissa abonnemang och eSIM-tjänster begränsar eller blockerar delning – kontrollera villkoren.",
+  },
+  {
+    id: "imei",
+    term: "IMEI-nummer",
+    def: "Telefonens unika identitetsnummer, ungefär som ett chassinummer. Du ser det genom att slå *#06# i telefonens knappsats. IMEI används bland annat för att spärra stulna telefoner och för att kontrollera om en telefon är operatörslåst eller stödjer eSIM.",
+  },
+  {
+    id: "kontantkort",
+    term: "Kontantkort",
+    def: "Ett abonnemang utan bindning där du betalar i förskott genom att ladda på pengar. Lokala kontantkort var länge standardlösningen för resenärer, men kräver ofta butiksbesök och ibland id-handling i landet du besöker. Rese-eSIM har i praktiken tagit över samma roll utan pappersarbete.",
+  },
+  {
+    id: "mms",
+    term: "MMS",
+    def: "Meddelanden som innehåller bild, ljud eller video och skickas via mobilnätet. Till skillnad från SMS kräver MMS att mobildata fungerar, och i utlandet kan MMS kosta extra även när SMS ingår. Appar som WhatsApp och Signal har i praktiken ersatt MMS för de flesta.",
+  },
+  {
+    id: "natval",
+    term: "Nätval",
+    def: "Telefonens val av vilket mobilnät den kopplar upp sig mot i utlandet. Standardläget är automatiskt, men du kan välja nät manuellt i inställningarna. Manuellt nätval kan behövas om din operatör har bättre priser i ett visst partnernät, eller för att undvika dyra specialnät som fartygs- och flygplansnät.",
+  },
+  {
+    id: "operatorslast",
+    term: "Operatörslåst",
+    def: "En telefon som är spärrad för att bara fungera med SIM-kort från en viss operatör, vanligen för att den köpts på avbetalning hos operatören. En operatörslåst telefon kan inte användas med lokala SIM-kort eller rese-eSIM förrän låset tagits bort, vilket du begär hos operatören. Telefoner köpta olåsta i handeln har inte den här begränsningen.",
+  },
+  {
+    id: "puk",
+    term: "PUK-kod",
+    def: "Upplåsningskoden som behövs om du slagit fel PIN-kod för många gånger och SIM-kortet låst sig. PUK-koden får du från din operatör, oftast via inloggat läge på deras webbplats eller app. Bra att veta var du hittar den innan du reser – inte när du står vid bagagebandet med låst telefon.",
+  },
+  {
+    id: "qr-aktivering",
+    term: "QR-aktivering",
+    def: "Det vanligaste sättet att installera ett eSIM: leverantören skickar en QR-kod som du skannar med telefonens kamera, varpå eSIM-profilen laddas ner och installeras. Skanningen kräver internetuppkoppling, så gör den hemma eller på WiFi innan du behöver uppkopplingen. Många leverantörer erbjuder även direktinstallation via app som alternativ.",
+  },
+  {
+    id: "roam-like-at-home",
+    term: "Roam Like at Home",
+    def: "EU:s roamingprincip som innebär att du använder ditt mobilabonnemang i andra EU- och EES-länder till samma pris som hemma. Samtal, SMS och surf dras ur din vanliga pott i stället för att debiteras extra. Principen gäller vid tillfälliga vistelser och kompletteras av fair use-regler som hindrar permanent användning utomlands.",
+  },
+  {
+    id: "roaming",
+    term: "Roaming",
+    def: "Att använda sitt mobilabonnemang via en utländsk operatörs nät. Din svenska operatör har avtal med operatörer världen över och vidarefakturerar dig för användningen. Inom EU/EES kostar roaming som hemma, men i resten av världen sätter operatören egna priser – det är där chockfakturorna uppstår.",
+  },
+  {
+    id: "satellitnodsamtal",
+    term: "Satellitnödsamtal",
+    def: "Funktion i vissa nyare telefoner som kan skicka nödmeddelanden via satellit när mobilnät saknas helt, till exempel i fjäll eller öken. Funktionen är avsedd för nödsituationer, fungerar bara utomhus med fri sikt mot himlen och finns inte i alla länder. Den ersätter inte vanlig täckning för samtal och surf.",
+  },
+  {
+    id: "utlandssparr",
+    term: "Utlandsspärr/beloppsspärr",
+    def: "Spärrar hos operatören som skyddar mot oväntade kostnader i utlandet. En utlandsspärr blockerar användning utomlands helt eller delvis, medan en beloppsspärr stoppar surfen när kostnaden nått en viss nivå. Ett standardskydd stoppar dataroaming vid ungefär motsvarande 50 euro om du inte aktivt valt annat – kontrollera vad som gäller hos din operatör före avresa.",
+  },
+  {
+    id: "volte",
+    term: "VoLTE",
+    def: "Voice over LTE – röstsamtal som går via 4G-nätet i stället för äldre nät. I länder som stängt ner sina 2G- och 3G-nät krävs VoLTE för att kunna ringa vanliga samtal över huvud taget. De flesta moderna telefoner har stödet, men det kan behöva vara påslaget i inställningarna, och vissa operatörer aktiverar det inte för roaming-gäster.",
+  },
+  {
+    id: "wifi-samtal",
+    term: "WiFi-samtal",
+    def: "Funktion som låter telefonen ringa och ta emot vanliga samtal via en WiFi-uppkoppling i stället för mobilnätet. På resa kan WiFi-samtal ge dig ditt svenska nummer på hotellets WiFi även där täckningen är dålig. Hur samtalen prissätts vid utlandsvistelse skiljer sig mellan operatörer – kontrollera innan du litar på det som gratislösning.",
+  },
+];
+
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  name: "Ringa.se ordlista",
+  hasDefinedTerm: terms.map((t) => ({
+    "@type": "DefinedTerm",
+    "@id": `https://ringa.se/ordlista/#${t.id}`,
+    name: t.term,
+    description: t.def,
+  })),
+};
+---
+
+<GuideLayout
+  title="Ordlista – tekniken förklarad enkelt"
+  description="eSIM, roaming, APN, VoLTE, WiFi-samtal och andra mobilbegrepp förklarade på begriplig svenska – utan säljsnack."
+  h1="Ordlista: tekniken förklarad enkelt"
+  hasAffiliateLinks={false}
+  factChecked={factChecked}
+  extraSchema={[definedTermSchema]}
+>
+  <p>
+    Här är begreppen du stöter på när du läser om att ringa och surfa
+    utomlands – förklarade så att du faktiskt förstår dem. Varje term har en
+    egen länk (klicka på termen i en guide så hamnar du rätt), och
+    definitionerna är skrivna för att hålla över tid.
+  </p>
+  <dl class="ordlista">
+    {
+      terms.map((t) => (
+        <>
+          <dt id={t.id}>{t.term}</dt>
+          <dd>{t.def}</dd>
+        </>
+      ))
+    }
+  </dl>
+</GuideLayout>

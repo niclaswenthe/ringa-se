@@ -1,0 +1,117 @@
+{
+  "updated": "2026-08",
+  "brands": [
+    {
+      "name": "Apple",
+      "models": [
+        { "model": "iPhone 17 / 17 Pro / 17 Pro Max", "esim": "ja", "note": "" },
+        { "model": "iPhone Air", "esim": "ja", "note": "Har enbart eSIM – ingen plats för fysiskt SIM-kort." },
+        { "model": "iPhone 16 / 16 Plus / 16 Pro / 16 Pro Max / 16e", "esim": "ja", "note": "" },
+        { "model": "iPhone 15 / 15 Plus / 15 Pro / 15 Pro Max", "esim": "ja", "note": "" },
+        { "model": "iPhone 14 / 14 Plus / 14 Pro / 14 Pro Max", "esim": "ja", "note": "" },
+        { "model": "iPhone 13 / 13 mini / 13 Pro / 13 Pro Max", "esim": "ja", "note": "" },
+        { "model": "iPhone 12 / 12 mini / 12 Pro / 12 Pro Max", "esim": "ja", "note": "" },
+        { "model": "iPhone 11 / 11 Pro / 11 Pro Max", "esim": "ja", "note": "" },
+        { "model": "iPhone SE (2022)", "esim": "ja", "note": "" },
+        { "model": "iPhone SE (2020)", "esim": "ja", "note": "" },
+        { "model": "iPhone XS / XS Max / XR", "esim": "ja", "note": "" },
+        { "model": "iPhone X / 8 / 8 Plus eller äldre", "esim": "nej", "note": "Första iPhone med eSIM var XS/XR. Äldre modeller kräver fysiskt SIM-kort." }
+      ]
+    },
+    {
+      "name": "Doro",
+      "models": [
+        { "model": "Doro (samtliga modeller)", "esim": "nej", "note": "Doros telefoner har hittills inte eSIM-stöd – använd fysiskt SIM-kort." }
+      ]
+    },
+    {
+      "name": "Fairphone",
+      "models": [
+        { "model": "Fairphone 5", "esim": "ja", "note": "" },
+        { "model": "Fairphone 4", "esim": "ja", "note": "" }
+      ]
+    },
+    {
+      "name": "Google",
+      "models": [
+        { "model": "Pixel 10 / 10 Pro / 10 Pro XL", "esim": "ja", "note": "" },
+        { "model": "Pixel 9 / 9 Pro / 9 Pro XL / 9a", "esim": "ja", "note": "" },
+        { "model": "Pixel 8 / 8 Pro / 8a", "esim": "ja", "note": "" },
+        { "model": "Pixel 7 / 7 Pro / 7a", "esim": "ja", "note": "" },
+        { "model": "Pixel 6 / 6 Pro / 6a", "esim": "ja", "note": "" },
+        { "model": "Pixel 5 / 5a", "esim": "ja", "note": "" },
+        { "model": "Pixel 4 / 4 XL / 4a", "esim": "ja", "note": "" },
+        { "model": "Pixel 3 / 3 XL / 3a", "esim": "ja", "note": "" }
+      ]
+    },
+    {
+      "name": "Honor",
+      "models": [
+        { "model": "Magic7 Pro", "esim": "ja", "note": "" },
+        { "model": "Magic6 Pro", "esim": "ja", "note": "" }
+      ]
+    },
+    {
+      "name": "Motorola",
+      "models": [
+        { "model": "Razr 40 / 50 / 60 (alla varianter)", "esim": "ja", "note": "" },
+        { "model": "Edge 60-serien", "esim": "ja", "note": "" },
+        { "model": "Edge 50-serien (inkl. Fusion, Neo, Pro)", "esim": "ja", "note": "" },
+        { "model": "Edge 40-serien", "esim": "ja", "note": "" },
+        { "model": "Moto G-serien (de flesta modeller)", "esim": "nej", "note": "Enstaka undantag finns (t.ex. Moto G34). Kontrollera din modell: slå *#06# – visas ett EID-nummer har telefonen eSIM." }
+      ]
+    },
+    {
+      "name": "Nothing",
+      "models": [
+        { "model": "Phone (3)", "esim": "ja", "note": "" },
+        { "model": "Phone (1) / Phone (2) / Phone (2a)", "esim": "nej", "note": "" }
+      ]
+    },
+    {
+      "name": "OnePlus",
+      "models": [
+        { "model": "OnePlus 13", "esim": "ja", "note": "" },
+        { "model": "OnePlus 12", "esim": "delvis", "note": "Europeiska/globala varianter har eSIM, kinesiska varianter saknar det. Slå *#06# – visas ett EID-nummer har din telefon eSIM." },
+        { "model": "OnePlus 11", "esim": "delvis", "note": "Stödet varierar mellan marknader. Slå *#06# – visas ett EID-nummer har din telefon eSIM." }
+      ]
+    },
+    {
+      "name": "Samsung",
+      "models": [
+        { "model": "Galaxy S25-serien", "esim": "ja", "note": "" },
+        { "model": "Galaxy S24 / S24+ / S24 Ultra / S24 FE", "esim": "ja", "note": "" },
+        { "model": "Galaxy S23 / S23+ / S23 Ultra / S23 FE", "esim": "ja", "note": "" },
+        { "model": "Galaxy S22 / S22+ / S22 Ultra", "esim": "ja", "note": "" },
+        { "model": "Galaxy S21 / S21+ / S21 Ultra", "esim": "ja", "note": "Gäller inte S21 FE – den saknar eSIM." },
+        { "model": "Galaxy S21 FE", "esim": "nej", "note": "" },
+        { "model": "Galaxy S20 / S20+ / S20 Ultra", "esim": "ja", "note": "Gäller inte S20 FE – den saknar eSIM." },
+        { "model": "Galaxy S20 FE", "esim": "nej", "note": "" },
+        { "model": "Galaxy Z Flip-serien (alla)", "esim": "ja", "note": "" },
+        { "model": "Galaxy Z Fold-serien (alla)", "esim": "ja", "note": "" },
+        { "model": "Galaxy A55 / A54 / A35", "esim": "ja", "note": "Europeiska varianter har eSIM." },
+        { "model": "Galaxy A53 / A52 / A34 / A33 eller äldre A-modeller", "esim": "nej", "note": "Äldre och enklare A-modeller saknar eSIM." }
+      ]
+    },
+    {
+      "name": "Sony",
+      "models": [
+        { "model": "Xperia 1 VI / 10 VI", "esim": "ja", "note": "" },
+        { "model": "Xperia 1 V / 5 V / 10 V", "esim": "ja", "note": "" },
+        { "model": "Xperia 1 IV / 5 IV / 10 IV", "esim": "ja", "note": "" },
+        { "model": "Xperia 1 III / 5 III / 10 III eller äldre", "esim": "nej", "note": "" }
+      ]
+    },
+    {
+      "name": "Xiaomi",
+      "models": [
+        { "model": "Xiaomi 15-serien", "esim": "ja", "note": "" },
+        { "model": "Xiaomi 14 / 14 Pro / 14 Ultra / 14T / 14T Pro", "esim": "ja", "note": "" },
+        { "model": "Xiaomi 13T / 13T Pro", "esim": "ja", "note": "" },
+        { "model": "Redmi Note 14 Pro / 14 Pro+", "esim": "delvis", "note": "Globala/europeiska varianter har eSIM. Slå *#06# – visas ett EID-nummer har din telefon eSIM." },
+        { "model": "Redmi Note 13 Pro / 13 Pro+", "esim": "delvis", "note": "Globala/europeiska varianter har eSIM. Slå *#06# – visas ett EID-nummer har din telefon eSIM." },
+        { "model": "Redmi Note (övriga) / Redmi 12 / 13C och enklare modeller", "esim": "nej", "note": "" }
+      ]
+    }
+  ]
+}
