@@ -1,13 +1,15 @@
-# Månatlig faktagranskning med människa-i-loopen. [KRAV]
+# Faktagranskning med människa-i-loopen. [KRAV]
 # Agenten öppnar pull requests – den publicerar aldrig direkt till main.
 #
-# Förutsättningar:
-# - Repo secret ANTHROPIC_API_KEY måste finnas.
-# - Branch protection på main + CODEOWNERS skyddar komponenter och juridik.
+# DRIFTLÄGE (beslut 2026-08-21): den schemalagda månadskörningen sker LOKALT
+# på hemmaservern via Claude Code på prenumerationen (0 kr API-kostnad) –
+# se scripts/ringa-fact-check.sh i homeserver-bot-repot. Detta workflow är
+# MANUELL BACKUP (workflow_dispatch) och är pinnat till Haiku 4.5 för att
+# hålla API-kostnaden nere (~5–10 kr/körning; en opinnad körning på
+# Opus-klass kostade ~50 kr). Aktivera schedule-blocket endast om den
+# lokala driften läggs ner.
 #
-# TODO EFTER LANSERING: aktivera cron-schemat genom att avkommentera
-# schedule-blocket nedan. Fram till dess körs jobbet manuellt via
-# workflow_dispatch (fliken Actions → Fact check → Run workflow).
+# Förutsättningar: repo secret ANTHROPIC_API_KEY, branch protection på main.
 
 name: Fact check
 
@@ -54,4 +56,4 @@ jobs:
             Skapa branches och pull requests med `gh` (GITHUB_TOKEN är satt).
             Öppna aldrig en PR som ändrar filer utanför skyddsräckena i
             prompten.
-          claude_args: "--allowedTools 'Bash,Read,Edit,Write,Glob,Grep,WebSearch,WebFetch'"
+          claude_args: "--model claude-haiku-4-5 --max-turns 120 --allowedTools 'Bash,Read,Edit,Write,Glob,Grep,WebSearch,WebFetch'"

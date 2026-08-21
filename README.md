@@ -33,5 +33,7 @@ npm run preview    # förhandsgranska byggd sajt
 
 1. Riktiga spårningslänkar i `src/config/partners.ts` (efter
    Adtraction/Impact-godkännande).
-2. Aktivera cron-schemat i `.github/workflows/fact-check.yml` + lägg
-   `ANTHROPIC_API_KEY` som repo secret.
+
+Faktagranskningen körs månatligen lokalt på ägarens server via Claude Code
+(prenumeration, 0 kr API-kostnad); `.github/workflows/fact-check.yml` är
+manuell backup pinnad till Haiku 4.5.

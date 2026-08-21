@@ -6,11 +6,23 @@ publicerar ALDRIG direkt till main. Ansvaret enligt marknadsföringslagen
 ligger på publicisten; hellre en fråga i en PR-kommentar än en gissning i en
 merge.
 
+## Budgetdisciplin
+
+Håll körningen snål: gör högst cirka 30 webbsökningar. Gruppera claims per
+källa – en källa (t.ex. Telias utlandssida) verifierar ofta flera claims med
+en enda sökning/hämtning. Prioritera i denna ordning: (1) claims vars
+`verified` är äldre än innevarande månad, (2) de mest föränderliga områdena
+(operatörsvillkor för Storbritannien/USA, priser, `esim-devices.json`),
+(3) övriga. Stabila fakta (landsnummer, nödnummer, EU-förordningens
+giltighet) behöver bara djupkontrolleras var tredje månad – däremellan
+räcker en rimlighetsbedömning.
+
 ## Uppdraget, i ordning
 
 1. **Läs `agents/claims.yml`** – registret över sajtens granskningsbara
    påståenden. Varje post har: `claim`, `file`, `source`, `verified`.
-2. **Verifiera varje påstående** mot källan via webbsökning:
+2. **Verifiera påståendena** mot källan via webbsökning, enligt
+   prioriteringen ovan:
    - Operatörernas roamingvillkor (särskilt Storbritannien- och USA-villkor –
      sajtens mest föränderliga fakta).
    - eSIM-stödet i `src/data/esim-devices.json` (stickprov: nya modeller som
