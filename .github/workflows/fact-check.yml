@@ -16,10 +16,8 @@ name: Fact check
 on:
   workflow_dispatch:
   # schedule:
-  #   # Körs 06:00 UTC dag 1–7 varje månad; guard-steget nedan släpper bara
-  #   # igenom måndagar → "första måndagen i månaden" (GitHub-cron saknar
-  #   # direkt stöd för det).
-  #   - cron: "0 6 1-7 * *"
+  #   # Den 2:a varje månad 06:00 UTC – samma rytm som den lokala driften.
+  #   - cron: "0 6 2 * *"
 
 permissions:
   contents: write
@@ -33,14 +31,6 @@ jobs:
   fact-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Bara första måndagen (vid cron-körning)
-        if: github.event_name == 'schedule'
-        run: |
-          if [ "$(date +%u)" != "1" ]; then
-            echo "Inte måndag – hoppar över."
-            exit 78
-          fi
-
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
