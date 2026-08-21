@@ -1,0 +1,21 @@
+{
+  "_kommentar": "Central datakälla för roamingkalkylatorns kostnadsspann. Uppdateras av faktagranskningspipelinen – kalkylatorsidan läser härifrån vid build, så en prisändring görs på ETT ställe. Alla belopp i SEK, alltid spann [låg, hög].",
+  "updated": "2026-08",
+  "dayPassKr": [40, 130],
+  "esimWeekKr": {
+    "latt": [40, 150],
+    "normal": [100, 300],
+    "mycket": [200, 500]
+  },
+  "tripFactors": {
+    "helg": 0.7,
+    "vecka": 1.0,
+    "tvaveckor": 1.6
+  },
+  "usageShareOfDays": {
+    "latt": 0.35,
+    "normal": 1.0,
+    "mycket": 1.0
+  },
+  "heavyTopFactor": 1.5
+}

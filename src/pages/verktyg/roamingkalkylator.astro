@@ -2,15 +2,15 @@
 // Interaktivt verktyg: Vad kostar min resa?
 // All data bäddas in vid build – inga API-anrop, inga cookies, ingen
 // localStorage. Uppskattningar redovisas alltid i spann, aldrig exakta
-// priser. Antaganden redovisas öppet under resultatet. [KRAV]
+// priser, och beräkningsunderlaget visas öppet vid varje resultat. [KRAV]
+// Kostnadsspannen hämtas från den centrala datakällan
+// src/data/roaming-costs.json som hålls uppdaterad av agentpipelinen.
 import GuideLayout from "../../layouts/GuideLayout.astro";
 import AffiliateButton from "../../components/AffiliateButton.astro";
+import costs from "../../data/roaming-costs.json";
 
 const factChecked = "2026-08";
 
-// Kostnadsspann i kr för en veckoresa, per surfbehov.
-// op = operatörsroaming med dygnspaket, esim = turist-eSIM.
-// Hålls uppdaterad av agentpipelinen (se agents/claims/verktyg.yml).
 const calcData = {
   countries: [
     { id: "thailand", name: "Thailand", kind: "utanfor" },
@@ -20,43 +20,44 @@ const calcData = {
     { id: "annat", name: "Annat land utanför EU", kind: "utanfor" },
     { id: "eu", name: "Land inom EU/EES", kind: "eu" },
   ],
-  usage: [
-    { id: "latt", name: "Lätt (mest WiFi, upp till ca 1 GB)" },
-    { id: "normal", name: "Normal (karta, sociala medier, ca 3–5 GB)" },
-    { id: "mycket", name: "Mycket (video, delning, ca 10 GB eller mer)" },
+  trips: [
+    { id: "helg", name: "Långhelg (cirka 3 dagar)", days: 3 },
+    { id: "vecka", name: "En vecka (cirka 7 dagar)", days: 7 },
+    { id: "tvaveckor", name: "Två veckor (cirka 14 dagar)", days: 14 },
   ],
-  op: {
-    latt: [100, 400],
-    normal: [300, 700],
-    mycket: [500, 1200],
-  },
-  esim: {
-    latt: [40, 150],
-    normal: [100, 300],
-    mycket: [200, 500],
-  },
-} as const;
+  usage: [
+    { id: "latt", name: "Lätt (mest WiFi, upp till ca 1 GB)", gb: "cirka 1 GB" },
+    { id: "normal", name: "Normal (karta, sociala medier, ca 3–5 GB)", gb: "3–5 GB" },
+    { id: "mycket", name: "Mycket (video, delning, 10 GB eller mer)", gb: "10 GB eller mer" },
+  ],
+  costs,
+};
 ---
 
 <GuideLayout
   title="Roamingkalkylatorn – vad kostar min resa?"
-  description="Välj land och surfbehov och få ett uppskattat kostnadsspann för en veckoresa: operatörsroaming jämfört med rese-eSIM."
+  description="Välj land, reslängd och surfbehov och få ett uppskattat kostnadsspann för resan: operatörsroaming jämfört med rese-eSIM, med öppet beräkningsunderlag."
   h1="Roamingkalkylatorn: vad kostar mobilen på min resa?"
   hasAffiliateLinks={true}
   factChecked={factChecked}
 >
   <p>
-    Välj resmål och hur mycket du surfar, så får du ett uppskattat
-    kostnadsspann för en veckoresa – med din svenska operatörs
+    Välj resmål, reslängd och hur mycket du surfar, så får du ett uppskattat
+    kostnadsspann – med din svenska operatörs
     <a href="/ordlista/#roaming">roaming</a> respektive med ett
-    <a href="/ordlista/#esim">rese-eSIM</a>. Kalkylatorn körs helt i din
-    webbläsare och sparar ingenting.
+    <a href="/ordlista/#esim">rese-eSIM</a> – och ser exakt hur vi räknat.
+    Kalkylatorn körs helt i din webbläsare och sparar ingenting.
   </p>
 
   <div class="tool-form">
     <label for="country-select">Vart reser du?</label>
     <select id="country-select">
       <option value="">Välj resmål …</option>
+    </select>
+
+    <label for="trip-select">Hur länge är du borta?</label>
+    <select id="trip-select">
+      <option value="">Välj reslängd …</option>
     </select>
 
     <label for="usage-select">Hur mycket surfar du?</label>
@@ -69,14 +70,12 @@ const calcData = {
     <p class="verdict" id="calc-headline"></p>
     <p id="calc-op"></p>
     <p id="calc-esim"></p>
+    <p id="calc-basis" class="fact-checked"></p>
   </div>
   {/* CTA:n ligger utanför live-regionen så att skärmläsare inte läser upp
       annonslänken vid varje resultatuppdatering. */}
   <div id="calc-cta" hidden>
-    <AffiliateButton
-      partner="airalo"
-      text="Se Airalos eSIM för ditt resmål"
-    />
+    <AffiliateButton partner="airalo" text="Se Airalos eSIM för ditt resmål" />
   </div>
 
   <noscript>
@@ -90,11 +89,13 @@ const calcData = {
 
   <h2>Hur räknar kalkylatorn?</h2>
   <p>
-    Spannen bygger på öppet redovisade antaganden: en resa på ungefär en vecka,
-    svenska operatörers dygnspaket utanför EU (oftast cirka 40–130 kr per dygn
-    du använder data) och typiska priser för turist-eSIM med motsvarande
-    datamängd. Allt är uppskattningar i spann – kontrollera alltid aktuellt
-    pris hos din operatör och hos eSIM-leverantören innan du beställer.
+    Varje resultat visar sitt beräkningsunderlag: antal resdagar, hur många av
+    dagarna vi antar att du använder mobildata, och vilka spann som använts.
+    Grundantagandena: svenska operatörers dygnspaket utanför EU kostar oftast
+    cirka 40–130 kr per dygn du använder data, och turist-eSIM prissätts efter
+    datamängd och giltighetstid. Allt är uppskattningar i spann – kontrollera
+    alltid aktuellt pris hos din operatör och hos eSIM-leverantören innan du
+    beställer.
   </p>
   <ul>
     <li>
@@ -122,55 +123,95 @@ const calcData = {
     <a href="/lander/thailand/">Thailand</a>, <a href="/lander/usa/">USA</a>,
     <a href="/lander/turkiet/">Turkiet</a> och
     <a href="/lander/storbritannien/">Storbritannien</a> går igenom respektive
-    resmål i detalj.
+    resmål i detalj. Kolla också att din telefon stöder eSIM i
+    <a href="/verktyg/esim-kollare/">eSIM-kollaren</a>.
   </p>
 
   <script is:inline define:vars={{ calcData }}>
     const countrySelect = document.getElementById("country-select");
+    const tripSelect = document.getElementById("trip-select");
     const usageSelect = document.getElementById("usage-select");
     const resultBox = document.getElementById("calc-result");
     const headlineEl = document.getElementById("calc-headline");
     const opEl = document.getElementById("calc-op");
     const esimEl = document.getElementById("calc-esim");
+    const basisEl = document.getElementById("calc-basis");
     const ctaEl = document.getElementById("calc-cta");
+    const costs = calcData.costs;
 
     calcData.countries.forEach((c) => {
       countrySelect.appendChild(new Option(c.name, c.id));
+    });
+    calcData.trips.forEach((t) => {
+      tripSelect.appendChild(new Option(t.name, t.id));
     });
     calcData.usage.forEach((u) => {
       usageSelect.appendChild(new Option(u.name, u.id));
     });
 
-    function kr(range) {
-      return "cirka " + range[0] + "–" + range[1] + " kr";
+    function r10(x) {
+      return Math.round(x / 10) * 10;
+    }
+    function kr(lo, hi) {
+      return "cirka " + r10(lo) + "–" + r10(hi) + " kr";
     }
 
     // Visa live-regionen först och fyll den strax därefter – innehåll som
     // sätts medan regionen är display:none annonseras inte av alla
     // skärmläsare (WCAG 4.1.3).
-    function showResult(headline, opText, esimText, showCta) {
+    function showResult(headline, opText, esimText, basisText, showCta) {
       resultBox.hidden = false;
       ctaEl.hidden = !showCta;
       setTimeout(() => {
         headlineEl.textContent = headline;
         opEl.textContent = opText;
         esimEl.textContent = esimText;
+        basisEl.textContent = basisText;
       }, 60);
     }
 
     function update() {
-      const countryId = countrySelect.value;
-      const usageId = usageSelect.value;
-      if (!countryId || !usageId) {
+      const country = calcData.countries.find(
+        (c) => c.id === countrySelect.value
+      );
+      const trip = calcData.trips.find((t) => t.id === tripSelect.value);
+      const usage = calcData.usage.find((u) => u.id === usageSelect.value);
+      if (!country || !trip || !usage) {
         resultBox.hidden = true;
         ctaEl.hidden = true;
         return;
       }
-      const country = calcData.countries.find((c) => c.id === countryId);
-      const op = calcData.op[usageId];
-      const esim = calcData.esim[usageId];
+
+      // Operatörsroaming: dygnspaket de dagar du använder data.
+      const usedDays = Math.max(
+        1,
+        Math.round(trip.days * costs.usageShareOfDays[usage.id])
+      );
+      const opLo = usedDays * costs.dayPassKr[0];
+      let opHi = usedDays * costs.dayPassKr[1];
+      if (usage.id === "mycket") {
+        opHi = opHi * costs.heavyTopFactor;
+      }
+
+      // eSIM: paket efter datamängd, skalat efter reslängd.
+      const f = costs.tripFactors[trip.id];
+      const esimLo = costs.esimWeekKr[usage.id][0] * f;
+      const esimHi = costs.esimWeekKr[usage.id][1] * f;
+
       const headline =
-        "Uppskattad kostnad för en veckoresa till " + country.name;
+        "Uppskattad kostnad: " + trip.days + " dagar i " + country.name;
+      const basis =
+        "Så räknade vi: " +
+        trip.days +
+        " resdagar, varav data används cirka " +
+        usedDays +
+        " – dygnspaket " +
+        costs.dayPassKr[0] +
+        "–" +
+        costs.dayPassKr[1] +
+        " kr per använd dag; eSIM-paket med " +
+        usage.gb +
+        " som täcker hela resan. Spann, inte exakta priser.";
 
       if (country.kind === "eu") {
         showResult(
@@ -179,8 +220,10 @@ const calcData = {
             "ditt abonnemang inom EU/EES, upp till abonnemangets fair use-gräns.",
           "Rese-eSIM: behövs normalt inte inom EU. Undantaget är om du surfar " +
             "mer än din fair use-gräns – då kan ett eSIM för " +
-            kr(esim) +
+            kr(esimLo, esimHi) +
             " vara ett alternativ.",
+          "Så räknade vi: inom EU/EES gäller roam like at home – ingen " +
+            "beräkning behövs för operatörsroaming.",
           false
         );
       } else if (country.kind === "uk") {
@@ -188,23 +231,26 @@ const calcData = {
           headline,
           "Med din svenska operatör: 0 kr hos operatörer som behåller " +
             "EU-villkor i Storbritannien – eller " +
-            kr(op) +
+            kr(opLo, opHi) +
             " hos operatörer som tar betalt per dygn. Kolla vad just din " +
             "operatör gör före avresan.",
-          "Med rese-eSIM: " + kr(esim) + ".",
+          "Med rese-eSIM: " + kr(esimLo, esimHi) + ".",
+          basis,
           true
         );
       } else {
         showResult(
           headline,
-          "Med din svenska operatörs roaming: " + kr(op) + ".",
-          "Med rese-eSIM: " + kr(esim) + ".",
+          "Med din svenska operatörs roaming: " + kr(opLo, opHi) + ".",
+          "Med rese-eSIM: " + kr(esimLo, esimHi) + ".",
+          basis,
           true
         );
       }
     }
 
     countrySelect.addEventListener("change", update);
+    tripSelect.addEventListener("change", update);
     usageSelect.addEventListener("change", update);
   </script>
 </GuideLayout>

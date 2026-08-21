@@ -353,19 +353,19 @@
 # --- verktyg ---
 # Granskningsbara påståenden i verktygssidorna.
 - claim: "Svenska operatörers dygnspaket utanför EU kostar oftast cirka 40–130 kr per dygn"
-  file: src/pages/verktyg/roamingkalkylator.astro
+  file: src/data/roaming-costs.json
   source: "https://www.telia.se/privat/support/utomlands"
   verified: "2026-08"
 - claim: "Kalkylatorns spann för operatörsroaming (100–1200 kr/vecka beroende på surfbehov) täcker de stora svenska operatörernas dygnspaketpriser"
-  file: src/pages/verktyg/roamingkalkylator.astro
+  file: src/data/roaming-costs.json
   source: "https://www.tele2.se/utomlands"
   verified: "2026-08"
 - claim: "Kalkylatorns spann för turist-eSIM (40–500 kr/vecka beroende på surfbehov) täcker typiska priser hos stora eSIM-leverantörer"
-  file: src/pages/verktyg/roamingkalkylator.astro
+  file: src/data/roaming-costs.json
   source: "https://www.airalo.com/sv"
   verified: "2026-08"
 - claim: "En beloppsspärr på cirka 600–700 kr för dataroaming är standard hos svenska operatörer (motsvarar 50 € enligt EU-regler)"
-  file: src/pages/verktyg/roamingkalkylator.astro
+  file: src/data/roaming-costs.json
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
   verified: "2026-08"
 

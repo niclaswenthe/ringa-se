@@ -28,9 +28,9 @@ räcker en rimlighetsbedömning.
    - eSIM-stödet i `src/data/esim-devices.json` (stickprov: nya modeller som
      lanserats sedan senaste körningen läggs till, felaktiga poster rättas).
    - EU:s roamingregler och beloppsgränser.
-   - Kalkylatorns kostnadsspann i
-     `src/pages/verktyg/roamingkalkylator.astro` (spannen ska täcka aktuella
-     dygnspaket- och eSIM-priser).
+   - Kalkylatorns kostnadsspann i `src/data/roaming-costs.json` – sajtens
+     centrala prisdatakälla (spannen ska täcka aktuella dygnspaket- och
+     eSIM-priser; en ändring där slår igenom i kalkylatorn vid build).
    - Att partnerlänkarna i `src/config/partners.ts` svarar (HTTP-status 200
      efter redirects). Rapportera döda länkar i PR-beskrivningen – men ändra
      ALDRIG själva filen.

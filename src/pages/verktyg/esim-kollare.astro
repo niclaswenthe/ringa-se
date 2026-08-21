@@ -48,16 +48,47 @@ const faq = [
     <select id="model-select" disabled>
       <option value="">Välj märke först …</option>
     </select>
+
+    <label for="model-search">… eller sök din modell direkt</label>
+    <input
+      type="text"
+      id="model-search"
+      list="model-list"
+      placeholder="T.ex. Galaxy A55"
+      autocomplete="off"
+    />
+    <datalist id="model-list"></datalist>
   </div>
 
   <div id="kollare-result" class="tool-result" role="status" hidden>
     <p class="verdict" id="kollare-verdict"></p>
     <p id="kollare-note"></p>
   </div>
-  {/* CTA:n ligger utanför live-regionen så att skärmläsare inte läser upp
-      annonslänken vid varje resultatuppdatering. */}
+  {/* CTA och nästa steg ligger utanför live-regionen så att skärmläsare
+      inte läser upp dem vid varje resultatuppdatering. */}
   <div id="kollare-cta" hidden>
     <AffiliateButton partner="airalo" text="Se eSIM för din resa hos Airalo" />
+  </div>
+  <div id="kollare-next-ja" hidden>
+    <p>
+      <strong>Nästa steg:</strong> räkna på vad resan kostar i
+      <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a>, eller gå
+      direkt till landsguiden för
+      <a href="/lander/thailand/">Thailand</a>,
+      <a href="/lander/usa/">USA</a>,
+      <a href="/lander/turkiet/">Turkiet</a> eller
+      <a href="/lander/storbritannien/">Storbritannien</a>.
+    </p>
+  </div>
+  <div id="kollare-next-nej" hidden>
+    <p>
+      <strong>Alternativ utan eSIM:</strong> din operatörs roaming eller
+      resepaket (läs
+      <a href="/guider/roaming-utanfor-eu/">guiden om roaming utanför EU</a>
+      först), eller ett lokalt
+      <a href="/ordlista/#fysiskt-sim">fysiskt SIM-kort</a> på resmålet –
+      landsguiderna beskriver vad som finns per land.
+    </p>
   </div>
 
   <noscript>
@@ -102,10 +133,31 @@ const faq = [
       brandSelect.appendChild(opt);
     });
 
-    brandSelect.addEventListener("change", () => {
-      modelSelect.innerHTML = "";
+    const searchInput = document.getElementById("model-search");
+    const dataList = document.getElementById("model-list");
+    const nextJaEl = document.getElementById("kollare-next-ja");
+    const nextNejEl = document.getElementById("kollare-next-nej");
+
+    // Fritextsökning: datalist med "Märke Modell" för alla poster.
+    const searchIndex = [];
+    brands.forEach((brand, bi) => {
+      brand.models.forEach((m, mi) => {
+        const label = brand.name + " " + m.model;
+        searchIndex.push({ label: label.toLowerCase(), bi, mi });
+        dataList.appendChild(new Option(label));
+      });
+    });
+
+    function hideResult() {
       resultBox.hidden = true;
       ctaEl.hidden = true;
+      nextJaEl.hidden = true;
+      nextNejEl.hidden = true;
+    }
+
+    brandSelect.addEventListener("change", () => {
+      modelSelect.innerHTML = "";
+      hideResult();
       if (brandSelect.value === "") {
         modelSelect.disabled = true;
         modelSelect.appendChild(new Option("Välj märke först …", ""));
@@ -124,9 +176,11 @@ const faq = [
     // Visa live-regionen först och fyll den strax därefter – innehåll som
     // sätts medan regionen är display:none annonseras inte av alla
     // skärmläsare (WCAG 4.1.3).
-    function showResult(verdictText, verdictClass, noteText, showCta) {
+    function showResult(verdictText, verdictClass, noteText, next) {
       resultBox.hidden = false;
-      ctaEl.hidden = !showCta;
+      ctaEl.hidden = next !== "ja";
+      nextJaEl.hidden = next !== "ja";
+      nextNejEl.hidden = next !== "nej";
       setTimeout(() => {
         verdictEl.textContent = verdictText;
         verdictEl.className = "verdict " + verdictClass;
@@ -134,25 +188,7 @@ const faq = [
       }, 60);
     }
 
-    modelSelect.addEventListener("change", () => {
-      if (modelSelect.value === "") {
-        resultBox.hidden = true;
-        ctaEl.hidden = true;
-        return;
-      }
-
-      if (modelSelect.value === UNKNOWN) {
-        showResult(
-          "Osäkert – kolla i telefonen",
-          "verdict-okand",
-          FALLBACK,
-          false
-        );
-        return;
-      }
-
-      const model =
-        brands[Number(brandSelect.value)].models[Number(modelSelect.value)];
+    function showModel(model) {
       const texts = {
         ja: "Ja – den här modellen stöder eSIM.",
         nej: "Nej – den här modellen stöder inte eSIM.",
@@ -169,8 +205,38 @@ const faq = [
         texts[model.esim],
         "verdict-" + model.esim,
         note,
-        model.esim !== "nej"
+        model.esim === "nej" ? "nej" : "ja"
       );
+    }
+
+    modelSelect.addEventListener("change", () => {
+      searchInput.value = "";
+      if (modelSelect.value === "") {
+        hideResult();
+        return;
+      }
+      if (modelSelect.value === UNKNOWN) {
+        showResult("Osäkert – kolla i telefonen", "verdict-okand", FALLBACK, "none");
+        return;
+      }
+      showModel(
+        brands[Number(brandSelect.value)].models[Number(modelSelect.value)]
+      );
+    });
+
+    searchInput.addEventListener("input", () => {
+      const q = searchInput.value.trim().toLowerCase();
+      if (q.length < 3) {
+        return;
+      }
+      const hits = searchIndex.filter((e) => e.label.includes(q));
+      if (hits.length === 1) {
+        const hit = hits[0];
+        brandSelect.value = String(hit.bi);
+        brandSelect.dispatchEvent(new Event("change"));
+        modelSelect.value = String(hit.mi);
+        showModel(brands[hit.bi].models[hit.mi]);
+      }
     });
   </script>
 </GuideLayout>
