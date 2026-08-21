@@ -1,6 +1,8 @@
 ---
-// [KRAV] Sidfot på alla sidor: juridiska länkar + domän-till-salu-raden.
+// [KRAV] Sidfot på alla sidor med juridiska länkar.
 // Årtalet genereras vid build. Får inte ändras av agentpipelinen.
+// (Domän-till-salu-raden togs bort helt 2026-08-21 på ägarens beslut –
+// återinförs eventuellt i ett senare skede.)
 const year = new Date().getFullYear();
 ---
 
@@ -11,10 +13,6 @@ const year = new Date().getFullYear();
       <li><a href="/om/sa-tjanar-vi-pengar/">Så tjänar vi pengar</a></li>
       <li><a href="/om/integritet-cookies/">Integritet &amp; cookies</a></li>
     </ul>
-    <p>
-      Intresserad av domänen ringa.se?
-      <a href="/om/#domanen">Kontakta oss.</a>
-    </p>
     <p>© {year} Ringa.se. Innehållet är originalskrivet och faktagranskas löpande.</p>
   </div>
 </footer>

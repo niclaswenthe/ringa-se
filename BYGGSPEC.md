@@ -37,7 +37,7 @@ Bygg dessa FÖRST, före innehållssidorna:
 
 1. **`<AdDisclosure />`** – banner som renderas överst i innehållsytan på varje sida som innehåller minst en affiliatelänk. Text: "Annonssamarbete: Den här sidan innehåller annonslänkar. Om du beställer via länkarna kan Ringa.se få provision från leverantören. Det påverkar aldrig priset för dig. Läs mer om hur Ringa.se finansieras." (länk till /om/sa-tjanar-vi-pengar). Får inte gå att utelämna av misstag: gör den till en del av sidmallen `GuideLayout` som kräver prop `hasAffiliateLinks: boolean` utan defaultvärde.
 2. **`<AffiliateButton />`** – knappkomponent för själva affiliatelänken. Renderar alltid ordet "Annonslänk" i liten text i direkt anslutning till knappen (MFL 9 § reklamidentifiering, IAB Sveriges rekommendation).
-3. **Sidfot** – på alla sidor: länkar till Om Ringa.se, Så tjänar vi pengar, Integritet & cookies, samt raden "Intresserad av domänen ringa.se? Kontakta oss." (länk till om-sidan). Årtal genereras vid build.
+3. **Sidfot** – på alla sidor: länkar till Om Ringa.se, Så tjänar vi pengar, Integritet & cookies. Årtal genereras vid build. *(Ändrat 2026-08-21: domän-till-salu-raden är borttagen helt på ägarens beslut – trovärdigheten som konsumenttjänst prioriteras; kan återinföras i ett senare skede.)*
 
 ## Juridiska sidor [KRAV]
 
@@ -137,4 +137,4 @@ Skäl till PR-tvånget: publicistansvaret enligt MFL ligger på ägaren; agenten
 2. Aktivera Cloudflare Email Routing: info@ringa.se → vidarebefordran till privata Gmail; sätt upp Gmails "Skicka e-post som"-alias för utgående svar. (Agentbevakning av inkorgen byggs därefter i wenthe_bot — se projektplanen Del 4.)
 3. Lägg till sajten i Google Search Console, skicka in sitemap.
 4. Ansök: Adtraction (Hallon/Vimla/Comviq) och Airalo via Impact.com. Vid godkännande: ersätt platshållare i partners.ts, pusha.
-5. Lista domänen på Sedo + Dan.com (make offer).
+5. ~~Lista domänen på Sedo + Dan.com (make offer).~~ *(Vilande 2026-08-21: domänförsäljningsspåret är pausat i sin helhet – omprövas senare vid behov.)*
