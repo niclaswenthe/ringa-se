@@ -31,9 +31,7 @@ npm run preview    # förhandsgranska byggd sajt
 
 ## Kvarvarande TODO före lansering
 
-1. Bolagsnamn + org-nummer på `/om/` (`src/pages/om/index.astro`).
-2. Riktiga spårningslänkar i `src/config/partners.ts` (efter
+1. Riktiga spårningslänkar i `src/config/partners.ts` (efter
    Adtraction/Impact-godkännande).
-3. Aktivera cron-schemat i `.github/workflows/fact-check.yml` + lägg
+2. Aktivera cron-schemat i `.github/workflows/fact-check.yml` + lägg
    `ANTHROPIC_API_KEY` som repo secret.
-4. Branch protection på main med krav på CODEOWNERS-granskning.
