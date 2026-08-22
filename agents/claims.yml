@@ -15,7 +15,7 @@
   verified: "2026-08"
 - claim: "Vimla ingår fri roaming i EU/EES och Storbritannien, med ett månadstak för utlandssurf (fair use)"
   file: src/pages/guider/basta-abonnemang-resa.astro
-  source: "https://vimla.se/roaming/"
+  source: "https://vimla.se/utlandspriser/"
   verified: "2026-08"
 - claim: "Vimla erbjuder eSIM utan extra kostnad"
   file: src/pages/guider/basta-abonnemang-resa.astro
@@ -232,7 +232,7 @@
   verified: "2026-08"
 - claim: "Vimla har fri roaming i EU/EES och Storbritannien med en månadsgräns för surf (f.n. 33 GB/mån)"
   file: src/pages/lander/storbritannien.astro
-  source: "https://vimla.se/roaming/"
+  source: "https://vimla.se/utlandspriser/"
   verified: "2026-08"
 - claim: "Storbritannien ingår i Tres 3Världen – surf som hemma med abonnemang som har tjänsten"
   file: src/pages/lander/storbritannien.astro
@@ -256,7 +256,7 @@
   verified: "2026-08"
 - claim: "Nödnumret i Storbritannien är 999 och EU-numret 112 fungerar parallellt mot samma larmcentral"
   file: src/pages/lander/storbritannien.astro
-  source: "https://www.gov.uk/contact-999-textphone"
+  source: "https://en.wikipedia.org/wiki/999_(emergency_telephone_number)"
   verified: "2026-08"
 - claim: "Airalo säljer eSIM för Storbritannien med datapaket från helgpaket till månadspaket"
   file: src/pages/lander/storbritannien.astro
