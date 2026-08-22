@@ -1,10 +1,14 @@
 ---
+// Startsidan – omdesignad 2026-08-22 enligt designunderlaget: personlig
+// hero med två huvudhandlingar, förtroenderad, snabbval för resmål och
+// personlig avsändare. Verktygen ska dominera; guiderna är fördjupning.
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroIllustration from "../components/HeroIllustration.astro";
 import { siteName, siteDescription, sitePages } from "../config/site";
 
 const title = "Ringa.se – Ringa & surfa utomlands utan chockfaktura";
 const description =
-  "Sveriges begripligaste källa om att ringa och surfa utomlands. Guider, ordlista och verktyg som visar om eSIM funkar i din telefon och vad resan kostar.";
+  "Se vad mobilen kan kosta på ditt resmål, kontrollera om telefonen stöder eSIM och få tydliga råd innan du reser – på begriplig svenska.";
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -29,10 +33,18 @@ const organizationSchema = {
   description: siteDescription,
 };
 
-const verktyg = sitePages.filter((p) => p.section === "verktyg");
 const guider = sitePages.filter((p) => p.section === "guider");
-const lander = sitePages.filter((p) => p.section === "lander");
 const ordlista = sitePages.filter((p) => p.section === "ordlista");
+const lander = sitePages.filter((p) => p.section === "lander");
+
+const snabbval = [
+  { id: "thailand", name: "Thailand" },
+  { id: "usa", name: "USA" },
+  { id: "turkiet", name: "Turkiet" },
+  { id: "storbritannien", name: "Storbritannien" },
+  { id: "eu", name: "Inom EU/EES" },
+  { id: "annat", name: "Annat land utanför EU" },
+];
 ---
 
 <BaseLayout
@@ -40,54 +52,132 @@ const ordlista = sitePages.filter((p) => p.section === "ordlista");
   description={description}
   schema={[websiteSchema, organizationSchema]}
 >
-  <h1>Ringa &amp; surfa utomlands – utan chockfaktura</h1>
-  <p>
-    Ringa.se förklarar på begriplig svenska vad det kostar att använda mobilen
-    utomlands, när ett <a href="/ordlista/#esim">eSIM</a> är smartare än
-    <a href="/ordlista/#roaming">roaming</a> – och hur du slipper de klassiska
-    fällorna. Sajten finansieras öppet med annonslänkar;
-    <a href="/om/sa-tjanar-vi-pengar/">så här tjänar vi pengar</a>.
-  </p>
-
-  <h2>Testa själv</h2>
-  <ul class="card-grid">
-    {
-      verktyg.map((p) => (
-        <li>
-          <a class="card" href={p.path}>
-            <strong>{p.title}</strong>
-            <p>{p.description}</p>
+  <div class="home">
+    <section class="hero">
+      <div>
+        <h1>Mobilen ska bara fungera – även på resan</h1>
+        <p class="hero-ingress">
+          Se vad mobilen kan kosta på ditt resmål, kontrollera om telefonen
+          stöder eSIM och få tydliga råd innan du reser.
+        </p>
+        <p class="cta-row">
+          <a class="btn btn-primary" href="/verktyg/roamingkalkylator/">
+            Räkna på min resa
           </a>
-        </li>
-      ))
-    }
-  </ul>
-
-  <h2>Guider</h2>
-  <ul class="card-grid">
-    {
-      [...guider, ...ordlista].map((p) => (
-        <li>
-          <a class="card" href={p.path}>
-            <strong>{p.title}</strong>
-            <p>{p.description}</p>
+          <a class="btn btn-secondary" href="/verktyg/esim-kollare/">
+            Kontrollera min telefon
           </a>
-        </li>
-      ))
-    }
-  </ul>
+        </p>
+        <p class="hero-trust">
+          Oberoende guider · Faktagranskat varje månad · Inga spårningscookies
+        </p>
+      </div>
+      <HeroIllustration />
+    </section>
 
-  <h2>Landsguider</h2>
-  <ul class="card-grid">
-    {
-      lander.map((p) => (
-        <li>
-          <a class="card" href={p.path}>
-            <strong>{p.title}</strong>
-            <p>{p.description}</p>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+    <ul class="trust-row">
+      <li>
+        <span class="trust-label">Faktagranskat</span>
+        <span class="trust-desc">Kontrolleras varje månad</span>
+      </li>
+      <li>
+        <span class="trust-label">Oberoende råd</span>
+        <span class="trust-desc">Officiella källor prioriteras</span>
+      </li>
+      <li>
+        <span class="trust-label">Öppen finansiering</span>
+        <span class="trust-desc">
+          <a href="/om/sa-tjanar-vi-pengar/">Annonslänkar märks tydligt</a>
+        </span>
+      </li>
+      <li>
+        <span class="trust-label">Integritet</span>
+        <span class="trust-desc">
+          <a href="/om/integritet-cookies/">Inga spårningscookies</a>
+        </span>
+      </li>
+    </ul>
+
+    <h2>Vart ska du resa?</h2>
+    <p>
+      Välj resmål så räknar kalkylatorn direkt på vad mobilen kan kosta där –
+      och om ett eSIM är värt det.
+    </p>
+    <ul class="pill-row">
+      {
+        snabbval.map((land) => (
+          <li>
+            <a class="pill" href={`/verktyg/roamingkalkylator/?land=${land.id}`}>
+              {land.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2>Populära resmål</h2>
+    <ul class="card-grid">
+      {
+        lander.map((p) => (
+          <li>
+            <a class="card" href={p.path}>
+              <strong>{p.title}</strong>
+              <p>{p.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2>Så fungerar det</h2>
+    <ol class="steps">
+      <li>
+        <strong>Välj resmål</strong>
+        <p>
+          Berätta vart du ska och hur länge – i kalkylatorn eller via
+          snabbvalen ovan.
+        </p>
+      </li>
+      <li>
+        <strong>Se vad det kostar</strong>
+        <p>
+          Du får ett ärligt kostnadsspann för operatörsroaming respektive
+          rese-eSIM, med beräkningen öppet redovisad.
+        </p>
+      </li>
+      <li>
+        <strong>Res med rätt lösning</strong>
+        <p>
+          Följ råden i landsguiden – och kolla först att telefonen stöder eSIM
+          i <a href="/verktyg/esim-kollare/">eSIM-kollaren</a>.
+        </p>
+      </li>
+    </ol>
+
+    <section class="founder">
+      <blockquote>
+        ”Jag tyckte själv att det var onödigt svårt att förstå vad mobilen
+        faktiskt skulle kosta utomlands. Därför byggde jag Ringa.se – med
+        räkneverktyg, källor på bordet och utan en enda spårningscookie.”
+      </blockquote>
+      <p class="founder-sign">
+        – Niclas, grundare. <a href="/om/">Mer om Ringa.se och hur sajten
+        hålls aktuell.</a>
+      </p>
+    </section>
+
+    <h2>Fördjupning: guider och ordlista</h2>
+    <ul class="card-grid">
+      {
+        [...guider, ...ordlista].map((p) => (
+          <li>
+            <a class="card" href={p.path}>
+              <strong>{p.title}</strong>
+              <p>{p.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>

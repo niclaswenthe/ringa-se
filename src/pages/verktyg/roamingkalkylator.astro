@@ -255,5 +255,16 @@ const calcData = {
     countrySelect.addEventListener("change", update);
     tripSelect.addEventListener("change", update);
     usageSelect.addEventListener("change", update);
+
+    // Snabbval från startsidan: ?land=<id> förväljer resmålet och visar
+    // direkt ett resultat med vecka/normal som synligt redovisade
+    // standardantaganden. Ingen lagring – bara URL-parametern.
+    const preselect = new URLSearchParams(window.location.search).get("land");
+    if (preselect && calcData.countries.some((c) => c.id === preselect)) {
+      countrySelect.value = preselect;
+      tripSelect.value = "vecka";
+      usageSelect.value = "normal";
+      update();
+    }
   </script>
 </GuideLayout>

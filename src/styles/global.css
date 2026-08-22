@@ -3,6 +3,12 @@
 :root {
   --color-bg: #ffffff;
   --color-bg-soft: #f2f6fa;
+  /* Designsystem (2026-08-22): varm palett runt förtroendeblått.
+     Korall är enbart accent/grafik – ALDRIG textfärg (3.4:1 mot vitt). */
+  --color-navy: #17324d;
+  --color-sand: #f7f1e8;
+  --color-coral: #d96b55;
+  --color-lightblue: #eaf3fa;
   --color-text: #1d2733;
   --color-text-muted: #4a5a6a; /* AA mot vit och --color-bg-soft */
   --color-accent: #0b5cad; /* länkar/knappar, AA mot vitt */
@@ -338,4 +344,200 @@ blockquote,
 
 .faq h3 {
   margin-top: 1.25rem;
+}
+
+/* ===== Startsidan (designsystem 2026-08-22) ===== */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  padding-block: 1.25rem 1.75rem;
+}
+.hero h1 {
+  font-size: 2.3rem;
+  color: var(--color-navy);
+  margin-top: 0;
+}
+.hero-ingress {
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+}
+.hero-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 44rem) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+  .hero-illustration {
+    order: 2;
+    max-width: 24rem;
+    margin-inline: auto;
+  }
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+}
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  color: #fff;
+}
+.btn-secondary {
+  background: #fff;
+  color: var(--color-accent-dark);
+  border: 2px solid var(--color-accent);
+}
+.btn-secondary:hover {
+  background: var(--color-lightblue);
+}
+.hero-trust {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.trust-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+}
+.trust-row li {
+  background: var(--color-lightblue);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  margin: 0;
+}
+.trust-row .trust-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+}
+.trust-row .trust-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.home h2 {
+  color: var(--color-navy);
+}
+.home h2::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-coral);
+  margin-top: 0.35rem;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.pill-row li {
+  margin: 0;
+}
+.pill {
+  display: inline-block;
+  border: 1.5px solid var(--color-navy);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  text-decoration: none;
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.pill:hover {
+  background: var(--color-navy);
+  color: #fff;
+}
+
+.steps {
+  list-style: none;
+  counter-reset: steg;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.steps li {
+  counter-increment: steg;
+  margin: 0;
+  padding-top: 0.25rem;
+}
+.steps li::before {
+  content: counter(steg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--color-navy);
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.steps strong {
+  display: block;
+  color: var(--color-navy);
+}
+.steps p {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.founder {
+  background: var(--color-sand);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+}
+.founder blockquote {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-navy);
+}
+.founder .founder-sign {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
 }
