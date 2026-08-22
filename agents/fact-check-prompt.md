@@ -63,6 +63,17 @@ Footer, Header), `src/layouts/**`, `src/config/**` (partners.ts, site.ts),
 `public/robots.txt`. Behöver något där ändras: föreslå det i PR-beskrivningen
 utan att röra filen.
 
+## Källkvalitet
+
+Prioritera alltid primärkällor: operatörernas egna pris- och villkorssidor,
+myndigheter (PTS, FCC, EU/europa.eu) och tillverkarnas officiella
+specifikationer. Wikipedia, privata bloggar, forum och nyhetsartiklar är
+sekundärkällor – acceptabla som tillfällig nödlösning när primärkällan är
+trasig, men varje körning ska försöka ersätta sekundärkällor i både
+`claims.yml` och sidornas källänkar med officiella källor när sådana finns.
+En sådan källuppgradering är en giltig anledning till PR även när själva
+sakuppgiften är oförändrad.
+
 ## Stilregler vid ändringar
 
 Samma som sajtens: svenska, du-tilltal, priser som "från cirka X kr" eller
