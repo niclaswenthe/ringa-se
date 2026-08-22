@@ -383,3 +383,25 @@
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
   verified: "2026-08"
 
+# --- wifi-samtal-och-appar (tillagt 2026-08-21 efter extern granskning;
+# --- lärdom: även råd utan ursprunglig källa ska ha claims-poster) ---
+- claim: "Telenors WiFi-samtal fungerar endast i Sverige, inte utomlands"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://www.telenor.se/support/vanliga-fragor/wifi/fungerar-wifi-samtal-utomlands/"
+  verified: "2026-08"
+- claim: "Tres WiFi-samtal är avsett för användning i Sverige och fungerar inte utomlands för privatkunder"
+  file: src/pages/ordlista/index.astro
+  source: "https://community.tre.se/abonnemang-8/wi-fi-samtal-utomlands-1014"
+  verified: "2026-08"
+- claim: "Telias WiFi-samtal fungerar endast i Sverige"
+  file: src/pages/ordlista/index.astro
+  source: "https://www.telia.se/support/mobiltelefoni"
+  verified: "2026-08"
+- claim: "Hos de flesta svenska operatörer fungerar WiFi-samtal bara i Sverige (formulering som används på landsguiderna och i ordlistan)"
+  file: src/pages/lander/thailand.astro
+  source: "https://www.telenor.se/support/vanliga-fragor/wifi/fungerar-wifi-samtal-utomlands/"
+  verified: "2026-08"
+- claim: "Swish är kopplat till mobilnummer och bankkonto; Mobilt BankID är installerat på enheten och inte beroende av SIM – båda fungerar utomlands med internetuppkoppling"
+  file: src/pages/lander/usa.astro
+  source: "https://www.bankid.com/privat/skaffa-bankid"
+  verified: "2026-08"
