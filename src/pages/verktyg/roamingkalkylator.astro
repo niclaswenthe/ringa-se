@@ -229,7 +229,7 @@ const calcData = {
       } else if (country.kind === "uk") {
         showResult(
           headline,
-          "Med din svenska operatör: 0 kr hos operatörer som behåller " +
+          "Svensk operatörsroaming: 0 kr hos operatörer som behåller " +
             "EU-villkor i Storbritannien – eller " +
             kr(opLo, opHi) +
             " hos operatörer som tar betalt per dygn. Kolla vad just din " +
@@ -241,7 +241,10 @@ const calcData = {
       } else {
         showResult(
           headline,
-          "Med din svenska operatörs roaming: " + kr(opLo, opHi) + ".",
+          "Generellt kostnadsspann för svensk operatörsroaming: " +
+            kr(opLo, opHi) +
+            ". Ditt faktiska pris kan vara lägre eller redan ingå i ditt " +
+            "abonnemang – kontrollera villkoren hos din operatör.",
           "Med rese-eSIM: " + kr(esimLo, esimHi) + ".",
           basis,
           true

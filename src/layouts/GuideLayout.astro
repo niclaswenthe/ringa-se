@@ -50,14 +50,25 @@ const MONTHS = [
 const [fcYear, fcMonth] = factChecked.split("-").map(Number);
 const factCheckedText = `${MONTHS[fcMonth - 1]} ${fcYear}`;
 
+// Sajtens ursprungliga publiceringsdatum – gäller alla lanseringssidor.
+// Sidor som tillkommer senare kan skicka en egen published-prop.
+const SITE_LAUNCH_DATE = "2026-08-21";
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: h1,
   description,
   inLanguage: "sv",
+  datePublished: SITE_LAUNCH_DATE,
   dateModified: `${factChecked}-01`,
+  image: new URL("/og-bild.png", Astro.site).href,
   mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+  author: {
+    "@type": "Organization",
+    name: siteName,
+    url: Astro.site?.href,
+  },
   publisher: {
     "@type": "Organization",
     name: siteName,
