@@ -4,6 +4,7 @@
     {
       "name": "Apple",
       "models": [
+        { "model": "iPhone 17e", "esim": "ja", "note": "" },
         { "model": "iPhone 17 / 17 Pro / 17 Pro Max", "esim": "ja", "note": "" },
         { "model": "iPhone Air", "esim": "ja", "note": "Har enbart eSIM – ingen plats för fysiskt SIM-kort." },
         { "model": "iPhone 16 / 16 Plus / 16 Pro / 16 Pro Max / 16e", "esim": "ja", "note": "" },
@@ -34,7 +35,7 @@
     {
       "name": "Google",
       "models": [
-        { "model": "Pixel 10 / 10 Pro / 10 Pro XL", "esim": "ja", "note": "" },
+        { "model": "Pixel 10 / 10 Pro / 10 Pro XL / 10a", "esim": "ja", "note": "" },
         { "model": "Pixel 9 / 9 Pro / 9 Pro XL / 9a", "esim": "ja", "note": "" },
         { "model": "Pixel 8 / 8 Pro / 8a", "esim": "ja", "note": "" },
         { "model": "Pixel 7 / 7 Pro / 7a", "esim": "ja", "note": "" },
@@ -79,6 +80,7 @@
     {
       "name": "Samsung",
       "models": [
+        { "model": "Galaxy S26-serien", "esim": "ja", "note": "" },
         { "model": "Galaxy S25-serien", "esim": "ja", "note": "" },
         { "model": "Galaxy S24 / S24+ / S24 Ultra / S24 FE", "esim": "ja", "note": "" },
         { "model": "Galaxy S23 / S23+ / S23 Ultra / S23 FE", "esim": "ja", "note": "" },
@@ -96,6 +98,7 @@
     {
       "name": "Sony",
       "models": [
+        { "model": "Xperia 1 VII / 10 VII", "esim": "ja", "note": "" },
         { "model": "Xperia 1 VI / 10 VI", "esim": "ja", "note": "" },
         { "model": "Xperia 1 V / 5 V / 10 V", "esim": "ja", "note": "" },
         { "model": "Xperia 1 IV / 5 IV / 10 IV", "esim": "ja", "note": "" },
@@ -105,6 +108,7 @@
     {
       "name": "Xiaomi",
       "models": [
+        { "model": "Xiaomi 17-serien", "esim": "ja", "note": "Globala/europeiska varianter har eSIM, kinesiska varianter saknar det." },
         { "model": "Xiaomi 15-serien", "esim": "ja", "note": "" },
         { "model": "Xiaomi 14 / 14 Pro / 14 Ultra / 14T / 14T Pro", "esim": "ja", "note": "" },
         { "model": "Xiaomi 13T / 13T Pro", "esim": "ja", "note": "" },
