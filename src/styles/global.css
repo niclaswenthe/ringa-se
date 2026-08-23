@@ -369,6 +369,9 @@ blockquote,
   height: auto;
   display: block;
 }
+.hero-illustration-mobil {
+  display: none;
+}
 @media (max-width: 44rem) {
   .hero {
     grid-template-columns: 1fr;
@@ -377,9 +380,13 @@ blockquote,
   .hero h1 {
     font-size: 1.9rem;
   }
-  .hero-illustration {
+  .hero-illustration-desktop {
+    display: none;
+  }
+  .hero-illustration-mobil {
+    display: block;
     order: 2;
-    max-width: 24rem;
+    max-width: 22rem;
     margin-inline: auto;
   }
 }
