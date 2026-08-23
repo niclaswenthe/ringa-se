@@ -1,0 +1,51 @@
+---
+// Ringa.se:s logotyp (koncept 2026-08-23): korallinjen – resvägen – löper
+// under ordmärket och stiger upp till punkten i ".se", som är samma
+// destinationspunkt som i hero-bilden och sektionslinjerna. Linje och
+// punkt är integrerade delar av SVG:n, inte dekor utanpå.
+// Typsnittet är systemstacken (sajtens medvetna val); textLength låser
+// bredden så att kompositionen håller oavsett plattformens font.
+// Dekorativ – länken som omger logotypen bär det tillgängliga namnet.
+interface Props {
+  /** Höjd i px; bredden följer proportionerligt. */
+  hojd?: number;
+}
+const { hojd = 30 } = Astro.props;
+const bredd = Math.round((hojd * 156) / 44);
+---
+
+<svg
+  class="logotyp"
+  viewBox="0 0 156 44"
+  width={bredd}
+  height={hojd}
+  aria-hidden="true"
+>
+  <text
+    x="0"
+    y="31"
+    textLength="97"
+    lengthAdjust="spacingAndGlyphs"
+    font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+    font-size="32"
+    font-weight="800"
+    letter-spacing="-0.5"
+    fill="#17324D">Ringa</text>
+  <path
+    d="M2 39.5 Q34 43.5 66 40.5 Q90 38 100.5 30.5"
+    fill="none"
+    stroke="#D96B55"
+    stroke-width="2.6"
+    stroke-linecap="round"></path>
+  <circle cx="105" cy="27.5" r="4.2" fill="#D96B55"></circle>
+  <text
+    x="114"
+    y="31"
+    textLength="34"
+    lengthAdjust="spacingAndGlyphs"
+    font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+    font-size="32"
+    font-weight="800"
+    letter-spacing="-0.5"
+    fill="#0B5CAD">se</text>
+</svg>

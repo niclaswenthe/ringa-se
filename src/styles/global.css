@@ -115,13 +115,12 @@ a:hover {
   padding-block: 0.8rem;
 }
 .site-logo {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
 }
-.site-logo span {
-  color: var(--color-accent);
+.site-logo .logotyp {
+  display: block;
 }
 .site-nav ul {
   list-style: none;

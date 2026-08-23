@@ -2,6 +2,8 @@
 // Sidhuvud: horisontell meny på desktop, kompakt logotyp + menyknapp på
 // mobil (~64 px). Mobilmenyn är en <details>-utfällning – fungerar helt
 // utan JavaScript och stänger sig själv vid sidbyte.
+import Logotyp from "./Logotyp.astro";
+
 const nav = [
   { path: "/guider/ringa-utomlands/", label: "Stora guiden" },
   { path: "/verktyg/esim-kollare/", label: "eSIM-kollaren" },
@@ -16,7 +18,9 @@ const current = Astro.url.pathname;
 <a class="skip-link" href="#huvudinnehall">Hoppa till innehållet</a>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="site-logo" href="/">Ringa<span>.se</span></a>
+    <a class="site-logo" href="/" aria-label="Ringa.se – till startsidan">
+      <Logotyp hojd={32} />
+    </a>
     <nav class="site-nav" aria-label="Huvudmeny">
       <ul>
         {
