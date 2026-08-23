@@ -18,8 +18,19 @@ const target = partners[partner];
 ---
 
 <p class="affiliate-button-wrap">
-  <span class="affiliate-label">Annonslänk · {target.label}</span>
-  <a class="affiliate-button" href={target.url} rel="sponsored noopener">
+  <span class="affiliate-label" aria-hidden="true">
+    Annonslänk · {target.label}
+  </span>
+  {/* Märkningen ingår i länkens tillgängliga namn så att den hörs även
+      vid länknavigering i skärmläsare (och den visuella etiketten döljs
+      för skärmläsare så att den inte läses dubbelt). Den synliga
+      knapptexten ingår ordagrant i namnet (WCAG 2.5.3 Label in Name). */}
+  <a
+    class="affiliate-button"
+    href={target.url}
+    rel="sponsored noopener"
+    aria-label={`Annonslänk: ${text}`}
+  >
     {text}
   </a>
 </p>
