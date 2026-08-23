@@ -364,13 +364,11 @@ blockquote,
   font-size: 1.125rem;
   margin-bottom: 1.25rem;
 }
-.hero-illustration {
+.hero-bild {
   width: 100%;
   height: auto;
   display: block;
-}
-.hero-illustration-mobil {
-  display: none;
+  border-radius: 20px;
 }
 @media (max-width: 44rem) {
   .hero {
@@ -380,13 +378,9 @@ blockquote,
   .hero h1 {
     font-size: 1.9rem;
   }
-  .hero-illustration-desktop {
-    display: none;
-  }
-  .hero-illustration-mobil {
-    display: block;
+  .hero-bild {
     order: 2;
-    max-width: 22rem;
+    max-width: 26rem;
     margin-inline: auto;
   }
 }

@@ -8,4 +8,4 @@ licens och licensvillkor INNAN den publiceras. [KRAV enligt BYGGSPEC.md]
 
 | Fil | Källa | Licens | Noteringar |
 |-----|-------|--------|------------|
-| –   | –     | –      | Inga externa bilder används |
+| src/assets/hero-familj.png | Levererad av extern designanalytiker som bildförslag för Ringa.se:s startsida (2026-08-23) | Framtagen för Ringa.se:s bruk; AI-assisterat illustrationsverk utan tredjepartslicens | Stiliserad illustration (inga verkliga personer). Optimeras vid build till responsiva AVIF/WebP-varianter. |

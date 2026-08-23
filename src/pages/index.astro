@@ -2,9 +2,10 @@
 // Startsidan – omdesignad 2026-08-22 enligt designunderlaget: personlig
 // hero med två huvudhandlingar, förtroenderad, snabbval för resmål och
 // personlig avsändare. Verktygen ska dominera; guiderna är fördjupning.
+import { Picture } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroIllustration from "../components/HeroIllustration.astro";
 import { siteName, siteDescription, sitePages } from "../config/site";
+import heroBild from "../assets/hero-familj.png";
 
 const title = "Ringa.se – Ringa & surfa utomlands utan chockfaktura";
 const description =
@@ -72,7 +73,20 @@ const snabbval = [
           Oberoende guider · Faktagranskat varje månad · Inga spårningscookies
         </p>
       </div>
-      <HeroIllustration />
+      {/* Illustration levererad av designanalytikern (se docs/licenser.md).
+          Dekorativ intill hero-texten → tom alt. Hero-bilden är sidans LCP,
+          därför eager + hög prioritet. */}
+      <Picture
+        src={heroBild}
+        alt=""
+        formats={["avif"]}
+        fallbackFormat="webp"
+        widths={[480, 760, 1100]}
+        sizes="(max-width: 44rem) 92vw, 40vw"
+        loading="eager"
+        fetchpriority="high"
+        class="hero-bild"
+      />
     </section>
 
     <ul class="trust-row">
