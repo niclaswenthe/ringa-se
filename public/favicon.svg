@@ -2,6 +2,6 @@
   <!-- SIM-formen med avskuret hörn – Ringa.se:s designsignatur -->
   <path d="M12 2 H42 L62 22 V52 a10 10 0 0 1 -10 10 H12 A10 10 0 0 1 2 52 V12 A10 10 0 0 1 12 2 Z" fill="#17324D"/>
   <text x="10" y="49" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="42" font-weight="800" fill="#ffffff">R</text>
-  <path d="M36 46 Q46 38 50 27" fill="none" stroke="#D96B55" stroke-width="3.6" stroke-linecap="round"/>
-  <circle cx="51.5" cy="21" r="5.5" fill="#D96B55"/>
+  <path d="M33 48 H43 Q48.5 48 50.5 41.5" fill="none" stroke="#D96B55" stroke-width="3.6" stroke-linecap="round"/>
+  <circle cx="51.5" cy="34.5" r="5.5" fill="#D96B55"/>
 </svg>
