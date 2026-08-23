@@ -4,8 +4,20 @@
 // personlig avsändare. Verktygen ska dominera; guiderna är fördjupning.
 import { Picture } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Ikon from "../components/Ikon.astro";
+import Sektionslinje from "../components/Sektionslinje.astro";
+import PackningIllustration from "../components/PackningIllustration.astro";
 import { siteName, siteDescription, sitePages } from "../config/site";
 import heroBild from "../assets/hero-familj.png";
+
+// Ikon per fördjupningskort (samma DNA som hero-bilden).
+const kortIkon: Record<string, "glob" | "sim" | "varning" | "checklista" | "ordbok"> = {
+  "/guider/ringa-utomlands/": "glob",
+  "/guider/esim-for-nyborjare/": "sim",
+  "/guider/roaming-utanfor-eu/": "varning",
+  "/guider/basta-abonnemang-resa/": "checklista",
+  "/ordlista/": "ordbok",
+};
 
 const title = "Ringa.se – Ringa & surfa utomlands utan chockfaktura";
 const description =
@@ -63,10 +75,10 @@ const snabbval = [
         </p>
         <p class="cta-row">
           <a class="btn btn-primary" href="/verktyg/roamingkalkylator/">
-            Räkna på min resa
+            <Ikon namn="kalkylator" storlek={22} /> Räkna på min resa
           </a>
           <a class="btn btn-secondary" href="/verktyg/esim-kollare/">
-            Kontrollera min telefon
+            <Ikon namn="mobil-ok" storlek={22} /> Kontrollera min telefon
           </a>
         </p>
         <p class="hero-trust">
@@ -91,24 +103,36 @@ const snabbval = [
 
     <ul class="trust-row">
       <li>
-        <span class="trust-label">Faktagranskat</span>
-        <span class="trust-desc">Kontrolleras varje månad</span>
+        <Ikon namn="granskad" />
+        <div>
+          <span class="trust-label">Faktagranskat</span>
+          <span class="trust-desc">Kontrolleras varje månad</span>
+        </div>
       </li>
       <li>
-        <span class="trust-label">Oberoende råd</span>
-        <span class="trust-desc">Officiella källor prioriteras</span>
+        <Ikon namn="oberoende" />
+        <div>
+          <span class="trust-label">Oberoende råd</span>
+          <span class="trust-desc">Officiella källor prioriteras</span>
+        </div>
       </li>
       <li>
-        <span class="trust-label">Öppen finansiering</span>
-        <span class="trust-desc">
-          <a href="/om/sa-tjanar-vi-pengar/">Annonslänkar märks tydligt</a>
-        </span>
+        <Ikon namn="annonsmarkning" />
+        <div>
+          <span class="trust-label">Öppen finansiering</span>
+          <span class="trust-desc">
+            <a href="/om/sa-tjanar-vi-pengar/">Annonslänkar märks tydligt</a>
+          </span>
+        </div>
       </li>
       <li>
-        <span class="trust-label">Integritet</span>
-        <span class="trust-desc">
-          <a href="/om/integritet-cookies/">Inga spårningscookies</a>
-        </span>
+        <Ikon namn="integritet" />
+        <div>
+          <span class="trust-label">Integritet</span>
+          <span class="trust-desc">
+            <a href="/om/integritet-cookies/">Inga spårningscookies</a>
+          </span>
+        </div>
       </li>
     </ul>
 
@@ -143,9 +167,11 @@ const snabbval = [
       }
     </ul>
 
+    <Sektionslinje />
     <h2>Så fungerar det</h2>
     <ol class="steps">
       <li>
+        <Ikon namn="resmal" storlek={32} />
         <strong>Välj resmål</strong>
         <p>
           Berätta vart du ska och hur länge – i kalkylatorn eller via
@@ -153,6 +179,7 @@ const snabbval = [
         </p>
       </li>
       <li>
+        <Ikon namn="kalkylator" storlek={32} />
         <strong>Se vad det kostar</strong>
         <p>
           Du får ett ärligt kostnadsspann för operatörsroaming respektive
@@ -160,6 +187,7 @@ const snabbval = [
         </p>
       </li>
       <li>
+        <Ikon namn="mobil-ok" storlek={32} />
         <strong>Res med rätt lösning</strong>
         <p>
           Följ råden i landsguiden – och kolla först att telefonen stöder eSIM
@@ -167,6 +195,8 @@ const snabbval = [
         </p>
       </li>
     </ol>
+
+    <PackningIllustration />
 
     <section class="founder">
       <blockquote>
@@ -180,12 +210,14 @@ const snabbval = [
       </p>
     </section>
 
+    <Sektionslinje />
     <h2>Fördjupning: guider och ordlista</h2>
     <ul class="card-grid">
       {
         [...guider, ...ordlista].map((p) => (
           <li>
-            <a class="card" href={p.path}>
+            <a class="card card-med-ikon" href={p.path}>
+              <Ikon namn={kortIkon[p.path] ?? "glob"} storlek={26} />
               <strong>{p.title}</strong>
               <p>{p.description}</p>
             </a>

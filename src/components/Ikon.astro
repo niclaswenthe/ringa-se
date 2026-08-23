@@ -1,0 +1,130 @@
+---
+// Ringa.se:s egna funktionsikoner – gemensamt visuellt DNA enligt
+// designbeslutet 2026-08-23: marinblå rundade linjer (currentColor),
+// en liten korallfärgad detalj per ikon, SIM-inspirerad avskuren hörna
+// där det passar, läsbara i 24–32 px. Egna SVG:er, inget ikonbibliotek.
+// Ikonerna är alltid dekorativa intill en textetikett → aria-hidden.
+interface Props {
+  namn:
+    | "granskad"
+    | "oberoende"
+    | "annonsmarkning"
+    | "integritet"
+    | "kalkylator"
+    | "mobil-ok"
+    | "resmal"
+    | "glob"
+    | "sim"
+    | "checklista"
+    | "ordbok"
+    | "varning";
+  /** Sidlängd i px (kvadratisk). */
+  storlek?: number;
+}
+const { namn, storlek = 28 } = Astro.props;
+const KORALL = "#D96B55";
+---
+
+<svg
+  class="ikon"
+  width={storlek}
+  height={storlek}
+  viewBox="0 0 32 32"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  {namn === "granskad" && (
+    <>
+      <circle cx="16" cy="13" r="8.5"></circle>
+      <path d="M11.5 19.5 L9.5 28 L16 24.5 L22.5 28 L20.5 19.5"></path>
+      <path d="M12.5 13 l2.4 2.4 4.6-4.8" stroke={KORALL}></path>
+    </>
+  )}
+  {namn === "oberoende" && (
+    <>
+      <path d="M16 7 V25 M10 28 H22 M6 10 H26"></path>
+      <path d="M9 10 L5.5 17.5 M9 10 L12.5 17.5 M5.5 17.5 a3.6 3.6 0 0 0 7 0 Z"></path>
+      <path d="M23 10 L19.5 17.5 M23 10 L26.5 17.5 M19.5 17.5 a3.6 3.6 0 0 0 7 0 Z"></path>
+      <circle cx="16" cy="5.5" r="1.6" fill={KORALL} stroke="none"></circle>
+    </>
+  )}
+  {namn === "annonsmarkning" && (
+    <>
+      <path d="M6.5 13.5 V7.5 a1 1 0 0 1 1 -1 H13.5 L26 19 a1.5 1.5 0 0 1 0 2.1 L21.1 26 a1.5 1.5 0 0 1 -2.1 0 Z"></path>
+      <circle cx="11" cy="11" r="1.8" fill={KORALL} stroke="none"></circle>
+    </>
+  )}
+  {namn === "integritet" && (
+    <>
+      <path d="M16 4 L26 8 V15 Q26 24 16 28 Q6 24 6 15 V8 Z"></path>
+      <path d="M12 15.5 l3 3 5.5-5.5" stroke={KORALL}></path>
+    </>
+  )}
+  {namn === "kalkylator" && (
+    <>
+      <rect x="7.5" y="4" width="17" height="24" rx="3"></rect>
+      <rect x="11" y="8" width="10" height="4.5" rx="1"></rect>
+      <circle cx="12" cy="17.5" r="1.3" fill="currentColor" stroke="none"></circle>
+      <circle cx="16" cy="17.5" r="1.3" fill="currentColor" stroke="none"></circle>
+      <circle cx="20" cy="17.5" r="1.3" fill="currentColor" stroke="none"></circle>
+      <circle cx="12" cy="22.5" r="1.3" fill="currentColor" stroke="none"></circle>
+      <circle cx="16" cy="22.5" r="1.3" fill="currentColor" stroke="none"></circle>
+      <circle cx="20" cy="22.5" r="1.3" fill={KORALL} stroke="none"></circle>
+    </>
+  )}
+  {namn === "mobil-ok" && (
+    <>
+      <rect x="8.5" y="3.5" width="14" height="25" rx="3"></rect>
+      <path d="M13.5 6.5 H17.5"></path>
+      <circle cx="23" cy="23" r="6" fill="#ffffff"></circle>
+      <path d="M20.5 23 l1.8 1.8 3.4-3.6" stroke={KORALL}></path>
+    </>
+  )}
+  {namn === "resmal" && (
+    <>
+      <path d="M16 28 Q7.5 18.5 7.5 12.5 A8.5 8.5 0 0 1 24.5 12.5 Q24.5 18.5 16 28 Z"></path>
+      <circle cx="16" cy="12.5" r="3" fill={KORALL} stroke="none"></circle>
+    </>
+  )}
+  {namn === "glob" && (
+    <>
+      <circle cx="16" cy="16" r="11.5"></circle>
+      <ellipse cx="16" cy="16" rx="5.2" ry="11.5"></ellipse>
+      <path d="M5 16 H27"></path>
+      <circle cx="21.5" cy="9.5" r="1.8" fill={KORALL} stroke="none"></circle>
+    </>
+  )}
+  {namn === "sim" && (
+    <>
+      <path d="M10 4 H19 L26 11 V25 a3 3 0 0 1 -3 3 H10 a3 3 0 0 1 -3 -3 V7 a3 3 0 0 1 3 -3 Z"></path>
+      <rect x="11.5" y="14" width="9" height="7.5" rx="1.5" stroke={KORALL}></rect>
+    </>
+  )}
+  {namn === "checklista" && (
+    <>
+      <rect x="6.5" y="4" width="19" height="24" rx="3"></rect>
+      <path d="M14.5 11 H21.5 M14.5 16.5 H21.5 M14.5 22 H18.5"></path>
+      <path d="M9.5 11 l1.2 1.2 2-2.2" stroke={KORALL}></path>
+      <circle cx="10.5" cy="16.5" r="1.2" fill="currentColor" stroke="none"></circle>
+      <circle cx="10.5" cy="22" r="1.2" fill="currentColor" stroke="none"></circle>
+    </>
+  )}
+  {namn === "ordbok" && (
+    <>
+      <path d="M6 6.5 Q11 4.5 16 6.5 V26 Q11 24 6 26 Z"></path>
+      <path d="M16 6.5 Q21 4.5 26 6.5 V26 Q21 24 16 26 Z"></path>
+      <path d="M21.5 5.5 V11 L23.3 9.6 L25.1 11 V5.8" stroke={KORALL} stroke-width="1.8"></path>
+    </>
+  )}
+  {namn === "varning" && (
+    <>
+      <path d="M16 5 L28 26 H4 Z"></path>
+      <path d="M16 12.5 V19"></path>
+      <circle cx="16" cy="22.5" r="1.5" fill={KORALL} stroke="none"></circle>
+    </>
+  )}
+</svg>
