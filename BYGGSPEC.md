@@ -35,8 +35,8 @@ Innan godkännande pekar platshållarna på partnerns vanliga webbplats (ej spå
 
 Bygg dessa FÖRST, före innehållssidorna:
 
-1. **`<AdDisclosure />`** – banner som renderas överst i innehållsytan på varje sida som innehåller minst en affiliatelänk. Text: "Annonssamarbete: Den här sidan innehåller annonslänkar. Om du beställer via länkarna kan Ringa.se få provision från leverantören. Det påverkar aldrig priset för dig. Läs mer om hur Ringa.se finansieras." (länk till /om/sa-tjanar-vi-pengar). Får inte gå att utelämna av misstag: gör den till en del av sidmallen `GuideLayout` som kräver prop `hasAffiliateLinks: boolean` utan defaultvärde.
-2. **`<AffiliateButton />`** – knappkomponent för själva affiliatelänken. Renderar alltid ordet "Annonslänk" i liten text i direkt anslutning till knappen (MFL 9 § reklamidentifiering, IAB Sveriges rekommendation).
+1. **`<AdDisclosure />`** – annonsmärkning överst i innehållsytan på varje sida som innehåller minst en affiliatelänk. *(Omformad 2026-08-23 efter designgranskning: kompakt neutral notis med infoikon i stället för stor varningsgul banner – "Annonssamarbete: sidan innehåller märkta annonslänkar" + länk till finansieringssidan. Identifieringen bärs av tre lager: toppnotisen, "Annonslänk"-märkningen vid varje knapp och en provisionsupplysning i direkt anslutning till verktygens resultatknappar.)* Får inte gå att utelämna av misstag: en del av sidmallen `GuideLayout` som kräver prop `hasAffiliateLinks: boolean` utan defaultvärde.
+2. **`<AffiliateButton />`** – knappkomponent för själva affiliatelänken. Renderar alltid "Annonslänk · [partner]" i liten text i direkt anslutning till (ovanför) knappen (MFL 9 § reklamidentifiering, IAB Sveriges rekommendation).
 3. **Sidfot** – på alla sidor: länkar till Om Ringa.se, Så tjänar vi pengar, Integritet & cookies. Årtal genereras vid build. *(Ändrat 2026-08-21: domän-till-salu-raden är borttagen helt på ägarens beslut – trovärdigheten som konsumenttjänst prioriteras; kan återinföras i ett senare skede.)*
 
 ## Juridiska sidor [KRAV]
