@@ -64,8 +64,45 @@ const faq = [
     <p class="verdict" id="kollare-verdict"></p>
     <p id="kollare-note"></p>
   </div>
-  {/* CTA och nästa steg ligger utanför live-regionen så att skärmläsare
-      inte läser upp dem vid varje resultatuppdatering. */}
+  {/* Checklista, CTA och nästa steg ligger utanför live-regionen så att
+      skärmläsare inte läser upp dem vid varje resultatuppdatering.
+      Checklistan visas FÖRE annonsknappen med avsikt: besökaren ska kunna
+      avstå från ett köp som ändå inte hade fungerat. */}
+  <div id="kollare-checklista" hidden>
+    <section class="kop-checklista" aria-labelledby="checklista-rubrik">
+      <h2 id="checklista-rubrik">Innan du köper – fyra saker att kolla</h2>
+      <ol>
+        <li>
+          <strong>Sitter ditt svenska abonnemang på ett fysiskt SIM-kort?</strong>
+          Då är allt klart – rese-eSIM:et läggs till vid sidan av. Har du
+          däremot ditt svenska abonnemang som eSIM behöver telefonen klara
+          <strong>två aktiva eSIM samtidigt</strong>. Det gör iPhone 13 och
+          senare, iPhone SE (2022) samt Pixel 7 och senare, medan äldre
+          modeller bara kan ha ett eSIM aktivt i taget. På en äldre telefon
+          får du då välja mellan ditt svenska nummer och rese-eSIM:et.
+        </li>
+        <li>
+          <strong>Är telefonen olåst?</strong> Nästan alla telefoner som sålts
+          i Sverige de senaste åren är det, oavsett om du betalar av den
+          månadsvis. Men en äldre
+          <a href="/ordlista/#operatorslast">operatörslåst</a> telefon kan
+          vägra andra leverantörers eSIM.
+        </li>
+        <li>
+          <strong>Ingår resmålet redan i ditt abonnemang?</strong> Vissa
+          svenska abonnemang inkluderar surf även utanför EU. Då behöver du
+          inget rese-eSIM alls – kolla operatörens utlandssidor först, och
+          räkna på resan i
+          <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a>.
+        </li>
+        <li>
+          <strong>Installera hemma, inte på flygplatsen.</strong>
+          Installationen kräver internet, så gör den på hemma-wifi i lugn och
+          ro före avresan och aktivera profilen när du landat.
+        </li>
+      </ol>
+    </section>
+  </div>
   <div id="kollare-cta" hidden>
     <p class="cta-upplysning">
       Om du beställer via annonslänken kan Ringa.se få provision – det
@@ -140,6 +177,7 @@ const faq = [
 
     const searchInput = document.getElementById("model-search");
     const dataList = document.getElementById("model-list");
+    const checklistaEl = document.getElementById("kollare-checklista");
     const nextJaEl = document.getElementById("kollare-next-ja");
     const nextNejEl = document.getElementById("kollare-next-nej");
 
@@ -155,6 +193,7 @@ const faq = [
 
     function hideResult() {
       resultBox.hidden = true;
+      checklistaEl.hidden = true;
       ctaEl.hidden = true;
       nextJaEl.hidden = true;
       nextNejEl.hidden = true;
@@ -183,6 +222,7 @@ const faq = [
     // skärmläsare (WCAG 4.1.3).
     function showResult(verdictText, verdictClass, noteText, next) {
       resultBox.hidden = false;
+      checklistaEl.hidden = next !== "ja";
       ctaEl.hidden = next !== "ja";
       nextJaEl.hidden = next !== "ja";
       nextNejEl.hidden = next !== "nej";

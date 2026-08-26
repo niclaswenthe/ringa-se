@@ -261,6 +261,30 @@ a:hover {
   color: #fff;
 }
 
+/* Checklista före köp i eSIM-kollaren */
+.kop-checklista {
+  background: var(--color-sand);
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem 1.2rem;
+  margin: 1.25rem 0 0.5rem;
+}
+.kop-checklista h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-navy);
+}
+.kop-checklista ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.kop-checklista li {
+  margin: 0.55rem 0;
+  font-size: 0.95rem;
+}
+.kop-checklista strong {
+  color: var(--color-navy);
+}
+
 /* Provisionsupplysning vid verktygens resultat */
 .cta-upplysning {
   font-size: 0.85rem;

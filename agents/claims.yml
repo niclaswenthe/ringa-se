@@ -414,3 +414,16 @@
   file: src/pages/guider/ringa-utomlands.astro
   source: "https://eur-lex.europa.eu/legal-content/SV/TXT/?uri=CELEX:32018R1971"
   verified: "2026-08"
+# --- dubbla esim och operatorslasning (tillagt 2026-08-26) ---
+- claim: "Två aktiva eSIM samtidigt stöds av iPhone 13 och senare samt iPhone SE (3:e generationen, 2022); äldre eSIM-iPhones klarar ett fysiskt SIM plus ett aktivt eSIM"
+  file: src/pages/verktyg/esim-kollare.astro
+  source: "https://support.apple.com/en-us/109317"
+  verified: "2026-08"
+- claim: "Google Pixel 7 och senare stöder två aktiva eSIM via MEP (Android 13); Samsung Galaxy stöder i regel fysiskt SIM plus ett eSIM, med undantag för nyare toppmodeller"
+  file: src/pages/verktyg/esim-kollare.astro
+  source: "https://support.google.com/pixelphone/answer/9449293"
+  verified: "2026-08"
+- claim: "Operatörslåsning är ovanlig i Sverige i dag; telefoner sålda här de senaste åren är i regel olåsta, och avbetalning är ett kreditavtal som inte i sig innebär lås"
+  file: src/pages/ordlista/index.astro
+  source: "https://www.surf.nu/operatorslast/"
+  verified: "2026-08"
