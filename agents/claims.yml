@@ -405,3 +405,12 @@
   file: src/pages/lander/usa.astro
   source: "https://www.bankid.com/privat/skaffa-bankid"
   verified: "2026-08"
+# --- intra-eu-samtal (tillagt 2026-08-26) ---
+- claim: "Samtal från Sverige till ett annat EU-land omfattas inte av roam like at home utan är utlandssamtal med eget pristak"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://eur-lex.europa.eu/SV/legal-content/summary/open-internet-access-and-intra-eu-communications.html"
+  verified: "2026-08"
+- claim: "EU:s pristak för samtal inom EU (från ett medlemsland till ett annat) är 19 eurocent per minut och 6 eurocent per sms, exklusive moms, sedan 15 maj 2019 enligt förordning (EU) 2018/1971"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://eur-lex.europa.eu/legal-content/SV/TXT/?uri=CELEX:32018R1971"
+  verified: "2026-08"
