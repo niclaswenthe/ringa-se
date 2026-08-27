@@ -264,7 +264,7 @@
   verified: "2026-08"
 - claim: "Nödnumret i Storbritannien är 999 och EU-numret 112 fungerar parallellt mot samma larmcentral"
   file: src/pages/lander/storbritannien.astro
-  source: "https://en.wikipedia.org/wiki/999_(emergency_telephone_number)"
+  source: "https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-call-999/"
   verified: "2026-08"
 - claim: "Airalo säljer eSIM för Storbritannien med datapaket från helgpaket till månadspaket"
   file: src/pages/lander/storbritannien.astro
@@ -299,7 +299,7 @@
   verified: "2026-08"
 - claim: "Thailands nödnummer: 191 polis, 1669 ambulans, 1155 turistpolis (engelsktalande); gratis från alla telefoner; 112 fungerar inte"
   file: src/pages/lander/thailand.astro
-  source: "https://www.expatica.com/th/health/healthcare/thailand-emergency-number-2172893/"
+  source: "https://www.touristpolice.go.th/"
   verified: "2026-08"
 - claim: "AIS och True är stora mobiloperatörer i Thailand med 4G/5G-täckning i städer och turistområden, säljer turist-SIM/eSIM"
   file: src/pages/lander/thailand.astro
@@ -326,7 +326,7 @@
   verified: "2026-08"
 - claim: "Nödnumret i Turkiet är 112 (samlat nödnummer för alla larmtjänster)"
   file: src/pages/lander/turkiet.astro
-  source: "https://en.wikipedia.org/wiki/112_(emergency_telephone_number)"
+  source: "https://112.gov.tr/"
   verified: "2026-08"
 - claim: "Turkiet kräver IMEI-registrering (med hög avgift) först när en turkisk SIM/eSIM använts i en utländsk telefon i mer än 120 dagar; turister och svensk roaming berörs inte"
   file: src/pages/lander/turkiet.astro
