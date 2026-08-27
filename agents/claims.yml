@@ -37,9 +37,17 @@
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.comviq.se/hjalp/mobiltelefoni/kom-igang-med-esim"
   verified: "2026-08"
-- claim: "Telia och Telenor tar särskild betalt för roaming i Storbritannien (dagavgift)"
+- claim: "Telenor låter kunder surfa på ordinarie surfpott i Storbritannien utan extra kostnad, medan samtal och SMS kan debiteras separat"
   file: src/pages/guider/basta-abonnemang-resa.astro
-  source: "https://feber.se/mobil/telia-och-telenor-infor-roamingavgifter-i-storbritannien/429384/"
+  source: "https://www.telenor.se/roaming/storbritannien/"
+  verified: "2026-08"
+- claim: "Telia behandlar Storbritannien som utanför EU-villkoren med dagspris eller surfpaket"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.telia.se/roaming/storbritannien"
+  verified: "2026-08"
+- claim: "Utlandsvillkor kan skilja sig mellan olika abonnemangsformer hos samma operatör (nyare vs aldre abonnemang, kontantkort vs abonnemang)"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.telenor.se/roaming/storbritannien/"
   verified: "2026-08"
 
 # --- esim-devices ---
