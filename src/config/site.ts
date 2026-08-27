@@ -43,7 +43,7 @@ export const sitePages: PageInfo[] = [
     path: "/guider/basta-abonnemang-resa/",
     title: "Bästa svenska abonnemanget för dig som reser",
     description:
-      "Jämförelse av svenska mobiloperatörer ur resenärens perspektiv: EU-villkor, Storbritannien och eSIM-stöd.",
+      "Vilka svenska operatörer har bäst utlandsvillkor? Genomgång av EU-villkor, Storbritannien efter Brexit och eSIM-stöd.",
     section: "guider",
   },
   {
