@@ -31,8 +31,10 @@ npm run preview    # förhandsgranska byggd sajt
 
 ## Kvarvarande TODO före lansering
 
-1. Riktiga spårningslänkar i `src/config/partners.ts` (efter
-   Adtraction/Impact-godkännande).
+1. Spårningslänkar för de svenska operatörerna i `src/config/partners.ts`
+   (efter Adtraction-godkännande). Airalo är klart sedan 2026-08-28, med
+   djuplänkar per land via `deepLinks` och `mal`-propen på
+   `<AffiliateButton />`.
 
 Faktagranskningen körs månatligen lokalt på ägarens server via Claude Code
 (prenumeration, 0 kr API-kostnad); `.github/workflows/fact-check.yml` är

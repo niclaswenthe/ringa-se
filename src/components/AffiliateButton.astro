@@ -4,17 +4,20 @@
 // rekommendation) och rel="sponsored noopener" (Googles krav för betalda
 // länkar). Märkningen ligger ovanför knappen enligt designbeslut
 // 2026-08-23. Får inte ändras av agentpipelinen.
-import { partners, type PartnerKey } from "../config/partners";
+import { partners, affiliateUrl, type PartnerKey } from "../config/partners";
 
 interface Props {
   /** Nyckel i partners.ts – enda tillåtna sättet att peka ut målet. */
   partner: PartnerKey;
   /** Knapptext, t.ex. "Se Airalos eSIM för Thailand". */
   text: string;
+  /** Djuplänksnyckel, t.ex. "thailand". Utan den används standardlänken. */
+  mal?: string;
 }
 
-const { partner, text } = Astro.props;
+const { partner, text, mal } = Astro.props;
 const target = partners[partner];
+const href = affiliateUrl(partner, mal);
 ---
 
 <p class="affiliate-button-wrap">
@@ -27,7 +30,7 @@ const target = partners[partner];
       knapptexten ingår ordagrant i namnet (WCAG 2.5.3 Label in Name). */}
   <a
     class="affiliate-button"
-    href={target.url}
+    href={href}
     rel="sponsored noopener"
     aria-label={`Annonslänk: ${text}`}
   >
