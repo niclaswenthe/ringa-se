@@ -482,3 +482,29 @@
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://vimla.se/utlandspriser/"
   verified: "2026-09"
+# --- EU-tak per operatör (tabell, tillagd 2026-09-02) ---
+# HÖGPRIORITERAD: hela tabellen ska verifieras varje månad mot operatörernas egna sidor.
+- claim: "Telenors tak för surf inom EU/EES är omkring 100 GB per månad för abonnemang med obegränsad surf"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.telenor.se/roaming/"
+  verified: "2026-09"
+- claim: "Telias tak för surf inom EU/EES är 50 GB per månad"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.telia.se/roaming"
+  verified: "2026-09"
+- claim: "Tele2:s tak för surf inom EU/EES är 30-60 GB per månad beroende på abonnemang"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.tele2.se/utland"
+  verified: "2026-09"
+- claim: "Vimlas tak för surf inom EU/EES och Storbritannien är 33 GB per månad"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://vimla.se/utlandspriser/"
+  verified: "2026-09"
+- claim: "Hallon, Comviq och Tre publicerar inte sina EU-tak utan hänvisar kunden till inloggat läge respektive abonnemangets allmänna villkor"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.hallon.se/support/utomlands/eu-roaming"
+  verified: "2026-09"
+- claim: "Hallons överförbrukningspris när EU-gränsen passeras är cirka 0,0143 kr per megabyte"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.hallon.se/support/utomlands/eu-roaming"
+  verified: "2026-09"

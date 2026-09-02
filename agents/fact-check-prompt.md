@@ -25,6 +25,15 @@ räcker en rimlighetsbedömning.
    prioriteringen ovan:
    - Operatörernas roamingvillkor (särskilt Storbritannien- och USA-villkor –
      sajtens mest föränderliga fakta).
+   - **Tabellen "Publicerade tak för surf inom EU/EES"** i
+     `basta-abonnemang-resa.astro` – kontrollera varje rad mot operatörens
+     egen sida varje körning. Taken ändras utan förvarning, och tabellen är
+     sajtens mest exakta uppgifter. Ändras ett tak: uppdatera raden, posten i
+     `claims.yml` och `factChecked`-datumet.
+   - **Inkluderade roamingländer** hos Telenor, Tre (3Världen) och Tele2.
+     Listorna ändras, och operatörerna anger själva att de kan ändras. De
+     ligger till grund för flera avsnitt i abonnemangsguiden och för
+     landsguidernas råd om att resmålet kan ingå redan.
    - eSIM-stödet i `src/data/esim-devices.json` (stickprov: nya modeller som
      lanserats sedan senaste körningen läggs till, felaktiga poster rättas).
    - EU:s roamingregler och beloppsgränser.
@@ -73,6 +82,21 @@ trasig, men varje körning ska försöka ersätta sekundärkällor i både
 `claims.yml` och sidornas källänkar med officiella källor när sådana finns.
 En sådan källuppgradering är en giltig anledning till PR även när själva
 sakuppgiften är oförändrad.
+
+## Tekniska fallgropar vid källkontroll
+
+Flera operatörer blockerar automatiserade anrop, och en sida som ser död ut
+behöver inte vara det. Innan du rapporterar en källa som trasig:
+
+1. Prova med webbläsarheaders:
+   `curl -s -L -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36" -H "Accept-Language: sv-SE,sv;q=0.9" URL`
+2. Är sidan JavaScript-renderad (tomt innehåll men status 200), rendera den:
+   `chromium --headless --disable-gpu --virtual-time-budget=20000 --screenshot=/tmp/sida.png URL`
+3. **Vimla** har JS-baserat botskydd och kräver metod 2. **Tre** listar
+   Storbritannien som England, Skottland, Wales och Nordirland – sök inte
+   bara på "Storbritannien".
+
+Rapportera en källa som död först när alla tre stegen misslyckats.
 
 ## Stilregler vid ändringar
 
