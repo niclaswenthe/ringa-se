@@ -47,7 +47,14 @@ export const partners = {
   },
   // TODO: Ersätt url med riktiga spårningslänkar när Adtraction godkänt
   // programmen, och sätt tracking: true.
-  hallon: { url: "https://www.hallon.se", label: "Hallon", network: "Adtraction", tracking: false },
+  // Hallon låser destinationen till sin egen kampanjsida (/affiliates) –
+  // djuplänkning via &url= ignoreras. Sidan är en vanlig abonnemangssida.
+  hallon: {
+    url: "https://go.hallon.se/t/t?a=1083250335&as=2105825431&t=2&tk=1",
+    label: "Hallon",
+    network: "Adtraction",
+    tracking: true,
+  },
   vimla: {
     url: "https://on.vimla.se/t/t?a=1081333617&as=2105825431&t=2&tk=1",
     label: "Vimla",
