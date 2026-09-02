@@ -27,7 +27,7 @@
   verified: "2026-08"
 - claim: "Comviq ingår fri EU/EES-roaming i de flesta abonnemang"
   file: src/pages/guider/basta-abonnemang-resa.astro
-  source: "https://www.comviq.se/hjalp/utland/anvanda-mobilen-till-och-fran-utlandet"
+  source: "https://www.comviq.se/hjalp/utland/mobilen-i-utlandet"
   verified: "2026-08"
 - claim: "Comviq räknar Storbritannien till övriga världen; surf där sker via Resesurf-dagpaket (från cirka 80 kr per dag) eller surfpaket"
   file: src/pages/guider/basta-abonnemang-resa.astro
@@ -246,7 +246,7 @@
   file: src/pages/lander/storbritannien.astro
   source: "https://www.tre.se/handla/tjanster/3varlden"
   verified: "2026-08"
-- claim: "Telenor låter de flesta abonnemang surfa på ordinarie surfpott i Storbritannien, men samtal och SMS kostar extra"
+- claim: "Storbritannien är ett av Telenors inkluderade roamingländer: mobilabonnemang surfar på ordinarie pott, samtal cirka 9 kr/min, skickade sms 4 kr, mottagna sms gratis, kontantkort omfattas inte"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.telenor.se/roaming/storbritannien/"
   verified: "2026-08"
@@ -393,21 +393,13 @@
 
 # --- wifi-samtal-och-appar (tillagt 2026-08-21 efter extern granskning;
 # --- lärdom: även råd utan ursprunglig källa ska ha claims-poster) ---
-- claim: "Telenors WiFi-samtal fungerar endast i Sverige, inte utomlands"
-  file: src/pages/guider/ringa-utomlands.astro
-  source: "https://www.telenor.se/support/vanliga-fragor/wifi/fungerar-wifi-samtal-utomlands/"
-  verified: "2026-08"
 - claim: "Tres WiFi-samtal är avsett för användning i Sverige och fungerar inte utomlands för privatkunder"
   file: src/pages/ordlista/index.astro
   source: "https://community.tre.se/abonnemang-8/wi-fi-samtal-utomlands-1014"
   verified: "2026-08"
-- claim: "Telias WiFi-samtal fungerar endast i Sverige"
-  file: src/pages/ordlista/index.astro
-  source: "https://www.telia.se/support/mobiltelefoni"
-  verified: "2026-08"
-- claim: "Hos de flesta svenska operatörer fungerar WiFi-samtal bara i Sverige (formulering som används på landsguiderna och i ordlistan)"
+- claim: "WiFi-samtal är hos flera svenska operatörer avsett för användning i Sverige; formuleringen på landsguiderna och i ordlistan uppmanar därför att kontrollera med sin egen operatör"
   file: src/pages/lander/thailand.astro
-  source: "https://www.telenor.se/support/vanliga-fragor/wifi/fungerar-wifi-samtal-utomlands/"
+  source: "https://community.tre.se/abonnemang-8/wi-fi-samtal-utomlands-1014"
   verified: "2026-08"
 - claim: "Swish är kopplat till mobilnummer och bankkonto; Mobilt BankID är installerat på enheten och inte beroende av SIM – båda fungerar utomlands med internetuppkoppling"
   file: src/pages/lander/usa.astro
@@ -464,4 +456,29 @@
 - claim: "Tele2:s fria samtalsminuter till Storbritannien gäller samtal från Sverige, inte samtal under vistelse i landet"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.tele2.se/utland"
+  verified: "2026-09"
+- claim: "Comviq tar omkring 21 kr per megabyte för surf i Storbritannien utan surfpaket, motsvarande över 20 000 kr per gigabyte"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.comviq.se/utland/storbritannien"
+  verified: "2026-09"
+# --- operatörsgranskning september 2026 ---
+- claim: "Telenor har inkluderad roaming i EU/EES plus 15 länder: Andorra, Gibraltar, Malaysia, Moldavien, Montenegro, Myanmar, San Marino, Schweiz, Serbien, Storbritannien, Thailand, Turkiet, Ukraina, USA och Vatikanstaten"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.telenor.se/roaming/"
+  verified: "2026-09"
+- claim: "Telenors inkluderade roaming gäller mobilabonnemang, med tak kring 100 GB/mån vid obegränsad surf; kontantkort omfattas inte utan betalar dygnspris"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.telenor.se/roaming/thailand/"
+  verified: "2026-09"
+- claim: "Telia saknar inkluderade länder utanför EU/EES men säljer resepaket där samtal, sms och surf ingår för en vecka"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.telia.se/roaming/usa"
+  verified: "2026-09"
+- claim: "Vimlas fair use-tak för EU/EES och Storbritannien är 33 GB per månad, och Utlandstjänster måste aktiveras i appen före resa"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://vimla.se/utlandspriser/"
+  verified: "2026-09"
+- claim: "Utanför EU/EES och Storbritannien har Vimla landsspecifika roamingpriser, inte förköpta surfpaket"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://vimla.se/utlandspriser/"
   verified: "2026-09"
