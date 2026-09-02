@@ -8,7 +8,7 @@
 - claim: "Hallon tillämpar samma villkor i Storbritannien som inom EU/EES – samtal, SMS och surf dras ur den vanliga potten upp till EU-gränsen"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.hallon.se/eu"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Hallon erbjuder eSIM utan extra kostnad, beställs via Mina sidor"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.hallon.se/esim"
@@ -16,7 +16,7 @@
 - claim: "Vimla ingår fri roaming i EU/EES och Storbritannien, med ett månadstak för utlandssurf (fair use)"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://vimla.se/utlandspriser/"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Vimla erbjuder eSIM utan extra kostnad"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://vimla.se/esim/"
@@ -28,11 +28,11 @@
 - claim: "Comviq ingår fri EU/EES-roaming i de flesta abonnemang"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.comviq.se/hjalp/utland/anvanda-mobilen-till-och-fran-utlandet"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Comviq räknar Storbritannien till övriga världen; surf där sker via Resesurf-dagpaket (från cirka 80 kr per dag) eller surfpaket"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.comviq.se/utland/storbritannien"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Comviq erbjuder eSIM som beställs och aktiveras i appen eller på Mitt konto"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.comviq.se/hjalp/mobiltelefoni/kom-igang-med-esim"
@@ -40,11 +40,11 @@
 - claim: "Telenor låter kunder surfa på ordinarie surfpott i Storbritannien utan extra kostnad, medan samtal och SMS kan debiteras separat"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.telenor.se/roaming/storbritannien/"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Telia behandlar Storbritannien som utanför EU-villkoren med dagspris eller surfpaket"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.telia.se/roaming/storbritannien"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Utlandsvillkor kan skilja sig mellan olika abonnemangsformer hos samma operatör (nyare vs aldre abonnemang, kontantkort vs abonnemang)"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.telenor.se/roaming/storbritannien/"
@@ -133,7 +133,7 @@
 - claim: "Rese-eSIM med mindre datapaket kostar från cirka 50–100 kr; veckopaket ofta 100–300 kr"
   file: src/pages/guider/esim-for-nyborjare.astro
   source: "https://www.airalo.com/sv"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Att ta emot SMS utomlands är gratis hos svenska operatörer"
   file: src/pages/guider/esim-for-nyborjare.astro
   source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
@@ -153,7 +153,7 @@
 - claim: "Roam Like at Home innebär att samtal, SMS och surf inom EU/EES dras ur den vanliga potten utan extra kostnad, med fair use-begränsningar (termer: Roam Like at Home, Fair use, Roaming)"
   file: src/pages/ordlista/index.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+  verified: "2026-09"
 
 # --- ringa-utomlands ---
 # Granskningsbara faktapåståenden i pelarguiden.
@@ -233,31 +233,31 @@
 - claim: "Storbritannien står sedan Brexit utanför EU:s roamingregler; svenska operatörer väljer själva sina UK-villkor"
   file: src/pages/lander/storbritannien.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Hallon räknar Storbritannien som EU/EES – ring, sms:a och surfa som hemma"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.hallon.se/support/utomlands/eu-roaming"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Vimla har fri roaming i EU/EES och Storbritannien med en månadsgräns för surf (f.n. 33 GB/mån)"
   file: src/pages/lander/storbritannien.astro
   source: "https://vimla.se/utlandspriser/"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Storbritannien ingår i Tres 3Världen – surf som hemma med abonnemang som har tjänsten"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.tre.se/handla/tjanster/3varlden"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Telenor låter de flesta abonnemang surfa på ordinarie surfpott i Storbritannien, men samtal och SMS kostar extra"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.telenor.se/roaming/storbritannien/"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Telia behandlar Storbritannien som land utanför EU-villkoren – dagspris från cirka 130 kr för 0,5 GB eller surfpaket"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.telia.se/roaming/storbritannien"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Tele2 räknar Storbritannien som land utanför EU/EES sedan 2022 – utlandspriser eller paket gäller"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.tele2.se/tips/vad-kostar-egentligen-samtal-och-surf-i-olika-lander"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Storbritanniens landsnummer är +44"
   file: src/pages/lander/storbritannien.astro
   source: "https://en.wikipedia.org/wiki/Telephone_numbers_in_the_United_Kingdom"
@@ -311,15 +311,15 @@
 - claim: "Turkiet ligger utanför EU/EES och omfattas inte av EU:s roamingregler (roam like at home)"
   file: src/pages/lander/turkiet.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Hos Telia kostar surf i Turkiet från cirka 130 kr per dag för 0,5 GB, med större surfpaket som alternativ"
   file: src/pages/lander/turkiet.astro
   source: "https://www.telia.se/roaming/turkiet"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Turkiet ingår i Tres tjänst 3Världen – kunder med abonnemang som har tjänsten surfar som hemma utan extra kostnad"
   file: src/pages/lander/turkiet.astro
   source: "https://www.tre.se/handla/tjanster/3varlden"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Turkiets landsnummer är +90"
   file: src/pages/lander/turkiet.astro
   source: "https://en.wikipedia.org/wiki/Telephone_numbers_in_Turkey"
@@ -335,7 +335,7 @@
 - claim: "Airalo säljer eSIM för Turkiet med datapaket i flera storlekar, små veckopaket kostar under hundralappen"
   file: src/pages/lander/turkiet.astro
   source: "https://www.airalo.com/turkey-esim"
-  verified: "2026-08"
+  verified: "2026-09"
 
 # --- usa ---
 # Granskningsbara påståenden – /lander/usa/
@@ -346,15 +346,15 @@
 - claim: "Telia tar betalt per MB i USA (4 kr/MB) upp till ett dagstak på cirka 130 kr för 0,5 GB; surfpaket finns från 5 GB och uppåt"
   file: src/pages/lander/usa.astro
   source: "https://www.telia.se/roaming/usa"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Tele2 tillämpar löpande utlandspriser i USA med surf debiterad per MB, om abonnemanget inte har surf utanför EU inkluderad"
   file: src/pages/lander/usa.astro
   source: "https://www.tele2.se/tips/vad-kostar-egentligen-samtal-och-surf-i-olika-lander"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "USA ingår i Tres tjänst 3Världen – abonnemang med tjänsten ringer och surfar som hemma vid tillfällig vistelse (upp till 30 dagar)"
   file: src/pages/lander/usa.astro
   source: "https://www.tre.se/handla/tjanster/3varlden"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "USA:s stora operatörer (AT&T, T-Mobile, Verizon) har stängt sina 2G- och 3G-nät; samtal kräver VoLTE"
   file: src/pages/lander/usa.astro
   source: "https://www.fcc.gov/consumers/guides/plan-ahead-phase-out-3g-cellular-networks-and-service"
@@ -362,7 +362,7 @@
 - claim: "Airalo har amerikanska eSIM från cirka 4 USD (ca 50 kr)"
   file: src/pages/lander/usa.astro
   source: "https://www.airalo.com/united-states-esim"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "USA:s landsnummer är +1"
   file: src/pages/lander/usa.astro
   source: "https://www.itu.int/oth/T02020000DE/en"
@@ -376,16 +376,16 @@
 # Granskningsbara påståenden i verktygssidorna.
 - claim: "Svenska operatörers dygnspaket utanför EU kostar oftast cirka 40–130 kr per dygn"
   file: src/data/roaming-costs.json
-  source: "https://www.telia.se/privat/support/utomlands"
-  verified: "2026-08"
+  source: "https://www.telia.se/roaming/usa"
+  verified: "2026-09"
 - claim: "Kalkylatorns spann för operatörsroaming (100–1200 kr/vecka beroende på surfbehov) täcker de stora svenska operatörernas dygnspaketpriser"
   file: src/data/roaming-costs.json
   source: "https://www.tele2.se/utomlands"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Kalkylatorns spann för turist-eSIM (40–500 kr/vecka beroende på surfbehov) täcker typiska priser hos stora eSIM-leverantörer"
   file: src/data/roaming-costs.json
   source: "https://www.airalo.com/sv"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "En beloppsspärr på cirka 600–700 kr för dataroaming är standard hos svenska operatörer (motsvarar 50 € enligt EU-regler)"
   file: src/data/roaming-costs.json
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
