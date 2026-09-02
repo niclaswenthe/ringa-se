@@ -254,9 +254,9 @@
   file: src/pages/lander/storbritannien.astro
   source: "https://www.telia.se/roaming/storbritannien"
   verified: "2026-08"
-- claim: "Tele2 räknar Storbritannien som land utanför EU/EES sedan 2022 – utlandspriser eller paket gäller"
+- claim: "Storbritannien ingår i flera av Tele2:s större abonnemang (40-60 GB surf); mindre abonnemang använder utlandspriser eller regionspaket"
   file: src/pages/lander/storbritannien.astro
-  source: "https://www.tele2.se/tips/vad-kostar-egentligen-samtal-och-surf-i-olika-lander"
+  source: "https://www.tele2.se/utland"
   verified: "2026-08"
 - claim: "Storbritanniens landsnummer är +44"
   file: src/pages/lander/storbritannien.astro
@@ -380,7 +380,7 @@
   verified: "2026-08"
 - claim: "Kalkylatorns spann för operatörsroaming (100–1200 kr/vecka beroende på surfbehov) täcker de stora svenska operatörernas dygnspaketpriser"
   file: src/data/roaming-costs.json
-  source: "https://www.tele2.se/utomlands"
+  source: "https://www.tele2.se/utland"
   verified: "2026-08"
 - claim: "Kalkylatorns spann för turist-eSIM (40–500 kr/vecka beroende på surfbehov) täcker typiska priser hos stora eSIM-leverantörer"
   file: src/data/roaming-costs.json
@@ -454,6 +454,14 @@
   source: "https://www.tele2.se/utland"
   verified: "2026-09"
 - claim: "Tele2 har kostnadskontroll för datatrafik utomlands påslagen från start på samtliga abonnemang, och erbjuder regionsbaserade surfpaket utanför EU"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.tele2.se/utland"
+  verified: "2026-09"
+- claim: "3Världen begränsas till abonnemangets datamängd, och för obegränsade abonnemang gäller ett tak på 60 GB"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.tre.se/handla/tjanster/3varlden"
+  verified: "2026-09"
+- claim: "Tele2:s fria samtalsminuter till Storbritannien gäller samtal från Sverige, inte samtal under vistelse i landet"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.tele2.se/utland"
   verified: "2026-09"
