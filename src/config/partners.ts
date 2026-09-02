@@ -48,7 +48,17 @@ export const partners = {
   // TODO: Ersätt url med riktiga spårningslänkar när Adtraction godkänt
   // programmen, och sätt tracking: true.
   hallon: { url: "https://www.hallon.se", label: "Hallon", network: "Adtraction", tracking: false },
-  vimla: { url: "https://vimla.se", label: "Vimla", network: "Adtraction", tracking: false },
+  vimla: {
+    url: "https://on.vimla.se/t/t?a=1081333617&as=2105825431&t=2&tk=1",
+    label: "Vimla",
+    network: "Adtraction",
+    tracking: true,
+    deepLinks: {
+      // Vimla pekar själva ut /bestall som sidan med aktuella priser.
+      bestall:
+        "https://on.vimla.se/t/t?a=1081333617&as=2105825431&t=2&tk=1&url=https%3A%2F%2Fvimla.se%2Fbestall%2F",
+    },
+  },
   comviq: { url: "https://www.comviq.se", label: "Comviq", network: "Adtraction", tracking: false },
   saily: { url: "https://saily.com/sv", label: "Saily", network: "TBD", tracking: false },
 } satisfies Record<string, Partner>;
