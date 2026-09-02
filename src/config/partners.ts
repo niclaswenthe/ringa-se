@@ -34,6 +34,17 @@ export const partners = {
       storbritannien: "https://airalo.pxf.io/OYL2bN",
     },
   },
+  tre: {
+    url: "https://at.tre.se/t/t?a=1243479444&as=2105825431&t=2&tk=1",
+    label: "Tre",
+    network: "Adtraction",
+    tracking: true,
+    deepLinks: {
+      // Adtraction djuplänkar via &url=<urlencodad destination>.
+      "3varlden":
+        "https://at.tre.se/t/t?a=1243479444&as=2105825431&t=2&tk=1&url=https%3A%2F%2Fwww.tre.se%2Fhandla%2Ftjanster%2F3varlden",
+    },
+  },
   // TODO: Ersätt url med riktiga spårningslänkar när Adtraction godkänt
   // programmen, och sätt tracking: true.
   hallon: { url: "https://www.hallon.se", label: "Hallon", network: "Adtraction", tracking: false },

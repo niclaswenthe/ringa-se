@@ -435,3 +435,12 @@
   file: src/pages/ordlista/index.astro
   source: "https://www.surf.nu/operatorslast/"
   verified: "2026-08"
+# --- tre 3varlden (tillagt 2026-09-02) ---
+- claim: "Tres tjänst 3Världen ingår utan extra kostnad i nya mobilabonnemang och ger svenska priser för samtal, sms och surf i ett hundratal länder"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.tre.se/handla/tjanster/3varlden"
+  verified: "2026-09"
+- claim: "3Världen gäller vid tillfällig vistelse i upp till 30 dagar; därefter gäller vanliga utlandspriser och perioden nollställs först efter användning i Sverige"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.tre.se/handla/tjanster/3varlden"
+  verified: "2026-09"
