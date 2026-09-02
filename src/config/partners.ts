@@ -45,6 +45,14 @@ export const partners = {
         "https://at.tre.se/t/t?a=1243479444&as=2105825431&t=2&tk=1&url=https%3A%2F%2Fwww.tre.se%2Fhandla%2Ftjanster%2F3varlden",
     },
   },
+  // Tele2 skriver om URL:en vid djuplänkning och tappar då at_gd-parametern
+  // – därför enbart baslänk, som behåller spårningen hela vägen.
+  tele2: {
+    url: "https://at.to.tele2.se/t/t?a=1864648074&as=2105825431&t=2&tk=1",
+    label: "Tele2",
+    network: "Adtraction",
+    tracking: true,
+  },
   // TODO: Ersätt url med riktiga spårningslänkar när Adtraction godkänt
   // programmen, och sätt tracking: true.
   // Hallon låser destinationen till sin egen kampanjsida (/affiliates) –

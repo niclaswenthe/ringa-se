@@ -444,3 +444,16 @@
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.tre.se/handla/tjanster/3varlden"
   verified: "2026-09"
+# --- tele2 utlandsvillkor (tillagt 2026-09-02) ---
+- claim: "Tele2:s abonnemang Obegränsad Max inkluderar surf i över 140 länder"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.tele2.se/utland"
+  verified: "2026-09"
+- claim: "Storbritannien ingår i flera av Tele2:s större abonnemang med surf och fria samtalsminuter; mindre abonnemang använder utlandspriser eller surfpaket"
+  file: src/pages/lander/storbritannien.astro
+  source: "https://www.tele2.se/utland"
+  verified: "2026-09"
+- claim: "Tele2 har kostnadskontroll för datatrafik utomlands påslagen från start på samtliga abonnemang, och erbjuder regionsbaserade surfpaket utanför EU"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.tele2.se/utland"
+  verified: "2026-09"
