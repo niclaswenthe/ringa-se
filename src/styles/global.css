@@ -571,6 +571,12 @@ blockquote,
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--color-accent-dark);
+  /* Understrykningen sitter på textspannet, inte på länken. En förälders
+     text-decoration ritas över alla barn och kan inte tas bort av dem –
+     annars stryks även pilen under. */
+  text-decoration: none;
+}
+.hero-lank .lank-text {
   text-decoration-line: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
@@ -582,7 +588,6 @@ blockquote,
   flex-shrink: 0;
 }
 .hero-lank .pil {
-  text-decoration: none;
   transition: transform 0.15s ease;
 }
 .hero-lank:hover .pil,
