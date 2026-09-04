@@ -555,37 +555,44 @@ blockquote,
 
 .cta-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  margin-bottom: 1.1rem;
 }
-.btn {
+/* Understruken länk med pil – förflyttning, inte funktion. Padding ger
+   träffyta ≥ 44 px trots att texten är radhög (WCAG 2.5.8). */
+.hero-lank {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  min-height: 44px;
+  padding-block: 0.4rem;
   font-weight: 600;
-  text-decoration: none;
-  padding: 0.7rem 1.4rem;
-  border-radius: 10px;
+  font-size: 1.05rem;
+  color: var(--color-accent-dark);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
-.btn .ikon {
+.hero-lank:hover {
+  color: var(--color-accent);
+}
+.hero-lank .ikon {
   flex-shrink: 0;
 }
-.btn-primary {
-  background: var(--color-accent);
-  color: #fff;
+.hero-lank .pil {
+  text-decoration: none;
+  transition: transform 0.15s ease;
 }
-.btn-primary:hover {
-  background: var(--color-accent-dark);
-  color: #fff;
+.hero-lank:hover .pil,
+.hero-lank:focus-visible .pil {
+  transform: translateX(3px);
 }
-.btn-secondary {
-  background: #fff;
-  color: var(--color-accent-dark);
-  border: 2px solid var(--color-accent);
-}
-.btn-secondary:hover {
-  background: var(--color-lightblue);
+@media (prefers-reduced-motion: reduce) {
+  .hero-lank .pil {
+    transition: none;
+  }
 }
 .hero-trust {
   font-size: 0.875rem;

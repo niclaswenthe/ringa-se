@@ -21,7 +21,7 @@ const kortIkon: Record<string, "glob" | "sim" | "varning" | "checklista" | "ordb
 
 const title = "Ringa.se – Ringa & surfa utomlands utan chockfaktura";
 const description =
-  "Se vad roaming kan kosta på ditt resmål, kontrollera om telefonen stöder eSIM och få tydliga råd inför resan – på begriplig svenska.";
+  "Se vad roaming kan kosta på ditt resmål, ta reda på om telefonen stöder eSIM och få tydliga råd inför resan – på begriplig svenska.";
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -70,15 +70,20 @@ const snabbval = [
       <div>
         <h1>Res med mobilen – utan dyra överraskningar</h1>
         <p class="hero-ingress">
-          Se vad roaming kan kosta på ditt resmål, kontrollera om telefonen
+          Se vad roaming kan kosta på ditt resmål, ta reda på om telefonen
           stöder eSIM och få tydliga råd inför resan.
         </p>
+        {/* Handlingslänkar, inte knappar: båda navigerar bara vidare i sajten.
+            En knapp signalerar "något körs", vilket oroade besökare inför
+            eSIM-kollaren. Understruken länk + pil signalerar förflyttning. */}
         <p class="cta-row">
-          <a class="btn btn-primary" href="/verktyg/roamingkalkylator/">
-            <Ikon namn="kalkylator" storlek={22} /> Räkna på min resa
+          <a class="hero-lank" href="/verktyg/roamingkalkylator/">
+            <Ikon namn="kalkylator" storlek={20} /> Räkna på min resa
+            <span class="pil" aria-hidden="true">→</span>
           </a>
-          <a class="btn btn-secondary" href="/verktyg/esim-kollare/">
-            <Ikon namn="mobil-ok" storlek={22} /> Funkar eSIM i min telefon?
+          <a class="hero-lank" href="/verktyg/esim-kollare/">
+            <Ikon namn="mobil-ok" storlek={20} /> Funkar eSIM i min telefon?
+            <span class="pil" aria-hidden="true">→</span>
           </a>
         </p>
         <p class="hero-trust">
