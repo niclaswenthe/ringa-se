@@ -53,8 +53,8 @@ export const partners = {
     network: "Adtraction",
     tracking: true,
   },
-  // TODO: Ersätt url med riktiga spårningslänkar när Adtraction godkänt
-  // programmen, och sätt tracking: true.
+  // TODO: Ersätt url med riktig spårningslänk när Adtraction godkänt Telia,
+  // och sätt tracking: true.
   // Hallon låser destinationen till sin egen kampanjsida (/affiliates) –
   // djuplänkning via &url= ignoreras. Sidan är en vanlig abonnemangssida.
   hallon: {
@@ -74,7 +74,18 @@ export const partners = {
         "https://on.vimla.se/t/t?a=1081333617&as=2105825431&t=2&tk=1&url=https%3A%2F%2Fvimla.se%2Fbestall%2F",
     },
   },
-  comviq: { url: "https://www.comviq.se", label: "Comviq", network: "Adtraction", tracking: false },
+  // Comviq spårar via cookie (at_gd) satt vid omdirigeringen, inte via
+  // parameter i slutadressen. Djuplänkning fungerar.
+  comviq: {
+    url: "https://at.to.comviq.se/t/t?a=1864643893&as=2105825431&t=2&tk=1",
+    label: "Comviq",
+    network: "Adtraction",
+    tracking: true,
+    deepLinks: {
+      abonnemang:
+        "https://at.to.comviq.se/t/t?a=1864643893&as=2105825431&t=2&tk=1&url=https%3A%2F%2Fwww.comviq.se%2Fmobilabonnemang",
+    },
+  },
   saily: { url: "https://saily.com/sv", label: "Saily", network: "TBD", tracking: false },
 } satisfies Record<string, Partner>;
 
