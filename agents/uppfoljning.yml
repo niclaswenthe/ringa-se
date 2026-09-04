@@ -1,0 +1,45 @@
+# Register över beslut som ska granskas om vid ett bestämt datum.
+#
+# Läses av faktagranskningsagenten (se agents/fact-check-prompt.md) vid varje
+# månadskörning. Varje post vars `granskas`-månad har passerat lyfts i
+# PR-beskrivningen tillsammans med sitt underlag och sin beslutsregel.
+# Agenten ändrar ALDRIG sidan utifrån en post här – Niclas avgör, och
+# flyttar då fram `granskas` eller tar bort posten.
+#
+# Fält:
+#   id            kort slug, används i PR-beskrivningen
+#   beslut        vad som gjordes och varför
+#   risk          vad som kan ha blivit sämre av beslutet
+#   underlag      var Niclas hittar det som går att bedöma
+#   beslutsregel  vad som ska hända beroende på vad underlaget visar
+#   granskas      YYYY-MM – månaden posten ska lyftas
+
+- id: hero-lankar-utan-knappform
+  beslut: >
+    Startsidans två hero-knappar gjordes om till understrukna handlingslänkar
+    med pil (2026-09-04). Knappform signalerade att något kördes, vilket
+    oroade besökare inför eSIM-kollaren – elementen var dessutom redan
+    <a>-taggar, så knapputseendet lovade mer än vad som sker.
+  risk: >
+    Länkar drar mindre uppmärksamhet än knappar. Om färre går vidare från
+    startsidan blir kalkylatorn och eSIM-kollaren undanskymda – och de är
+    sajtens egentliga värde.
+  underlag: >
+    Sajten har inga spårningsskript, så interna klick GÅR INTE att mäta och
+    ska inte heller börja mätas – integritetssidan lovar motsatsen.
+    Bedöm i stället på:
+    (1) Search Console → Resultat → Sidor: hur klick och visningar för
+        /verktyg/roamingkalkylator/ och /verktyg/esim-kollare/ utvecklats
+        sedan 2026-09. Svagt underlag – det mäter sökingångar, inte interna
+        klick – men fångar om verktygen tappat helt.
+    (2) Visa startsidan för 3–5 personer som inte sett den och fråga vad de
+        skulle klicka på först, och om något känns tveksamt att klicka på.
+        Detta är det underlag som faktiskt svarar på frågan.
+  beslutsregel: >
+    Pekar testpersonerna på länkarna och tvekar ingen inför eSIM-kollaren:
+    behåll, och flytta fram granskas ett år. Missar flera länkarna helt:
+    ge kalkylatorn tillbaka knappform men låt eSIM-kollaren förbli länk –
+    det var bara den senare som väckte oro. Nämner någon åter att det känns
+    som att sajten gör något med telefonen: problemet sitter djupare än
+    formen och hela eSIM-kollarens ingång behöver skrivas om.
+  granskas: "2026-12"

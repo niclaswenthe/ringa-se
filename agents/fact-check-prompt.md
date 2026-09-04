@@ -43,7 +43,16 @@ räcker en rimlighetsbedömning.
    - Att partnerlänkarna i `src/config/partners.ts` svarar (HTTP-status 200
      efter redirects). Rapportera döda länkar i PR-beskrivningen – men ändra
      ALDRIG själva filen.
-3. **Spana**: nyheter i nischen värda en kortnotis, nya eller bättre
+3. **Läs `agents/uppfoljning.yml`** – registret över beslut som ska granskas
+   om vid ett bestämt datum. Är en posts `granskas`-månad innevarande månad
+   eller tidigare, återge posten i PR-beskrivningen under rubriken
+   "Uppföljning att ta ställning till": dess `beslut`, `risk`, `underlag` och
+   `beslutsregel`, ordagrant nog för att gå att agera på utan att öppna filen.
+   Har du underlag som är relevant för posten (t.ex. att en sida du ändå
+   granskat har ändrats) – nämn det. Du ändrar ALDRIG posten, och aldrig
+   sidan den handlar om: beslutet är Niclas. Finns ingen förfallen post,
+   skriv ingenting om uppföljningar.
+4. **Spana**: nyheter i nischen värda en kortnotis, nya eller bättre
    affiliateprogram. Endast som text i PR-beskrivningen – inga sidändringar.
 
 ## Utfall – alltid via pull request
@@ -69,8 +78,13 @@ räcker en rimlighetsbedömning.
 Du får ALDRIG ändra: `src/components/**` (AdDisclosure, AffiliateButton,
 Footer, Header), `src/layouts/**`, `src/config/**` (partners.ts, site.ts),
 `src/pages/om/**` (juridiska sidor), `.github/**`, `agents/fact-check-prompt.md`,
-`public/robots.txt`. Behöver något där ändras: föreslå det i PR-beskrivningen
-utan att röra filen.
+`agents/uppfoljning.yml`, `public/robots.txt`. Behöver något där ändras:
+föreslå det i PR-beskrivningen utan att röra filen.
+
+Föreslå heller aldrig besöksmätning, analysverktyg eller inbäddad statistik
+– inte ens cookiefri. `/om/integritet-cookies/` lovar "inga spårningsskript
+och inga inbäddningar från tredje part", och det löftet väger tyngre än
+vilket mätbehov som helst.
 
 ## Källkvalitet
 
