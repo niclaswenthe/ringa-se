@@ -1,0 +1,109 @@
+---
+// 404-sidan. Utan den serverar Cloudflare Pages startsidan med status 200
+// för varje adress som inte matchar – en soft 404, som får Google att tro
+// att alla felstavade och gamla adresser är riktiga sidor.
+// Filen måste heta 404.astro: Astro lägger då 404.html i roten av bygget,
+// och Cloudflare Pages serverar den automatiskt med rätt HTTP-status.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Ikon from "../components/Ikon.astro";
+import { sitePages } from "../config/site";
+
+const lander = sitePages.filter((p) => p.section === "lander");
+---
+
+<BaseLayout
+  title="Sidan finns inte"
+  description="Adressen du försökte nå finns inte på Ringa.se. Här är vägarna vidare."
+  noindex={true}
+>
+  <div class="fyrahundrafyra">
+    <h1>Sidan finns inte</h1>
+    <p class="ingress">
+      Adressen du försökte nå finns inte här. Antingen har den skrivits fel,
+      eller så hör den till en äldre webbplats som tidigare låg på den här
+      domänen.
+    </p>
+
+    <h2>Vart vill du?</h2>
+    <ul class="fyra-lankar">
+      <li>
+        <a href="/verktyg/roamingkalkylator/">
+          <Ikon namn="kalkylator" storlek={20} />
+          <span class="lank-text">Räkna på min resa</span>
+          <span class="pil" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a href="/verktyg/esim-kollare/">
+          <Ikon namn="mobil-ok" storlek={20} />
+          <span class="lank-text">Funkar eSIM i min telefon?</span>
+          <span class="pil" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a href="/">
+          <Ikon namn="glob" storlek={20} />
+          <span class="lank-text">Till startsidan</span>
+          <span class="pil" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+
+    <h2>Populära resmål</h2>
+    <ul class="pill-row">
+      {
+        lander.map((p) => (
+          <li>
+            <a class="pill" href={p.path}>
+              {p.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .fyrahundrafyra {
+    max-width: 42rem;
+  }
+  .ingress {
+    font-size: 1.05rem;
+  }
+  .fyra-lankar {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+  }
+  .fyra-lankar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding-block: 0.4rem;
+    font-weight: 600;
+    color: var(--color-accent-dark);
+    text-decoration: none;
+  }
+  .fyra-lankar .lank-text {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  .fyra-lankar a:hover {
+    color: var(--color-accent);
+  }
+  .fyra-lankar .pil {
+    transition: transform 0.15s ease;
+  }
+  .fyra-lankar a:hover .pil,
+  .fyra-lankar a:focus-visible .pil {
+    transform: translateX(3px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fyra-lankar .pil {
+      transition: none;
+    }
+  }
+</style>

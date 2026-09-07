@@ -11,9 +11,14 @@ interface Props {
   description: string;
   /** JSON-LD-objekt som ska renderas statiskt i head. */
   schema?: object[];
+  /**
+   * Sidan ska inte indexeras (404-sidan). Utelämnar samtidigt canonical –
+   * en sida som svarar 404 ska inte peka ut någon kanonisk adress alls.
+   */
+  noindex?: boolean;
 }
 
-const { title, description, schema = [] } = Astro.props;
+const { title, description, schema = [], noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const fullTitle =
   Astro.url.pathname === "/" ? title : `${title} – ${siteName}`;
@@ -26,7 +31,11 @@ const fullTitle =
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {noindex ? (
+      <meta name="robots" content="noindex, follow" />
+    ) : (
+      <link rel="canonical" href={canonical} />
+    )}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
