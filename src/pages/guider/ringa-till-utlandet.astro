@@ -1,0 +1,208 @@
+---
+import GuideLayout from "../../layouts/GuideLayout.astro";
+
+const factChecked = "2026-09";
+
+const faq = [
+  {
+    q: "Vad kostar det att ringa till Sverige från utlandet?",
+    a: "Är du i ett EU- eller EES-land kostar det inget extra – samtalet dras ur din vanliga samtalspott precis som hemma. Är du utanför EU/EES gäller din operatörs roamingpriser, som saknar pristak och ofta ligger på tio kronor per minut eller mer, plus öppningsavgift. Även samtal du tar emot kan kosta där.",
+  },
+  {
+    q: "Vad kostar det att ringa från Sverige till ett annat EU-land?",
+    a: "Högst 19 eurocent per minut exklusive moms, alltså omkring tre kronor. Taket är EU-reglerat och gäller automatiskt hos alla operatörer sedan 2019. För sms är taket 6 eurocent exklusive moms.",
+  },
+  {
+    q: "Hur ringer man till Sverige från utlandet?",
+    a: "Slå +46 följt av numret utan den inledande nollan. Numret 070-123 45 67 blir alltså +46 70 123 45 67. Plustecknet fungerar i alla länder och är säkrare än att slå 00.",
+  },
+  {
+    q: "Är det gratis att ringa med WhatsApp eller FaceTime till utlandet?",
+    a: "Samtalet i sig kostar ingenting extra – det räknas som vanlig datatrafik och inte som ett utlandssamtal. Däremot förbrukar det surf ur din datapott, eller är helt gratis över wifi. Ett samtal drar ungefär en halv megabyte i minuten för ljud, betydligt mer för video.",
+  },
+  {
+    q: "Vad kostar det att skicka sms till utlandet?",
+    a: "Till ett EU- eller EES-land högst 6 eurocent exklusive moms, ungefär åttio öre. Till länder utanför EU/EES sätter operatören priset själv. Att ta emot sms är alltid gratis.",
+  },
+];
+---
+
+<GuideLayout
+  title="Ringa till och från utlandet"
+  description="Vad kostar det att ringa till Sverige från utlandet, och från Sverige till ett annat land? EU:s pristak, operatörernas priser utanför EU och landsnumren – förklarat enkelt."
+  h1="Ringa till och från utlandet"
+  hasAffiliateLinks={false}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <p>
+    Vad ett utlandssamtal kostar beror inte i första hand på vilket land du
+    ringer till, utan på <strong>var du själv befinner dig</strong> när du
+    ringer. Det är den skillnaden som gör att samma samtal kan vara gratis den
+    ena veckan och kosta hundralappar den andra. Här är hela bilden.
+  </p>
+
+  <h2>Vad kostar det att ringa till Sverige när du är utomlands?</h2>
+  <p>
+    Är du i ett EU- eller EES-land kostar det ingenting extra. Enligt EU:s
+    <a href="/ordlista/#roam-like-at-home">roam like at home</a>-regel dras
+    samtalet hem ur din vanliga samtalspott precis som om du stod i Sverige.
+    Detsamma gäller sms och surf. Du behöver alltså inte köpa till någonting
+    för att ringa hem från Spanien, Grekland eller Kroatien.
+  </p>
+  <p>
+    Utanför EU/EES finns inget pristak alls, och då blir det dyrt. Ett samtal
+    från Turkiet till Sverige kostar hos Telia drygt 12 kr per minut plus
+    öppningsavgift, och samma storleksordning gäller i de flesta länder utanför
+    Europa. Två saker överraskar många: även samtal du <em>tar emot</em> kostar
+    när du roamar utanför EU – ofta runt 5 kr per minut – och röstbrevlådan
+    räknas som ett mottaget samtal.
+  </p>
+  <p>
+    Vissa abonnemang inkluderar länder utanför EU utan extra kostnad, och flera
+    operatörer säljer veckopaket med fria samtal. Vilka som gör vad går vi
+    igenom i
+    <a href="/guider/basta-abonnemang-resa/">guiden om abonnemang för resenärer</a>.
+  </p>
+
+  <h2>Vad kostar det att ringa från Sverige till ett annat land?</h2>
+  <p>
+    Det här är den situation som förvånar flest: att ringa <em>från</em>
+    Sverige till ett annat EU-land är inte gratis, trots EU-roamingen.
+    Roam like at home gäller bara när du själv är utomlands. Ringer du hemifrån
+    är det ett internationellt samtal.
+  </p>
+  <p>
+    Däremot är det pristaksreglerat. Ett samtal från Sverige till ett annat
+    EU- eller EES-land får kosta
+    <a href="https://digital-strategy.ec.europa.eu/en/faqs/calling-and-texting-other-eu-countries-questions-answers">högst
+    19 eurocent per minut exklusive moms</a> – omkring tre kronor – och ett sms
+    högst 6 eurocent. Taket gäller automatiskt hos alla operatörer sedan 2019;
+    du behöver inte begära det.
+  </p>
+  <p>
+    Till länder utanför EU/EES finns inget tak. Där sätter operatören priset
+    själv, och det varierar kraftigt mellan länder och abonnemang. Ringer du
+    ofta till samma land utanför EU kan ett tilläggsabonnemang löna sig – Tre
+    säljer till exempel
+    <a href="https://www.tre.se/handla/tjanster/3varlden">3Global</a> för
+    billigare samtal från Sverige till utlandet. Räkna efter innan du tecknar:
+    lönsamheten beror helt på hur mycket du faktiskt ringer.
+  </p>
+
+  <h2>Snabb översikt</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Var du är och vart du ringer</th>
+          <th>Vad som gäller</th>
+          <th>Ungefärlig kostnad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>I EU/EES → till Sverige</td>
+          <td>Roam like at home</td>
+          <td>Inget extra, dras ur potten</td>
+        </tr>
+        <tr>
+          <td>I Sverige → till EU/EES-land</td>
+          <td>EU:s pristak för intra-EU-samtal</td>
+          <td>Högst 19 eurocent/min exkl. moms</td>
+        </tr>
+        <tr>
+          <td>I Sverige → till land utanför EU/EES</td>
+          <td>Operatörens egna priser, inget tak</td>
+          <td>Varierar kraftigt</td>
+        </tr>
+        <tr>
+          <td>Utanför EU/EES → till Sverige</td>
+          <td>Operatörens roamingpriser, inget tak</td>
+          <td>Ofta över 10 kr/min plus öppningsavgift</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Hur slår du numret till ett annat land?</h2>
+  <p>
+    Börja alltid med plustecknet följt av landsnumret, och ta bort den
+    inledande nollan i det svenska numret. Numret 070-123 45 67 blir alltså
+    <strong>+46 70 123 45 67</strong>. Plustecknet fungerar från alla länder
+    och alla nät, till skillnad från 00 som inte gäller överallt. Spara gärna
+    kontakterna i +46-format redan hemma – då fungerar de automatiskt när du
+    reser.
+  </p>
+  <ul>
+    <li>Danmark <strong>+45</strong>, Norge <strong>+47</strong>, Finland <strong>+358</strong></li>
+    <li>Italien <strong>+39</strong>, Spanien <strong>+34</strong>, Tyskland <strong>+49</strong>, Frankrike <strong>+33</strong></li>
+    <li>Storbritannien <strong>+44</strong>, USA och Kanada <strong>+1</strong></li>
+    <li>Turkiet <strong>+90</strong>, Thailand <strong>+66</strong>, Sverige <strong>+46</strong></li>
+  </ul>
+  <p>
+    En detalj för Italien: där behåller man den inledande nollan i fasta
+    nummer, till skillnad från de flesta andra länder. Är du osäker, slå numret
+    exakt som det står skrivet på mottagarens webbplats efter landsnumret.
+  </p>
+
+  <h2>Är det billigare att ringa med WhatsApp eller FaceTime?</h2>
+  <p>
+    Ja, nästan alltid. Appsamtal går över internet och räknas som vanlig
+    datatrafik, inte som utlandssamtal – därför spelar det ingen roll vilket
+    land du ringer till. Över wifi kostar de ingenting alls, och över mobildata
+    drar ett ljudsamtal ungefär en halv megabyte i minuten. Videosamtal drar
+    betydligt mer.
+  </p>
+  <p>
+    Två förbehåll. Mottagaren måste ha samma app, vilket gör metoden opålitlig
+    för myndigheter, banker och taxibolag. Och operatörernas egen funktion för
+    <a href="/ordlista/#wifi-samtal">WiFi-samtal</a> – som ser ut att vara
+    samma sak – fungerar hos de flesta svenska operatörer bara inom Sverige.
+    Räkna inte med den utomlands utan att ha kontrollerat saken först.
+  </p>
+
+  <h2>Vad kostar det att skicka sms till utlandet?</h2>
+  <p>
+    Till ett EU- eller EES-land högst 6 eurocent exklusive moms, alltså
+    ungefär åttio öre. Utanför EU/EES sätter operatören priset själv. Att ta
+    emot sms är alltid gratis, var du än befinner dig – det är bara att skicka
+    som kostar.
+  </p>
+  <p>
+    Sms är därför fortfarande värt att komma ihåg utanför EU: det är ofta
+    billigare än ett samtal, det kräver ingen app hos mottagaren, och det når
+    fram även med svag täckning.
+  </p>
+
+  <h2>Så ringer du billigast – i korthet</h2>
+  <ol>
+    <li>
+      <strong>Kolla var du är.</strong> Inom EU/EES ringer du hem utan extra
+      kostnad. Utanför EU/EES är utgångsläget dyrt.
+    </li>
+    <li>
+      <strong>Kontrollera abonnemanget före resan.</strong> Flera svenska
+      operatörer inkluderar länder utanför EU, och flera säljer veckopaket med
+      fria samtal. Det avgör mer än vilket land du reser till.
+    </li>
+    <li>
+      <strong>Använd appsamtal när det går.</strong> Över wifi kostar de
+      ingenting, oavsett land.
+    </li>
+    <li>
+      <strong>Spara numren med +46.</strong> Då fungerar kontakterna direkt
+      utan att du behöver tänka om på plats.
+    </li>
+    <li>
+      <strong>Stäng av röstbrevlådan utanför EU</strong> om du inte behöver
+      den. Varje meddelande som kopplas dit räknas som ett mottaget samtal och
+      kostar.
+    </li>
+  </ol>
+  <p>
+    Ska du främst surfa snarare än ringa är
+    <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a> snabbaste
+    vägen till en kostnadsuppskattning för just din resa.
+  </p>
+</GuideLayout>

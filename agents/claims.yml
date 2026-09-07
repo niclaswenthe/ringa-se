@@ -508,3 +508,35 @@
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.hallon.se/support/utomlands/eu-roaming"
   verified: "2026-09"
+
+# --- ringa-till-utlandet (ny sida 2026-09) ---
+- claim: "Samtal från Sverige till ett annat EU/EES-land får kosta högst 19 eurocent per minut exklusive moms, och sms högst 6 eurocent – EU-reglerat tak som gäller automatiskt sedan 15 maj 2019"
+  file: src/pages/guider/ringa-till-utlandet.astro
+  source: "https://digital-strategy.ec.europa.eu/en/faqs/calling-and-texting-other-eu-countries-questions-answers"
+  verified: "2026-09"
+- claim: "När du roamar inom EU/EES dras samtal hem till Sverige ur din vanliga samtalspott utan extra kostnad (roam like at home)"
+  file: src/pages/guider/ringa-till-utlandet.astro
+  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
+  verified: "2026-09"
+- claim: "Utanför EU/EES finns inget pristak för roaming, och även mottagna samtal kan kosta"
+  file: src/pages/guider/ringa-till-utlandet.astro
+  source: "https://www.telia.se/roaming/utanfor-eu"
+  verified: "2026-09"
+- claim: "Tre säljer tilläggstjänsten 3Global för billigare samtal och sms från Sverige till utlandet"
+  file: src/pages/guider/ringa-till-utlandet.astro
+  source: "https://www.tre.se/handla/tjanster/3varlden"
+  verified: "2026-09"
+
+# --- turkiet (kompletterat 2026-09) ---
+- claim: "Turkiet ingår i Tres 3Världen – med 3Världen i abonnemanget ringer, sms:ar och surfar du i Turkiet på samma villkor som hemma"
+  file: src/pages/lander/turkiet.astro
+  source: "https://www.tre.se/handla/tjanster/3varlden"
+  verified: "2026-09"
+- claim: "Telia tar drygt 12 kr per minut plus öppningsavgift för samtal Turkiet–Sverige, och cirka 5 kr per minut för mottagna samtal i Turkiet"
+  file: src/pages/lander/turkiet.astro
+  source: "https://www.telia.se/roaming/turkiet"
+  verified: "2026-09"
+- claim: "Telias paket Semestervecka innehåller fria samtal och sms samt 1 GB surf, giltigt i 7 dagar, och gäller bland annat i Turkiet"
+  file: src/pages/lander/turkiet.astro
+  source: "https://www.telia.se/support/mobiltelefoni/guider/sa-funkar-surfpaket-och-semestervecka"
+  verified: "2026-09"

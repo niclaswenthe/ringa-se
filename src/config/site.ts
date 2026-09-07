@@ -26,6 +26,13 @@ export const sitePages: PageInfo[] = [
     section: "guider",
   },
   {
+    path: "/guider/ringa-till-utlandet/",
+    title: "Ringa till och från utlandet",
+    description:
+      "Vad samtal kostar beroende på var du befinner dig: EU:s pristak, operatörernas priser utanför EU, landsnummer och appsamtal.",
+    section: "guider",
+  },
+  {
     path: "/guider/esim-for-nyborjare/",
     title: "eSIM för nybörjare",
     description:
