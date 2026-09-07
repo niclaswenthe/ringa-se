@@ -540,3 +540,7 @@
   file: src/pages/lander/turkiet.astro
   source: "https://www.telia.se/support/mobiltelefoni/guider/sa-funkar-surfpaket-och-semestervecka"
   verified: "2026-09"
+- claim: "Telias paket Semestervecka ger fria samtal och sms plus 1 GB surf i sju dagar och gäller bland annat i Turkiet, Thailand, Storbritannien och USA"
+  file: src/pages/guider/basta-abonnemang-resa.astro
+  source: "https://www.telia.se/support/mobiltelefoni/guider/sa-funkar-surfpaket-och-semestervecka"
+  verified: "2026-09"

@@ -53,8 +53,14 @@ export const partners = {
     network: "Adtraction",
     tracking: true,
   },
-  // TODO: Ersätt url med riktig spårningslänk när Adtraction godkänt Telia,
-  // och sätt tracking: true.
+  // Telias baslänk landar redan på abonnemangssidan, så ingen djuplänk
+  // behövs. Spårningen ligger både i at_gd-parametern och i en cookie.
+  telia: {
+    url: "https://go.telia.se/t/t?a=1960510145&as=2105825431&t=2&tk=1",
+    label: "Telia",
+    network: "Adtraction",
+    tracking: true,
+  },
   // Hallon låser destinationen till sin egen kampanjsida (/affiliates) –
   // djuplänkning via &url= ignoreras. Sidan är en vanlig abonnemangssida.
   hallon: {
