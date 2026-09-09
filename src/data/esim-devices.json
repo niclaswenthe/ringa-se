@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08",
+  "updated": "2026-09",
   "brands": [
     {
       "name": "Apple",
@@ -28,6 +28,7 @@
     {
       "name": "Fairphone",
       "models": [
+        { "model": "Fairphone (Gen. 6)", "esim": "ja", "note": "" },
         { "model": "Fairphone 5", "esim": "ja", "note": "" },
         { "model": "Fairphone 4", "esim": "ja", "note": "" }
       ]
@@ -35,6 +36,7 @@
     {
       "name": "Google",
       "models": [
+        { "model": "Pixel 11 / 11 Pro / 11 Pro XL / 11 Pro Fold", "esim": "ja", "note": "" },
         { "model": "Pixel 10 / 10 Pro / 10 Pro XL / 10a", "esim": "ja", "note": "" },
         { "model": "Pixel 9 / 9 Pro / 9 Pro XL / 9a", "esim": "ja", "note": "" },
         { "model": "Pixel 8 / 8 Pro / 8a", "esim": "ja", "note": "" },
