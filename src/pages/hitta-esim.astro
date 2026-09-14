@@ -37,32 +37,23 @@ const faq = [
   factChecked={factChecked}
   faq={faq}
 >
+  {/* Ordningen är medveten (beslut 2026-09-14): besked först, kontroller
+      efteråt som stöd. Ett kontrollblock före resmålen bygger osäkerhet
+      innan sidan visat sitt värde. */}
   <p>
-    Välj ditt resmål nedan så får du besked direkt: <strong>lönar sig ett
-    rese-eSIM där, eller räcker abonnemanget du redan har?</strong> Svaret är
-    inte ja överallt – inom EU behöver du oftast ingenting alls, och till
-    några länder ingår resmålet redan hos vissa operatörer.
+    Välj ditt resmål nedan så får du ett ärligt besked direkt:
+    <strong>lönar sig ett rese-eSIM där, eller räcker abonnemanget du redan
+    har?</strong> Svaret är inte ja överallt – inom EU behöver du oftast
+    ingenting alls, och till några länder ingår resmålet redan hos vissa
+    operatörer. När ett eSIM är rätt lösning länkar vi direkt till rätt paket.
   </p>
 
-  <div class="innan-du-koper">
-    <p>
-      <strong>Innan du köper – två kontroller som tar en minut.</strong>
-    </p>
-    <ol>
-      <li>
-        Stöder telefonen eSIM?
-        <a href="/verktyg/esim-kollare/">Kontrollera om min telefon stöder eSIM</a>
-        – ett köpt eSIM går inte att använda i en telefon utan stöd.
-      </li>
-      <li>
-        Är telefonen operatörslåst? Ett bundet abonnemang kan innebära att
-        telefonen bara accepterar din egen operatörs SIM. Är du osäker, fråga
-        din operatör innan du köper.
-      </li>
-    </ol>
-  </div>
-
   <h2>Välj ditt resmål</h2>
+  <p class="valjare-hjalp">
+    Osäker på om din telefon stöder eSIM?
+    <a href="/verktyg/esim-kollare/">Kontrollera din modell här</a> – de
+    flesta telefoner från de senaste åren gör det.
+  </p>
 
   <div class="resmal">
     <details>
@@ -194,6 +185,27 @@ const faq = [
     </details>
   </div>
 
+  <h2>Bra att veta innan du beställer</h2>
+  <ul>
+    <li>
+      <strong>Telefonstöd.</strong> De flesta telefoner som sålts i Sverige de
+      senaste åren stöder eSIM, men inte alla – kontrollera din modell i
+      <a href="/verktyg/esim-kollare/">eSIM-kollaren</a> om du är osäker.
+    </li>
+    <li>
+      <strong>Operatörslås.</strong> De flesta telefoner som sålts i Sverige
+      de senaste åren är olåsta, även om de köpts med bindningstid eller
+      avbetalning. Har du en äldre eller utlandsköpt telefon kan du
+      kontrollera med operatören innan du beställer.
+    </li>
+    <li>
+      <strong>Installation.</strong> Installera eSIM-profilen hemma på wifi i
+      lugn och ro före avresan, och aktivera den när du landat. Ditt svenska
+      nummer är kvar vid sidan av hela tiden.
+      <a href="/guider/esim-for-nyborjare/">Nybörjarguiden</a> visar stegen.
+    </li>
+  </ul>
+
   <h2>Varför Airalo?</h2>
   <p>
     Airalo är en av de största leverantörerna av rese-eSIM och täcker de
@@ -212,18 +224,10 @@ const faq = [
 </GuideLayout>
 
 <style>
-  .innan-du-koper {
-    border: 1px solid var(--color-border-strong);
-    border-radius: 10px;
-    padding: 0.9rem 1.1rem;
-    margin: 1.5rem 0;
-    background: var(--color-lightblue);
-  }
-  .innan-du-koper p {
-    margin-top: 0;
-  }
-  .innan-du-koper ol {
-    margin-bottom: 0;
+  .valjare-hjalp {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-top: -0.4rem;
   }
   .resmal details {
     border: 1px solid var(--color-border-strong);
