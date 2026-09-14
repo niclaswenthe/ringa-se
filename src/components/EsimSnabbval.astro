@@ -1,0 +1,64 @@
+---
+// Kompakt köpväg direkt efter ingressen på landssidorna. Syftet är att
+// besökaren ska hitta vidare utan att först läsa hela sidan – den utförliga
+// genomgången och rekommendationen ligger kvar längre ned.
+//
+// Telefonkontrollen står FÖRE annonslänken med avsikt: ett köpt eSIM
+// fungerar inte i en telefon som saknar stöd, och den kontrollen ska
+// besökaren möta innan köpet, inte efter.
+import AffiliateButton from "./AffiliateButton.astro";
+
+interface Props {
+  /** Landets namn, används i blockets tillgängliga namn. */
+  land: string;
+  /** Djuplänksnyckel i partners.ts, t.ex. "thailand". */
+  mal: string;
+  /** Ett ärligt kortbesked: lönar sig eSIM här, eller beror det? */
+  besked: string;
+}
+
+const { land, mal, besked } = Astro.props;
+---
+
+<aside class="esim-snabbval" aria-label={`Hitta eSIM för ${land}`}>
+  <p class="snabbval-besked">{besked}</p>
+  <p class="snabbval-kontroll">
+    <a href="/verktyg/esim-kollare/">Kontrollera om min telefon stöder eSIM</a>
+  </p>
+  <AffiliateButton
+    partner="airalo"
+    mal={mal}
+    text="Se paket och aktuella priser hos Airalo"
+  />
+  <p class="snabbval-mer">
+    Hela genomgången för {land} finns längre ned på sidan – och vill du
+    jämföra flera resmål finns
+    <a href="/hitta-esim/">resmålsväljaren</a>.
+  </p>
+</aside>
+
+<style>
+  .esim-snabbval {
+    border: 1px solid var(--color-border-strong);
+    border-radius: 10px;
+    background: var(--color-lightblue);
+    padding: 1rem 1.1rem 0.6rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .snabbval-besked {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .snabbval-kontroll {
+    font-size: 0.95rem;
+  }
+  .snabbval-mer {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.4rem;
+  }
+  .esim-snabbval :global(.affiliate-button-wrap) {
+    margin-block: 0.6rem;
+  }
+</style>

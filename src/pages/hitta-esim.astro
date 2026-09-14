@@ -1,0 +1,277 @@
+---
+// Resmålsväljare: kortaste vägen från "jag ska resa" till rätt eSIM.
+// Byggd med <details> – inget JavaScript, allt innehåll finns i HTML:en och
+// kan därmed läsas av både sökmotorer och skärmläsare.
+// Redaktionell regel: sidan måste kunna säga NEJ. För EU/EES finns ingen
+// affiliateknapp, eftersom det ärliga svaret är att abonnemanget räcker.
+import GuideLayout from "../layouts/GuideLayout.astro";
+import AffiliateButton from "../components/AffiliateButton.astro";
+
+const factChecked = "2026-09";
+
+const faq = [
+  {
+    q: "Behöver jag ett eSIM när jag reser inom EU?",
+    a: "Nej. Inom EU och EES gäller EU:s roamingregler, vilket betyder att surf, samtal och sms dras ur ditt vanliga abonnemang utan extra kostnad. Ett rese-eSIM tillför ingenting där, annat än om du vill ha mer surf än din pott räcker till.",
+  },
+  {
+    q: "Var köper jag eSIM:et?",
+    a: "Hos leverantören, inte hos oss. Ringa.se säljer ingenting – vi länkar vidare till Airalo, som är en av de större leverantörerna av rese-eSIM. Länkarna är annonslänkar och märkta som sådana.",
+  },
+  {
+    q: "Hur vet jag att min telefon klarar eSIM?",
+    a: "Kontrollera modellen i eSIM-kollaren innan du köper. De flesta telefoner från de senaste åren stöder eSIM, men inte alla – och ett köpt eSIM går inte att använda i en telefon som saknar stöd.",
+  },
+  {
+    q: "Behåller jag mitt svenska nummer?",
+    a: "Ja. Ett rese-eSIM läggs till som ett extra abonnemang vid sidan av ditt vanliga SIM-kort. Du surfar via eSIM:et och kan samtidigt ta emot samtal och sms till ditt svenska nummer.",
+  },
+];
+---
+
+<GuideLayout
+  title="Hitta eSIM för din resa"
+  description="Välj resmål och få besked direkt: lönar sig ett rese-eSIM där, eller räcker ditt svenska abonnemang? Med länk till rätt eSIM-paket när det är motiverat."
+  h1="Hitta eSIM för din resa"
+  hasAffiliateLinks={true}
+  factChecked={factChecked}
+  faq={faq}
+>
+  <p>
+    Välj ditt resmål nedan så får du besked direkt: <strong>lönar sig ett
+    rese-eSIM där, eller räcker abonnemanget du redan har?</strong> Svaret är
+    inte ja överallt – inom EU behöver du oftast ingenting alls, och till
+    några länder ingår resmålet redan hos vissa operatörer.
+  </p>
+
+  <div class="innan-du-koper">
+    <p>
+      <strong>Innan du köper – två kontroller som tar en minut.</strong>
+    </p>
+    <ol>
+      <li>
+        Stöder telefonen eSIM?
+        <a href="/verktyg/esim-kollare/">Kontrollera om min telefon stöder eSIM</a>
+        – ett köpt eSIM går inte att använda i en telefon utan stöd.
+      </li>
+      <li>
+        Är telefonen operatörslåst? Ett bundet abonnemang kan innebära att
+        telefonen bara accepterar din egen operatörs SIM. Är du osäker, fråga
+        din operatör innan du köper.
+      </li>
+    </ol>
+  </div>
+
+  <h2>Välj ditt resmål</h2>
+
+  <div class="resmal">
+    <details>
+      <summary>Thailand</summary>
+      <p class="besked besked-ja">Ja – här lönar sig ett eSIM nästan alltid.</p>
+      <p>
+        Thailand ligger utanför EU/EES, så EU-roamingen gäller inte. Svenska
+        operatörer tar dagspris eller säljer surfpaket, och för en vanlig
+        semestervecka blir det oftast flera hundra kronor. Ett rese-eSIM för
+        samma period kostar typiskt en bråkdel av det, med priset betalt i
+        förväg så att ingen efterdebitering kan uppstå.
+      </p>
+      <AffiliateButton
+        partner="airalo"
+        mal="thailand"
+        text="Se paket och aktuella priser hos Airalo"
+      />
+      <p class="las-mer">
+        <a href="/lander/thailand/">Läs hela landsguiden för Thailand</a>
+      </p>
+    </details>
+
+    <details>
+      <summary>USA</summary>
+      <p class="besked besked-ja">Ja – om inte ditt abonnemang redan täcker USA.</p>
+      <p>
+        USA ligger utanför EU/EES och är dyrt med vanlig roaming. Men kolla
+        abonnemanget först: USA finns med bland länderna i Tres
+        <a href="https://www.tre.se/handla/tjanster/3varlden">3Världen</a>,
+        och flera operatörer säljer veckopaket med surf och samtal
+        inkluderat. Ingår resmålet redan behöver du inget eSIM. Gör det inte
+        det är eSIM nästan alltid billigare än dagspris.
+      </p>
+      <AffiliateButton
+        partner="airalo"
+        mal="usa"
+        text="Se paket och aktuella priser hos Airalo"
+      />
+      <p class="las-mer">
+        <a href="/lander/usa/">Läs hela landsguiden för USA</a>
+      </p>
+    </details>
+
+    <details>
+      <summary>Turkiet</summary>
+      <p class="besked besked-kanske">Beror på din operatör – kontrollera först.</p>
+      <p>
+        Turkiet ligger utanför EU/EES, men ingår hos flera operatörer: landet
+        finns med i Tres
+        <a href="https://www.tre.se/handla/tjanster/3varlden">3Världen</a> och
+        bland Telenors inkluderade roamingländer. Har du något av det surfar du
+        som hemma och behöver inget eSIM. Saknar du det blir vanlig roaming
+        dyr – hos Telia drygt 12 kr per minut för samtal hem – och då är ett
+        eSIM klart billigare.
+      </p>
+      <AffiliateButton
+        partner="airalo"
+        mal="turkiet"
+        text="Se paket och aktuella priser hos Airalo"
+      />
+      <p class="las-mer">
+        <a href="/lander/turkiet/">Läs hela landsguiden för Turkiet</a>
+      </p>
+    </details>
+
+    <details>
+      <summary>Storbritannien</summary>
+      <p class="besked besked-kanske">Ofta inte – många abonnemang täcker landet.</p>
+      <p>
+        Storbritannien lämnade EU och omfattas inte längre av EU-roamingen,
+        men flera svenska operatörer har valt att behandla landet som förut
+        eller inkludera det i sina utlandspaket. Kontrollera ditt eget
+        abonnemang först – chansen är god att du inte behöver köpa någonting.
+        Gör du det, eller vill du ha mer surf än potten räcker till, fungerar
+        ett eSIM utmärkt.
+      </p>
+      <AffiliateButton
+        partner="airalo"
+        mal="storbritannien"
+        text="Se paket och aktuella priser hos Airalo"
+      />
+      <p class="las-mer">
+        <a href="/lander/storbritannien/">Läs hela landsguiden för Storbritannien</a>
+      </p>
+    </details>
+
+    <details>
+      <summary>Inom EU eller EES</summary>
+      <p class="besked besked-nej">Nej – du behöver troligen inget eSIM alls.</p>
+      <p>
+        Reser du inom EU eller EES gäller
+        <a href="/ordlista/#roam-like-at-home">roam like at home</a>: surf,
+        samtal och sms dras ur ditt vanliga abonnemang precis som hemma, utan
+        extra kostnad. Det gäller Spanien, Grekland, Italien, Kroatien och
+        alla övriga EU- och EES-länder. Ett rese-eSIM tillför ingenting där.
+      </p>
+      <p>
+        Ett undantag finns: har du ett litet surfpaket hemma kan potten ta slut
+        på resan, eftersom din operatör får sätta ett tak för hur mycket av den
+        du får använda utomlands. Hur mycket just din operatör tillåter finns i
+        <a href="/guider/basta-abonnemang-resa/">guiden om abonnemang för
+        resenärer</a>. Blir det knappt är extra surf från din egen operatör
+        oftast enklare än ett eSIM.
+      </p>
+      <p class="las-mer">
+        <a href="/guider/ringa-utomlands/">Läs mer om vad som ingår inom EU</a>
+      </p>
+    </details>
+
+    <details>
+      <summary>Annat land utanför EU</summary>
+      <p class="besked besked-ja">Troligen ja – men kolla abonnemanget först.</p>
+      <p>
+        Utanför EU/EES finns inget pristak, och utgångsläget är dyrt. Två
+        saker avgör om du behöver ett eSIM: om ditt abonnemang råkar inkludera
+        just det landet, och hur mycket du tänker surfa. Räkna på det i
+        <a href="/verktyg/roamingkalkylator/">roamingkalkylatorn</a> – den ger
+        ett kostnadsspann för både operatörsroaming och eSIM för din resa.
+      </p>
+      <p>
+        Airalo säljer eSIM för de flesta länder samt regionpaket som täcker
+        flera länder på samma resa, vilket är praktiskt om du ska besöka mer
+        än ett land.
+      </p>
+      <AffiliateButton
+        partner="airalo"
+        text="Se paket och aktuella priser hos Airalo"
+      />
+    </details>
+  </div>
+
+  <h2>Varför Airalo?</h2>
+  <p>
+    Airalo är en av de största leverantörerna av rese-eSIM och täcker de
+    flesta länder. Vi har ett annonssamarbete med dem, vilket betyder att
+    Ringa.se kan få provision om du beställer via länkarna ovan – priset för
+    dig blir detsamma. Det är också hela sajtens finansiering, och vi skriver
+    om det öppet på
+    <a href="/om/sa-tjanar-vi-pengar/">sidan om hur vi tjänar pengar</a>.
+  </p>
+  <p>
+    Att vi tjänar pengar på länken ändrar inte beskeden ovan. Det är därför
+    den här sidan säger nej för EU och "kolla först" för Turkiet och
+    Storbritannien – ett råd som alltid rekommenderar köp är ingen
+    rekommendation.
+  </p>
+</GuideLayout>
+
+<style>
+  .innan-du-koper {
+    border: 1px solid var(--color-border-strong);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    margin: 1.5rem 0;
+    background: var(--color-lightblue);
+  }
+  .innan-du-koper p {
+    margin-top: 0;
+  }
+  .innan-du-koper ol {
+    margin-bottom: 0;
+  }
+  .resmal details {
+    border: 1px solid var(--color-border-strong);
+    border-radius: 10px;
+    margin-bottom: 0.6rem;
+    background: #fff;
+  }
+  .resmal summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.9rem 1.1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .resmal summary:hover {
+    background: var(--color-lightblue);
+  }
+  .resmal details[open] summary {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .resmal details > *:not(summary) {
+    padding-inline: 1.1rem;
+  }
+  .resmal details > *:last-child {
+    padding-bottom: 0.9rem;
+  }
+  /* AffiliateButton renderas av en komponent och saknar sidans
+     scope-attribut – därför :global() för just den. */
+  .resmal details :global(.affiliate-button-wrap) {
+    padding-inline: 1.1rem;
+  }
+  .resmal details :global(.affiliate-button-wrap:last-child) {
+    padding-bottom: 0.9rem;
+  }
+  .besked {
+    font-weight: 700;
+    margin-top: 0.9rem;
+  }
+  .besked-ja {
+    color: var(--color-accent-dark);
+  }
+  .besked-kanske,
+  .besked-nej {
+    color: var(--color-text);
+  }
+  .las-mer {
+    font-size: 0.95rem;
+  }
+</style>

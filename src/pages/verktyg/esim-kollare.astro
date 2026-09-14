@@ -3,7 +3,6 @@
 // All data bäddas in vid build (define:vars) – inga API-anrop i drift,
 // inga cookies, ingen localStorage. [KRAV]
 import GuideLayout from "../../layouts/GuideLayout.astro";
-import AffiliateButton from "../../components/AffiliateButton.astro";
 import deviceData from "../../data/esim-devices.json";
 
 const factChecked = "2026-08";
@@ -28,7 +27,7 @@ const faq = [
   title="Funkar eSIM i min telefon?"
   description="Välj telefonmärke och modell och få svar direkt: stöder din telefon eSIM? Täcker de vanligaste modellerna i Sverige."
   h1="Funkar eSIM i min telefon?"
-  hasAffiliateLinks={true}
+  hasAffiliateLinks={false}
   factChecked={factChecked}
   faq={faq}
 >
@@ -103,13 +102,17 @@ const faq = [
       </ol>
     </section>
   </div>
+  {/* Kollaren vet vilken telefon du har, men inte vart du ska – och en
+      annonslänk utan resmål kan aldrig djuplänka rätt. Nästa steg är
+      därför resmålsväljaren, som både ger ett ärligt besked per land och
+      länkar till rätt paket. Sidan är därmed helt fri från annonslänkar. */}
   <div id="kollare-cta" hidden>
-    <p class="cta-upplysning">
-      Om du beställer via annonslänken kan Ringa.se få provision – det
-      påverkar inte ditt pris.
-      <a href="/om/sa-tjanar-vi-pengar/">Så finansieras Ringa.se.</a>
+    <p class="hitta-esim-cta">
+      <a class="hero-lank hero-lank-primar" href="/hitta-esim/">
+        <span class="lank-text">Hitta eSIM för min resa</span>
+        <span class="pil" aria-hidden="true">→</span>
+      </a>
     </p>
-    <AffiliateButton partner="airalo" text="Se eSIM för din resa hos Airalo" />
   </div>
   <div id="kollare-next-ja" hidden>
     <p>

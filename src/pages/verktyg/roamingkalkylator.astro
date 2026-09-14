@@ -8,10 +8,15 @@
 import GuideLayout from "../../layouts/GuideLayout.astro";
 import AffiliateButton from "../../components/AffiliateButton.astro";
 import costs from "../../data/roaming-costs.json";
+import { partners } from "../../config/partners";
 
-const factChecked = "2026-08";
+const factChecked = "2026-09";
 
 const calcData = {
+  // Djuplänkarna hämtas från partners.ts så att kalkylatorn aldrig kan
+  // hamna ur synk med den enda tillåtna källan för affiliatelänkar.
+  airaloBas: partners.airalo.url,
+  airaloDeepLinks: partners.airalo.deepLinks ?? {},
   countries: [
     { id: "thailand", name: "Thailand", kind: "utanfor" },
     { id: "usa", name: "USA", kind: "utanfor" },
@@ -80,7 +85,9 @@ const calcData = {
       påverkar inte ditt pris.
       <a href="/om/sa-tjanar-vi-pengar/">Så finansieras Ringa.se.</a>
     </p>
-    <AffiliateButton partner="airalo" text="Se Airalos eSIM för ditt resmål" />
+    {/* Texten och href sätts om av riktaCta() efter resmålsvalet. Värdena
+        här är fallbacken när JavaScript inte kört. */}
+    <AffiliateButton partner="airalo" text="Se paket och aktuella priser hos Airalo" />
   </div>
 
   <noscript>
@@ -164,9 +171,27 @@ const calcData = {
     // Visa live-regionen först och fyll den strax därefter – innehåll som
     // sätts medan regionen är display:none annonseras inte av alla
     // skärmläsare (WCAG 4.1.3).
+    // Riktar om annonslänken till valt resmål. Knappen sa tidigare "för ditt
+    // resmål" men gick alltid till Airalos startsida, trots att djuplänkarna
+    // fanns. aria-label måste följa den synliga texten (WCAG 2.5.3).
+    function riktaCta(countryId) {
+      const a = ctaEl.querySelector(".affiliate-button");
+      if (!a) return;
+      const djup = calcData.airaloDeepLinks[countryId];
+      const land = calcData.countries.find((c) => c.id === countryId);
+      const text =
+        djup && land
+          ? "Se paket och aktuella priser för " + land.name + " hos Airalo"
+          : "Se paket och aktuella priser hos Airalo";
+      a.href = djup || calcData.airaloBas;
+      a.textContent = text;
+      a.setAttribute("aria-label", "Annonslänk: " + text);
+    }
+
     function showResult(headline, opText, esimText, basisText, showCta) {
       resultBox.hidden = false;
       ctaEl.hidden = !showCta;
+      if (showCta) riktaCta(countrySelect.value);
       setTimeout(() => {
         headlineEl.textContent = headline;
         opEl.textContent = opText;

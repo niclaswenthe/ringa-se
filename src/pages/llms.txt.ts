@@ -5,6 +5,7 @@ import type { APIRoute } from "astro";
 import { siteName, siteDescription, sitePages } from "../config/site";
 
 const SECTIONS: { key: string; heading: string }[] = [
+  { key: "hitta", heading: "Hitta eSIM" },
   { key: "guider", heading: "Guider" },
   { key: "verktyg", heading: "Interaktiva verktyg" },
   { key: "lander", heading: "Landsguider" },

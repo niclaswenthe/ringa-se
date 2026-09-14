@@ -14,10 +14,17 @@ export interface PageInfo {
   title: string;
   /** En rad som beskriver sidan i llms.txt och på startsidan. */
   description: string;
-  section: "guider" | "verktyg" | "lander" | "ordlista" | "om";
+  section: "hitta" | "guider" | "verktyg" | "lander" | "ordlista" | "om";
 }
 
 export const sitePages: PageInfo[] = [
+  {
+    path: "/hitta-esim/",
+    title: "Hitta eSIM för din resa",
+    description:
+      "Resmålsväljare med ärligt besked per land: lönar sig ett rese-eSIM där, eller räcker det svenska abonnemanget?",
+    section: "hitta",
+  },
   {
     path: "/guider/ringa-utomlands/",
     title: "Ringa & surfa utomlands 2026 – stora guiden",

@@ -34,6 +34,12 @@ räcker en rimlighetsbedömning.
      Listorna ändras, och operatörerna anger själva att de kan ändras. De
      ligger till grund för flera avsnitt i abonnemangsguiden och för
      landsguidernas råd om att resmålet kan ingå redan.
+   - **Resmålsväljaren `src/pages/hitta-esim.astro`** upprepar besked som
+     bygger på landssidornas fakta (vilka operatörer som inkluderar Turkiet
+     respektive Storbritannien, och att EU/EES inte kräver eSIM). Ändrar du
+     ett sådant faktum på en landssida måste beskedet på resmålsväljaren
+     ändras i samma PR, annars säger sajten två olika saker. Beskeden har
+     inga egna poster i `claims.yml` – de följer landssidornas.
    - eSIM-stödet i `src/data/esim-devices.json` (stickprov: nya modeller som
      lanserats sedan senaste körningen läggs till, felaktiga poster rättas).
    - EU:s roamingregler och beloppsgränser.

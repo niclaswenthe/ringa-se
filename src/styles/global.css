@@ -581,8 +581,23 @@ blockquote,
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
+/* Primär handling: samma idiom som övriga länkar, men tyngre. Rangordning
+   via storlek och vikt i stället för knappform. */
+.hero-lank-primar {
+  font-size: 1.3rem;
+  font-weight: 700;
+  min-height: 48px;
+}
+.hero-lank-primar .lank-text {
+  text-decoration-thickness: 3px;
+}
 .hero-lank:hover {
   color: var(--color-accent);
+}
+.hero-hjalp {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0.15rem 0 1rem;
 }
 .hero-lank .ikon {
   flex-shrink: 0;
