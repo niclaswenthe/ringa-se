@@ -75,10 +75,10 @@
   source: "https://en.wikipedia.org/wiki/Samsung_Galaxy_S26"
   verified: "2026-08"
 
-- claim: "eSIM-stödet för Googles Pixel-modeller stämmer (Pixel 3 och senare har eSIM, inklusive Pixel 10a)"
+- claim: "eSIM-stödet för Googles Pixel-modeller stämmer (Pixel 3 och senare har eSIM, inklusive Pixel 11-serien)"
   file: src/data/esim-devices.json
-  source: "https://en.wikipedia.org/wiki/Pixel_10a"
-  verified: "2026-08"
+  source: "https://support.google.com/pixelphone/answer/9449293"
+  verified: "2026-09"
 
 - claim: "eSIM-stödet för Sonys Xperia-modeller stämmer (1/5/10-serierna generation IV och senare har eSIM i Europa, inklusive Xperia 1 VII och 10 VII)"
   file: src/data/esim-devices.json
@@ -110,10 +110,10 @@
   source: "https://www.honor.com/global/tech/honor-esim/"
   verified: "2026-08"
 
-- claim: "eSIM-stödet för Fairphone-modeller stämmer (Fairphone 4 och 5 har eSIM)"
+- claim: "eSIM-stödet för Fairphone-modeller stämmer (Fairphone 4, 5 och Gen. 6 har eSIM)"
   file: src/data/esim-devices.json
-  source: "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W"
-  verified: "2026-08"
+  source: "https://support.fairphone.com/hc/en-us/articles/38046290703122-Technical-specifications-for-The-Fairphone-Gen-6-and-Gen-6"
+  verified: "2026-09"
 
 - claim: "Doros telefoner saknar alltjämt eSIM-stöd"
   file: src/data/esim-devices.json
