@@ -167,12 +167,12 @@
 - claim: "Inom EU/EES ingår samtal, sms och surf till samma pris som hemma, utan föranmälan"
   file: src/pages/guider/ringa-utomlands.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+  verified: "2026-09"
 
 - claim: "Operatörer får tillämpa ett fair use-tak för surf i EU, beräknat enligt EU-formel, med begränsad tilläggsavgift över taket"
   file: src/pages/guider/ringa-utomlands.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+  verified: "2026-09"
 
 - claim: "Utanför EU/EES finns ingen prisreglering av roaming – operatörerna sätter priserna själva"
   file: src/pages/guider/ringa-utomlands.astro
@@ -184,31 +184,31 @@
   source: "https://pts.se/internet-och-telefoni/roaming/"
   verified: "2026-08"
 
-- claim: "Svenska operatörers dagspaket utanför EU kostar från cirka 50–100 kr per dag i populära resländer"
+- claim: "Svenska operatörers dagspaket utanför EU kostar från cirka 50–130 kr per dag i populära resländer"
   file: src/pages/guider/ringa-utomlands.astro
-  source: "https://www.telia.se/roaming/utanfor-eu"
-  verified: "2026-08"
+  source: "https://www.telia.se/roaming/usa"
+  verified: "2026-09"
 
 - claim: "Satellitnät på fartyg och flygplan omfattas inte av EU:s roamingregler och prissätts fritt"
   file: src/pages/guider/ringa-utomlands.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+  verified: "2026-09"
 
 - claim: "Ett rese-eSIM för en normal semestervecka utanför EU kostar ofta från cirka 50–150 kr"
   file: src/pages/guider/ringa-utomlands.astro
   source: "https://www.airalo.com/sv"
-  verified: "2026-08"
+  verified: "2026-09"
 
 # --- roaming-utanfor-eu ---
 # Granskningsbara påståenden i guiden Roaming utanför EU.
 - claim: "Inom EU/EES gäller roam like at home – samma pris som hemma för samtal, SMS och surf"
   file: src/pages/guider/roaming-utanfor-eu.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Fartygs- och satellitnät omfattas inte av EU:s roamingregler"
   file: src/pages/guider/roaming-utanfor-eu.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/faq/index_sv.htm"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Operatörer måste erbjuda automatisk kostnadsspärr för dataroaming på cirka 50 euro (ofta cirka 600 kr)"
   file: src/pages/guider/roaming-utanfor-eu.astro
   source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
@@ -217,10 +217,10 @@
   file: src/pages/guider/roaming-utanfor-eu.astro
   source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
   verified: "2026-08"
-- claim: "Svenska operatörers dagspaket utanför EU kostar ofta cirka 40–100 kr per dag"
+- claim: "Svenska operatörers dagspaket utanför EU kostar ofta cirka 40–130 kr per dag"
   file: src/pages/guider/roaming-utanfor-eu.astro
-  source: "https://www.telia.se/privat/support/utomlands"
-  verified: "2026-08"
+  source: "https://www.telia.se/roaming/usa"
+  verified: "2026-09"
 - claim: "Att ta emot SMS utomlands är gratis hos svenska operatörer"
   file: src/pages/guider/roaming-utanfor-eu.astro
   source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
