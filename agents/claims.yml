@@ -276,23 +276,23 @@
 - claim: "Thailand ligger utanför EU/EES och omfattas inte av EU:s roamingregler (roam like at home)"
   file: src/pages/lander/thailand.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
-- claim: "Telia tar betalt per MB i Thailand upp till ett dagstak på drygt 100 kr för 0,5 GB"
+  verified: "2026-09"
+- claim: "Telia tar betalt per MB (4 kr/MB) i Thailand upp till ett dagstak på cirka 130 kr för 0,5 GB"
   file: src/pages/lander/thailand.astro
   source: "https://www.telia.se/roaming/thailand"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Tele2 säljer datapaket för utvalda resmål utanför EU"
   file: src/pages/lander/thailand.astro
   source: "https://www.tele2.se/tips/vad-kostar-egentligen-samtal-och-surf-i-olika-lander"
-  verified: "2026-08"
-- claim: "Telenor har tidvis inkluderat Thailand i vissa abonnemangsformer"
+  verified: "2026-09"
+- claim: "Telenor inkluderar Thailand i sin roaming för många abonnemang – surf på ordinarie surfpott utan extra kostnad"
   file: src/pages/lander/thailand.astro
   source: "https://www.telenor.se/roaming/"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "eSIM med thailändsk data kostar från cirka 50 kr/vecka, cirka 100 kr för 10 GB (Airalo från ca 4 USD, 10 GB ca 10–11 USD)"
   file: src/pages/lander/thailand.astro
   source: "https://www.airalo.com/thailand-esim"
-  verified: "2026-08"
+  verified: "2026-09"
 - claim: "Thailands landsnummer är +66"
   file: src/pages/lander/thailand.astro
   source: "https://www.itu.int/oth/T02020000CD/en"
