@@ -9,4 +9,5 @@
 /public/robots.txt      @niclaswenthe
 /.github/               @niclaswenthe
 /agents/fact-check-prompt.md @niclaswenthe
+/agents/pr-review-prompt.md @niclaswenthe
 /agents/uppfoljning.yml @niclaswenthe
