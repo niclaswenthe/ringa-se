@@ -55,10 +55,20 @@
 # En samlingspost per märke. Verifieras månatligen av fact-check-pipelinen
 # mot tillverkarnas officiella specifikationer (europeiska varianter).
 
-- claim: "eSIM-stödet för Apples modeller i esim-devices.json stämmer med Apples officiella specifikationer (XS/XR och senare har eSIM; iPhone Air är eSIM-only)"
+- claim: "eSIM-stödet för Apples modeller i esim-devices.json stämmer med Apples officiella specifikationer (XS/XR och senare har eSIM; iPhone Air och iPhone Duo är eSIM-only)"
   file: src/data/esim-devices.json
   source: "https://www.airalo.com/help/about-airalo/NFHQSUXFCZOM/what-devices-support-esim/D2N6OZSVVM9W"
-  verified: "2026-08"
+  verified: "2026-10"
+
+- claim: "iPhone 18 Pro och 18 Pro Max har eSIM (i Sverige med både eSIM och fysiskt SIM; eSIM-only gäller enbart vissa marknader utanför Europa)"
+  file: src/data/esim-devices.json
+  source: "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/"
+  verified: "2026-10"
+
+- claim: "iPhone Duo (Apples första vikbara) är eSIM-only på alla marknader och stöder två aktiva eSIM"
+  file: src/data/esim-devices.json
+  source: "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/"
+  verified: "2026-10"
 
 - claim: "iPhone 17e har eSIM (i Sverige med både eSIM och fysiskt SIM; eSIM-only gäller enbart vissa marknader)"
   file: src/data/esim-devices.json
