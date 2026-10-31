@@ -27,16 +27,24 @@ const faq = [
     a: "Inte som turist. Först om du använder en turkisk SIM- eller eSIM-profil i samma telefon i mer än 120 dagar kräver Turkiet en IMEI-registrering med hög avgift. Kortare semestrar berörs inte alls.",
   },
   {
+    q: "Fungerar Telenor i Turkiet?",
+    a: "Ja. Med Telenor-abonnemang ingår Turkiet i roamingen – du surfar på din vanliga surfpott utan extra kostnad, med ett tak på 100 GB per månad vid obegränsad surf. Samtal kostar däremot 19 kr per minut, även att ta emot, så ring via appar över surfen. Kontantkort omfattas inte av den fria surfen.",
+  },
+  {
     q: "Vilket nödnummer gäller i Turkiet?",
     a: "112. Turkiet använder samma samlade nödnummer som Sverige och övriga Europa, och operatörerna kan hjälpa dig på engelska.",
   },
 ];
 ---
 
+{/* Titel och beskrivning följer sökintentionen (Search Console okt 2026):
+    besökarna söker "3världen turkiet", "telenor turkiet" och "ringa från
+    turkiet till sverige" – inte eSIM. Position 8,6 men CTR 0,36 % berodde
+    på att titeln ledde med fel sak. */}
 <GuideLayout
-  title="eSIM & ringa i Turkiet"
-  description="Turkiet ligger utanför EU:s roamingregler. Så mycket kostar det att surfa med svensk operatör i Turkiet – och så slipper du chockfakturan med eSIM."
-  h1="eSIM & ringa i Turkiet"
+  title="Ringa & surfa i Turkiet – 3Världen, Telenor och eSIM"
+  description="Ingår Turkiet i 3Världen? Fungerar Telenor i Turkiet? Vad kostar det att ringa hem till Sverige – och när lönar sig eSIM? Faktagranskade svar med källor."
+  h1="Ringa & surfa i Turkiet"
   hasAffiliateLinks={true}
   factChecked={factChecked}
   faq={faq}
@@ -103,6 +111,25 @@ const faq = [
     titta efter det på Mina sidor innan du reser. Och listan över länder är
     Tres egen och kan ändras, så gör kontrollen inför just din resa snarare än
     att lita på ett gammalt besked.
+  </p>
+
+  <h2>Fungerar Telenor i Turkiet?</h2>
+  <p>
+    Ja, och för surfen är svaret ovanligt bra: med Telenor-abonnemang ingår
+    Turkiet, så du <strong>surfar på din vanliga surfpott utan extra
+    kostnad</strong> – har du obegränsad surf gäller ett tak på 100 GB per
+    månad. Kontantkort omfattas inte utan betalar 99 kr per dygn för 1 GB
+    (<a href="https://www.telenor.se/roaming/turkiet/" rel="noopener">Telenors
+    priser för Turkiet</a>).
+  </p>
+  <p>
+    Samtal är den dyra delen: att ringa <em>och att ta emot samtal</em> kostar
+    19 kr per minut, röstbrevlådan räknas som samtal, och utanför EU/EES
+    debiterar Telenor per påbörjad minut – ett tre sekunder långt svar kostar
+    alltså en hel minut. Sms kostar 4 kr att skicka och är gratis att ta emot.
+    Rådet för Telenor-kunder i Turkiet blir därmed: surfa fritt, men ring via
+    appar som WhatsApp eller FaceTime över surfen, och låt röstbrevlådan vara
+    avstängd.
   </p>
 
   <h2>Vad kostar det att ringa från Turkiet till Sverige?</h2>

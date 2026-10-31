@@ -97,9 +97,9 @@ export const sitePages: PageInfo[] = [
   },
   {
     path: "/lander/turkiet/",
-    title: "eSIM & ringa i Turkiet",
+    title: "Ringa & surfa i Turkiet",
     description:
-      "Turkiet ligger utanför EU:s roamingregler – det här kostar det och så slipper du chockfakturan.",
+      "Ingår Turkiet i 3Världen? Fungerar Telenor? Vad kostar samtal hem – och när lönar sig eSIM?",
     section: "lander",
   },
   {

@@ -6,7 +6,7 @@ const factChecked = "2026-10";
 const faq = [
   {
     q: "Vad kostar det att ringa till Sverige från utlandet?",
-    a: "Är du i ett EU- eller EES-land kostar det inget extra – samtalet dras ur din vanliga samtalspott precis som hemma. Är du utanför EU/EES gäller din operatörs roamingpriser, som saknar pristak och ofta ligger på tio kronor per minut eller mer, plus öppningsavgift. Även samtal du tar emot kan kosta där.",
+    a: "Är du i ett EU- eller EES-land – eller i Ukraina eller Moldavien, som ingår i EU:s roamingområde sedan januari 2026 – kostar det inget extra: samtalet dras ur din vanliga samtalspott precis som hemma. Är du utanför det området gäller din operatörs roamingpriser, som saknar pristak och ofta ligger på tio kronor per minut eller mer, plus öppningsavgift. Även samtal du tar emot kan kosta där.",
   },
   {
     q: "Vad kostar det att ringa från Sverige till ett annat EU-land?",
@@ -42,13 +42,24 @@ const faq = [
     ena veckan och kosta hundralappar den andra. Här är hela bilden.
   </p>
 
-  <h2>Vad kostar det att ringa till Sverige när du är utomlands?</h2>
+  {/* H2:n lyder ordagrant som sajtens största sökfråga (184 exponeringar
+      okt 2026, position 22–30) – frågeformulerad rubrik med svaret i första
+      stycket enligt GEO-mönstret. */}
+  <h2>Ringa till Sverige från utlandet – vad kostar det?</h2>
   <p>
     Är du i ett EU- eller EES-land kostar det ingenting extra. Enligt EU:s
     <a href="/ordlista/#roam-like-at-home">roam like at home</a>-regel dras
     samtalet hem ur din vanliga samtalspott precis som om du stod i Sverige.
     Detsamma gäller sms och surf. Du behöver alltså inte köpa till någonting
-    för att ringa hem från Spanien, Grekland eller Kroatien.
+    för att ringa hem från Spanien, Grekland eller Kroatien – och sedan den
+    1 januari 2026 gäller samma regler även i
+    <a href="https://www.consilium.europa.eu/en/press/press-releases/2025/07/25/eu-mobile-roaming-benefits-extended-to-moldova-and-ukraine-as-of-2026/" rel="noopener">Ukraina och Moldavien</a>,
+    som anslutits till EU:s roamingområde.
+  </p>
+  <p>
+    Så ringer du: slå <strong>+46 följt av numret utan den första nollan</strong>
+    (070-123 45 67 blir +46 70 123 45 67). Det fungerar från alla länder och
+    alla nät – mer om landsnummer längre ned.
   </p>
   <p>
     Utanför EU/EES finns inget pristak alls, och då blir det dyrt. Ett samtal

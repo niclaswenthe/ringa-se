@@ -550,3 +550,19 @@
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.telia.se/support/mobiltelefoni/guider/sa-funkar-surfpaket-och-semestervecka"
   verified: "2026-10"
+
+# --- turkiet: Telenor-avsnitt (tillagt 2026-10-31) ---
+- claim: "Telenor inkluderar Turkiet i roamingen för abonnemang – surf ur ordinarie pott utan extra kostnad, tak 100 GB/mån vid obegränsad surf; kontantkort betalar 99 kr/dygn (1 GB, Surfpass)"
+  file: src/pages/lander/turkiet.astro
+  source: "https://www.telenor.se/roaming/turkiet/"
+  verified: "2026-10"
+- claim: "Hos Telenor i Turkiet kostar samtal 19 kr/min – både att ringa och ta emot, inklusive röstbrevlåda – med debitering per påbörjad 60 sekunder utanför EU/EES; sms 4 kr att skicka, gratis att ta emot"
+  file: src/pages/lander/turkiet.astro
+  source: "https://www.telenor.se/roaming/turkiet/"
+  verified: "2026-10"
+
+# --- EU-roamingområdet utvidgat (tillagt 2026-10-31) ---
+- claim: "Ukraina och Moldavien ingår i EU:s roamingområde (roam like at home) sedan den 1 januari 2026"
+  file: src/pages/guider/ringa-utomlands.astro
+  source: "https://www.consilium.europa.eu/en/press/press-releases/2025/07/25/eu-mobile-roaming-benefits-extended-to-moldova-and-ukraine-as-of-2026/"
+  verified: "2026-10"
