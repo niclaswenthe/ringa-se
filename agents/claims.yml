@@ -266,8 +266,8 @@
   verified: "2026-10"
 - claim: "Storbritanniens landsnummer är +44"
   file: src/pages/lander/storbritannien.astro
-  source: "https://en.wikipedia.org/wiki/Telephone_numbers_in_the_United_Kingdom"
-  verified: "2026-08"
+  source: "https://www.itu.int/oth/T02020000DD/en"
+  verified: "2026-11"
 - claim: "Nödnumret i Storbritannien är 999 och EU-numret 112 fungerar parallellt mot samma larmcentral"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-call-999/"
@@ -328,8 +328,8 @@
   verified: "2026-10"
 - claim: "Turkiets landsnummer är +90"
   file: src/pages/lander/turkiet.astro
-  source: "https://en.wikipedia.org/wiki/Telephone_numbers_in_Turkey"
-  verified: "2026-08"
+  source: "https://www.itu.int/oth/T02020000D6/en"
+  verified: "2026-11"
 - claim: "Nödnumret i Turkiet är 112 (samlat nödnummer för alla larmtjänster)"
   file: src/pages/lander/turkiet.astro
   source: "https://112.gov.tr/"
