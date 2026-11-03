@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10",
+  "updated": "2026-11",
   "brands": [
     {
       "name": "Apple",
@@ -86,6 +86,7 @@
       "models": [
         { "model": "Galaxy S26-serien", "esim": "ja", "note": "" },
         { "model": "Galaxy S25-serien", "esim": "ja", "note": "" },
+        { "model": "Galaxy S26 FE / S25 FE", "esim": "ja", "note": "" },
         { "model": "Galaxy S24 / S24+ / S24 Ultra / S24 FE", "esim": "ja", "note": "" },
         { "model": "Galaxy S23 / S23+ / S23 Ultra / S23 FE", "esim": "ja", "note": "" },
         { "model": "Galaxy S22 / S22+ / S22 Ultra", "esim": "ja", "note": "" },
@@ -95,8 +96,9 @@
         { "model": "Galaxy S20 FE", "esim": "nej", "note": "" },
         { "model": "Galaxy Z Flip-serien (alla)", "esim": "ja", "note": "" },
         { "model": "Galaxy Z Fold-serien (alla)", "esim": "ja", "note": "" },
+        { "model": "Galaxy A57 / A56 / A37 / A36", "esim": "ja", "note": "Europeiska varianter har eSIM." },
         { "model": "Galaxy A55 / A54 / A35", "esim": "ja", "note": "Europeiska varianter har eSIM." },
-        { "model": "Galaxy A53 / A52 / A34 / A33 eller äldre A-modeller", "esim": "nej", "note": "Äldre och enklare A-modeller saknar eSIM." }
+        { "model": "Galaxy A53 / A52 / A34 / A33 eller äldre A-modeller", "esim": "nej", "note": "Äldre och enklare A-modeller saknar eSIM. Även enklare nyare modeller som A26 och A16 saknar eSIM i europeiska varianter." }
       ]
     },
     {
