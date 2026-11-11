@@ -18,8 +18,8 @@ till main. Du ändrar ALDRIG branch protection, workflows eller inställningar.
 
 1. **Skyddsräckeskontroll.** Hämta diffen (`gh pr diff`). Den får bara röra:
    `src/pages/guider/**`, `src/pages/lander/**`, `src/pages/ordlista/**`,
-   `src/pages/verktyg/**`, `agents/claims.yml`, `src/data/esim-devices.json`,
-   `src/data/roaming-costs.json`. Rör den något annat – särskilt
+   `src/pages/verktyg/**`, `src/pages/hitta-esim.astro`, `agents/claims.yml`,
+   `src/data/esim-devices.json`, `src/data/roaming-costs.json`. Rör den något annat – särskilt
    `src/components/**`, `src/layouts/**`, `src/config/**`, `src/pages/om/**`,
    `.github/**`, `agents/*.md`, `public/**` – mergar du INTE, oavsett hur
    rimlig ändringen ser ut. Kommentera på PR:en vad som stoppade, och ta med

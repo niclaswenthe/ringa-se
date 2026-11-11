@@ -36,7 +36,7 @@
 - claim: "Telenor låter kunder surfa på ordinarie surfpott i Storbritannien utan extra kostnad, medan samtal och SMS kan debiteras separat"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.telenor.se/roaming/storbritannien/"
-  verified: "2026-08"
+  verified: "2026-11"
 - claim: "Telia behandlar Storbritannien som utanför EU-villkoren med dagspris eller surfpaket"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.telia.se/roaming/storbritannien"
@@ -44,7 +44,7 @@
 - claim: "Utlandsvillkor kan skilja sig mellan olika abonnemangsformer hos samma operatör (nyare vs aldre abonnemang, kontantkort vs abonnemang)"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.telenor.se/roaming/storbritannien/"
-  verified: "2026-08"
+  verified: "2026-11"
 
 # --- esim-devices ---
 # Claims-fragment: eSIM-stödet i src/data/esim-devices.json.
@@ -150,10 +150,10 @@
   file: src/pages/guider/esim-for-nyborjare.astro
   source: "https://www.airalo.com/sv"
   verified: "2026-11"
-- claim: "Att ta emot SMS utomlands är gratis hos svenska operatörer"
+- claim: "Att ta emot SMS utomlands är gratis hos svenska operatörer (Telia: 'Ta emot sms: Gratis' på landssidorna; Telenor 0 kr; Tele2 och Comviq: 'kostar inget extra')"
   file: src/pages/guider/esim-for-nyborjare.astro
-  source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
-  verified: "2026-08"
+  source: "https://www.telia.se/roaming/thailand"
+  verified: "2026-11"
 - claim: "Många rese-eSIM kan bara installeras en gång på en enhet och kan inte flyttas fritt"
   file: src/pages/guider/esim-for-nyborjare.astro
   source: "https://www.airalo.com/sv"
@@ -162,10 +162,10 @@
 # --- ordlista ---
 # Claims för /ordlista/ – de flesta definitioner är tidlösa och behöver
 # ingen löpande verifiering. Nedan endast påståenden med förändringsbara fakta.
-- claim: "EU:s standardskydd stoppar dataroaming vid ungefär motsvarande 50 euro om kunden inte aktivt valt annat (term: Utlandsspärr/beloppsspärr)"
+- claim: "EU:s standardskydd stoppar dataroaming vid ungefär motsvarande 50 euro om kunden inte aktivt valt annat (term: Utlandsspärr/beloppsspärr) – förordning (EU) 2022/612 artikel 14.4: standardgräns nära men högst 50 euro exkl. moms per faktureringsmånad, varning vid 80 %, gäller även utanför EU"
   file: src/pages/ordlista/index.astro
-  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+  source: "https://eur-lex.europa.eu/eli/reg/2022/612/oj/swe"
+  verified: "2026-11"
 - claim: "Roam Like at Home innebär att samtal, SMS och surf inom EU/EES dras ur den vanliga potten utan extra kostnad, med fair use-begränsningar (termer: Roam Like at Home, Fair use, Roaming)"
   file: src/pages/ordlista/index.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
@@ -195,10 +195,10 @@
   source: "https://pts.se/internet-och-telefoni/roaming/"
   verified: "2026-11"
 
-- claim: "En spärrgräns på motsvarande cirka 50 euro (600–700 kr) för datatrafik utomlands är standard på svenska abonnemang, med sms-varning och stopp"
+- claim: "En spärrgräns på motsvarande cirka 50 euro (600–700 kr) för datatrafik utomlands är standard på svenska abonnemang, med sms-varning och stopp (förordning (EU) 2022/612 artikel 14.4)"
   file: src/pages/guider/ringa-utomlands.astro
-  source: "https://pts.se/internet-och-telefoni/roaming/"
-  verified: "2026-08"
+  source: "https://eur-lex.europa.eu/eli/reg/2022/612/oj/swe"
+  verified: "2026-11"
 
 - claim: "Svenska operatörers dagspaket utanför EU kostar från cirka 50–130 kr per dag i populära resländer"
   file: src/pages/guider/ringa-utomlands.astro
@@ -225,22 +225,22 @@
   file: src/pages/guider/roaming-utanfor-eu.astro
   source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/faq/index_sv.htm"
   verified: "2026-11"
-- claim: "Operatörer måste erbjuda automatisk kostnadsspärr för dataroaming på cirka 50 euro (ofta cirka 600 kr)"
+- claim: "Operatörer måste erbjuda automatisk kostnadsspärr för dataroaming på cirka 50 euro (ofta cirka 600 kr) – förordning (EU) 2022/612 artikel 14.4"
   file: src/pages/guider/roaming-utanfor-eu.astro
-  source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
-  verified: "2026-08"
-- claim: "Kostnadsspärren gäller endast dataanvändning, inte samtal och SMS"
+  source: "https://eur-lex.europa.eu/eli/reg/2022/612/oj/swe"
+  verified: "2026-11"
+- claim: "Kostnadsspärren gäller endast dataanvändning, inte samtal och SMS (artikel 14.4 omfattar bara dataroamingtjänster)"
   file: src/pages/guider/roaming-utanfor-eu.astro
-  source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
-  verified: "2026-08"
+  source: "https://eur-lex.europa.eu/eli/reg/2022/612/oj/swe"
+  verified: "2026-11"
 - claim: "Svenska operatörers dagspaket utanför EU kostar ofta cirka 40–130 kr per dag"
   file: src/pages/guider/roaming-utanfor-eu.astro
   source: "https://www.telia.se/roaming/usa"
   verified: "2026-11"
-- claim: "Att ta emot SMS utomlands är gratis hos svenska operatörer"
+- claim: "Att ta emot SMS utomlands är gratis hos svenska operatörer (Tele2: 'kostar inget extra när du får ett sms'; Telia, Telenor och Comviq anger samma sak)"
   file: src/pages/guider/roaming-utanfor-eu.astro
-  source: "https://telekomradgivarna.se/en/sa-funkar-det/are-you-going-abroad/"
-  verified: "2026-08"
+  source: "https://www.tele2.se/utland"
+  verified: "2026-11"
 
 # --- storbritannien ---
 # Granskningsbara påståenden: src/pages/lander/storbritannien.astro
@@ -265,7 +265,7 @@
 - claim: "Storbritannien är ett av Telenors inkluderade roamingländer: mobilabonnemang surfar på ordinarie pott, samtal cirka 9 kr/min, skickade sms 4 kr, mottagna sms gratis, kontantkort omfattas inte"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.telenor.se/roaming/storbritannien/"
-  verified: "2026-08"
+  verified: "2026-11"
 - claim: "Telia behandlar Storbritannien som land utanför EU-villkoren – dagspris från cirka 130 kr för 0,5 GB eller surfpaket"
   file: src/pages/lander/storbritannien.astro
   source: "https://www.telia.se/roaming/storbritannien"
@@ -305,7 +305,7 @@
   file: src/pages/lander/thailand.astro
   source: "https://www.telenor.se/roaming/"
   verified: "2026-09"
-- claim: "eSIM med thailändsk data kostar från cirka 50 kr/vecka, cirka 100 kr för 10 GB (Airalo från ca 4 USD, 10 GB ca 10–11 USD)"
+- claim: "eSIM med thailändsk data kostar från cirka 60 kr/vecka, cirka 100 kr för 10 GB (Airalo i SEK: 3 GB/7 dagar 61 kr, 10 GB/7 dagar ca 100 kr; 1 GB/3 dagar ca 40 kr)"
   file: src/pages/lander/thailand.astro
   source: "https://www.airalo.com/thailand-esim"
   verified: "2026-11"
@@ -402,10 +402,10 @@
   file: src/data/roaming-costs.json
   source: "https://www.airalo.com/sv"
   verified: "2026-11"
-- claim: "En beloppsspärr på cirka 600–700 kr för dataroaming är standard hos svenska operatörer (motsvarar 50 € enligt EU-regler)"
-  file: src/data/roaming-costs.json
-  source: "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_sv.htm"
-  verified: "2026-08"
+- claim: "En beloppsspärr på cirka 600–700 kr för dataroaming är standard hos svenska operatörer (motsvarar 50 € enligt förordning (EU) 2022/612 artikel 14.4)"
+  file: src/pages/verktyg/roamingkalkylator.astro
+  source: "https://eur-lex.europa.eu/eli/reg/2022/612/oj/swe"
+  verified: "2026-11"
 
 # --- wifi-samtal-och-appar (tillagt 2026-08-21 efter extern granskning;
 # --- lärdom: även råd utan ursprunglig källa ska ha claims-poster) ---
@@ -435,7 +435,7 @@
   file: src/pages/verktyg/esim-kollare.astro
   source: "https://support.apple.com/en-us/109317"
   verified: "2026-08"
-- claim: "Google Pixel 7 och senare stöder två aktiva eSIM via MEP (Android 13); Samsung Galaxy stöder i regel fysiskt SIM plus ett eSIM, med undantag för nyare toppmodeller"
+- claim: "Google Pixel 7 och senare stöder två aktiva eSIM via MEP (Android 13); Samsung Galaxy stöder i regel fysiskt SIM plus ett eSIM, med undantag för nyare modeller som Galaxy S26 FE (dubbla eSIM enligt Samsungs svenska produktsida)"
   file: src/pages/verktyg/esim-kollare.astro
   source: "https://support.google.com/pixelphone/answer/9449293"
   verified: "2026-08"
@@ -481,11 +481,11 @@
 - claim: "Telenor har inkluderad roaming i EU/EES plus 15 länder: Andorra, Gibraltar, Malaysia, Moldavien, Montenegro, Myanmar, San Marino, Schweiz, Serbien, Storbritannien, Thailand, Turkiet, Ukraina, USA och Vatikanstaten"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.telenor.se/roaming/"
-  verified: "2026-09"
+  verified: "2026-11"
 - claim: "Telenors inkluderade roaming gäller mobilabonnemang, med tak kring 100 GB/mån vid obegränsad surf; kontantkort omfattas inte utan betalar dygnspris"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.telenor.se/roaming/thailand/"
-  verified: "2026-09"
+  verified: "2026-11"
 - claim: "Telia saknar inkluderade länder utanför EU/EES men säljer resepaket där samtal, sms och surf ingår för en vecka"
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://www.telia.se/roaming/usa"
@@ -494,10 +494,10 @@
   file: src/pages/guider/basta-abonnemang-resa.astro
   source: "https://vimla.se/utlandspriser/"
   verified: "2026-11"
-- claim: "Utanför EU/EES och Storbritannien har Vimla landsspecifika roamingpriser, inte förköpta surfpaket"
+- claim: "Utanför EU/EES och Storbritannien gäller inte Vimlas surfpott; surfpaket köps på plats genom att svara på det sms Vimla skickar vid ankomst, med storlek och pris som beror på landet"
   file: src/pages/guider/basta-abonnemang-resa.astro
-  source: "https://vimla.se/utlandspriser/"
-  verified: "2026-10"
+  source: "https://faq.vimla.se/hc/sv/articles/34229612974993-Allt-du-beh%C3%B6ver-veta-inf%C3%B6r-din-resa"
+  verified: "2026-11"
 # --- EU-tak per operatör (tabell, tillagd 2026-09-02) ---
 # HÖGPRIORITERAD: hela tabellen ska verifieras varje månad mot operatörernas egna sidor.
 - claim: "Telenors tak för surf inom EU/EES är omkring 100 GB per månad för abonnemang med obegränsad surf"

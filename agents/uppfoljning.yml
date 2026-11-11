@@ -43,3 +43,26 @@
     som att sajten gör något med telefonen: problemet sitter djupare än
     formen och hela eSIM-kollarens ingång behöver skrivas om.
   granskas: "2026-12"
+
+- id: eu-grossisttak-data-2027
+  beslut: >
+    Noterat av faktagranskningen 2026-11 (inte åtgärdat): EU:s grossisttak för
+    dataroaming sjunker enligt förordning (EU) 2022/612 artikel 10 till
+    1 euro/GB från 1 januari 2027. Fair use-taken inom EU räknas ut från
+    grossisttaket, så operatörernas publicerade EU-tak kan höjas i början av
+    året. Ingen sidändring gjord – taken i tabellen "Publicerade tak för surf
+    inom EU/EES" stämde fortfarande i november.
+  risk: >
+    Tabellen och texten "Mellan 33 och 100 gigabyte i månaden" i
+    basta-abonnemang-resa kan bli för låga om operatörerna höjer sina tak
+    efter årsskiftet, och sajten skulle då underskatta vad läsaren får.
+  underlag: >
+    Operatörernas egna EU-sidor (samma källor som tabellraderna i claims.yml)
+    samt europa.eu/youreurope om fair use. Faktagranskningsagenten kontrollerar
+    tabellen varje månad, så avvikelser syns i dess PR.
+  beslutsregel: >
+    Har minst en operatör höjt sitt tak: låt agentens PR uppdatera tabellen
+    och se över spannet "33 och 100 gigabyte" i ingressen; överväg en
+    kortnotis om att EU-taken höjts. Har inget ändrats i februari: flytta fram
+    granskas till 2027-05 och ta bort posten om det fortfarande är oförändrat.
+  granskas: "2027-02"

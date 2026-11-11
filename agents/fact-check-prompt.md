@@ -76,10 +76,12 @@ räcker en rimlighetsbedömning.
 ## Skyddsräcken – filer du FÅR ändra
 
 - Innehållssidor: `src/pages/guider/**`, `src/pages/lander/**`,
-  `src/pages/ordlista/**`, `src/pages/verktyg/**` (endast text/data – aldrig
-  komponentanvändning eller skriptlogik)
+  `src/pages/ordlista/**`, `src/pages/verktyg/**` och resmålsväljaren
+  `src/pages/hitta-esim.astro` (endast text/data – aldrig komponentanvändning
+  eller skriptlogik)
 - `agents/claims.yml`
 - `src/data/esim-devices.json`
+- `src/data/roaming-costs.json` (spannen och `updated`-fältet)
 
 Du får ALDRIG ändra: `src/components/**` (AdDisclosure, AffiliateButton,
 Footer, Header), `src/layouts/**`, `src/config/**` (partners.ts, site.ts),
